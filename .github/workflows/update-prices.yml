@@ -1,0 +1,39 @@
+name: Atualizar Preços Reais dos Supermercados (Cloud Playwright)
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 9 * * *' # Atualiza diariamente às 06:00 BRT
+
+permissions:
+  contents: write
+
+jobs:
+  scrape-prices:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar dependências e navegador Playwright
+        run: |
+          npm ci || npm install
+          npx playwright install --with-deps chromium
+
+      - name: Extrair preços reais das lojas (Arena, GoodBom, Amazon)
+        run: node scripts/update-real-pool.js
+
+      - name: Publicar preços reais atualizados no GitHub Pages
+        run: |
+          cp public/real-store-pool.json ./real-store-pool.json
+          cp public/real-snapshot.json ./real-snapshot.json
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/real-store-pool.json real-store-pool.json public/real-snapshot.json real-snapshot.json data/results.json || true
+          git diff --staged --quiet || git commit -m "chore: atualiza preços reais extraídos dos supermercados [skip ci]"
+          git push

@@ -217,6 +217,23 @@
       <h2 id="pick-title"></h2>
       <p class="muted small" id="pick-sub"></p>
       <ul id="pick-list"></ul>
+
+      <div class="step-box" style="background:#f8fafc">
+        <div class="step-box-title"><b>⚡ Importar da Aba Oficial Logada (Sem Servidor — Funciona no GitHub Pages):</b></div>
+        <p class="muted small">
+          Se a loja exigir login pessoal (ex.: Mercado Livre / Magalu): clique em <b>Abrir busca na loja ↗</b>, pressione <code>Ctrl+A</code> e <code>Ctrl+C</code> na aba da loja e clique no botão abaixo:
+        </p>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+          <button type="button" class="btn primary sm" id="pick-paste-clip">📋 Colar produtos copiados da aba da loja (1 clique)</button>
+          <a class="btn sm" id="pick-open" target="_blank" rel="noopener">↗ Abrir busca deste item na loja</a>
+        </div>
+        <details style="margin-top:.25rem">
+          <summary class="small">Ou cole o texto da página da loja manualmente aqui</summary>
+          <textarea id="pick-paste-text" rows="3" placeholder="Cole aqui (Ctrl+V) o conteúdo copiado da página de busca da loja..."></textarea>
+          <button type="button" class="btn sm" id="pick-parse-text">Extrair produtos e preços reais do texto</button>
+        </details>
+      </div>
+
       <div class="manual">
         <label>Ou informe o preço unitário real visto na página oficial da loja (R$)
           <input id="pick-manual" type="number" step="0.01" min="0" placeholder="Ex.: 24.90" /></label>
@@ -227,7 +244,6 @@
         <span class="spacer"></span>
         <a class="btn sm" id="pick-open-login" target="_blank" rel="noopener">↗ Login oficial da loja</a>
         <button type="button" class="btn sm" id="pick-confirm-logged">✓ Avisar que está logado</button>
-        <a class="btn sm" id="pick-open" target="_blank" rel="noopener">Abrir busca na loja ↗</a>
         <button class="btn primary sm" id="pick-close">Fechar</button>
       </div>
     </div>

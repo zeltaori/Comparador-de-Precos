@@ -47,16 +47,25 @@ function saveLocalState() {
   } catch {}
 }
 
+let realStorePool = { updatedAt: null, stores: {} };
+
 async function loadRealSnapshot() {
   try {
-    const r = await fetch('./real-snapshot.json');
-    if (r.ok) {
-      realSnapshot = await r.json();
+    const [rSnap, rPool] = await Promise.all([
+      fetch('./real-snapshot.json').catch(() => null),
+      fetch('./real-store-pool.json').catch(() => null),
+    ]);
+    if (rSnap && rSnap.ok) {
+      realSnapshot = await rSnap.json();
+    }
+    if (rPool && rPool.ok) {
+      realStorePool = await rPool.json();
     }
   } catch {}
 }
 
-// Vincula resultados reais já extraídos (por ID ou mesma query normalizada) sem NUNCA inventar preços fictícios
+// Vincula resultados reais já extraídos (tanto do snapshot quanto do banco de 1.160+ produtos reais extraídos das lojas)
+// para qualquer item que o usuário adicionar manualmente na lista, sem NUNCA inventar preços fictícios!
 function syncSnapshotResults(items = state.list, stores = state.stores.filter((s) => s.enabled)) {
   const snapByQuery = {};
   for (const [, byStore] of Object.entries(realSnapshot)) {
@@ -66,18 +75,39 @@ function syncSnapshotResults(items = state.list, stores = state.stores.filter((s
     }
   }
 
+  const maxLimit = state.settings.maxResults || 8;
+
   for (const item of items) {
     state.results[item.id] ??= {};
     const matchedSnap = realSnapshot[item.id] || snapByQuery[norm(item.query)];
     for (const store of stores) {
       const existing = state.results[item.id][store.id];
-      if (existing && existing.querySnapshot === item.query && (existing.candidates?.length || existing.error)) {
+      if (existing && existing.querySnapshot === item.query && existing.candidates?.length) {
         continue;
       }
       if (matchedSnap && matchedSnap[store.id] && norm(matchedSnap[store.id].querySnapshot) === norm(item.query)) {
         const snapEntry = structuredClone(matchedSnap[store.id]);
         snapEntry.selected = selectBestCandidate(snapEntry.candidates);
         state.results[item.id][store.id] = snapEntry;
+        continue;
+      }
+
+      // Pesquisa no banco amplo de produtos reais extraídos da loja (real-store-pool.json)
+      const poolProducts = realStorePool?.stores?.[store.id] || [];
+      if (poolProducts.length > 0) {
+        const ranked = rankAndFilterCandidates(item.query, poolProducts, maxLimit);
+        if (ranked.length > 0) {
+          state.results[item.id][store.id] = {
+            querySnapshot: item.query,
+            candidates: ranked,
+            selected: selectBestCandidate(ranked),
+            manualPrice: existing?.manualPrice ?? null,
+            error: null,
+            method: `preço real extraído da loja (${store.name})`,
+            searchUrl: store.searchUrl.replace('{q}', encodeURIComponent(item.query)),
+            at: realStorePool.updatedAt || new Date().toISOString(),
+          };
+        }
       }
     }
   }
@@ -656,25 +686,153 @@ $('#list-items').addEventListener('change', (e) => {
   saveList(state.list.map((it) => (it.id === id ? { ...it, qty: Math.max(1, Number(e.target.value) || 1) } : it)));
 });
 
-// ---------------- Busca no modo estático (sem servidor local) ----------------
-async function tryBrowserArenaFetch(query, maxLimit = 8) {
-  const fetchOne = async (q) => {
-    const target =
-      'https://www.arenaatacado.com.br/on/demandware.store/Sites-Arena-Site/pt_BR/SearchServices-GetSuggestionsJson?q=' +
-      encodeURIComponent(q);
-    for (const proxy of [
-      `https://api.allorigins.win/raw?url=${encodeURIComponent(target)}`,
-      `https://corsproxy.io/?${encodeURIComponent(target)}`,
-    ]) {
+// ---------------- Busca Ao Vivo no Navegador (GitHub Pages sem Servidor Local) ----------------
+async function fetchTextViaCors(targetUrl, timeoutMs = 6500) {
+  const routes = [
+    { url: targetUrl, type: 'raw' },
+    { url: `https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)}`, type: 'allorigins-json' },
+    { url: `https://api.allorigins.win/raw?url=${encodeURIComponent(targetUrl)}`, type: 'raw' },
+    { url: `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(targetUrl)}`, type: 'raw' },
+    { url: `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`, type: 'raw' },
+  ];
+
+  for (const route of routes) {
+    try {
+      const ctrl = new AbortController();
+      const t = setTimeout(() => ctrl.abort(), timeoutMs);
+      const r = await fetch(route.url, { signal: ctrl.signal });
+      clearTimeout(t);
+      if (!r.ok) continue;
+      if (route.type === 'allorigins-json') {
+        const j = await r.json();
+        if (j?.contents && String(j.contents).length > 40) return String(j.contents);
+      } else {
+        const txt = await r.text();
+        if (txt && txt.length > 40) return txt;
+      }
+    } catch {}
+  }
+  return null;
+}
+
+function parsePriceNumber(txt) {
+  if (!txt) return null;
+  const m = String(txt).replace(/\s/g, '').match(/(\d{1,3}(?:\.\d{3})*|\d+)(?:,(\d{1,2}))?/);
+  if (!m) return null;
+  return parseFloat(m[1].replace(/\./g, '') + '.' + (m[2] || '0').padEnd(2, '0'));
+}
+
+function extractProductsFromHtml(html, baseUrl, selectors = {}) {
+  const doc = new DOMParser().parseFromString(html, 'text/html');
+  const abs = (href) => {
+    try {
+      return new URL(href, baseUrl).href;
+    } catch {
+      return baseUrl;
+    }
+  };
+  const priceOf = (el) => {
+    if (!el) return null;
+    const frac = el.querySelector?.('.andes-money-amount__fraction');
+    if (frac) {
+      const cents = el.querySelector('.andes-money-amount__cents');
+      return parseFloat(frac.textContent.replace(/\./g, '') + '.' + (cents ? cents.textContent : '00'));
+    }
+    const content = el.getAttribute?.('content');
+    if (content && !isNaN(parseFloat(content))) return parseFloat(content);
+    return parsePriceNumber(el.textContent);
+  };
+  const imgOf = (el) => {
+    const img = el.querySelector?.('img');
+    return img ? abs(img.getAttribute('src') || img.getAttribute('data-src') || '') : null;
+  };
+
+  const out = [];
+  const push = (r) => {
+    if (r && r.title && r.price > 0 && !out.some((o) => o.title === r.title && o.price === r.price)) {
+      out.push(r);
+    }
+  };
+
+  // 1) Seletores CSS da loja
+  if (selectors?.item) {
+    for (const card of doc.querySelectorAll(selectors.item)) {
+      const tEl = selectors.title ? card.querySelector(selectors.title) : null;
+      const pEl = selectors.price ? card.querySelector(selectors.price) : null;
+      let lEl = selectors.link ? card.querySelector(selectors.link) : null;
+      if (!lEl && card.tagName === 'A') lEl = card;
+      push({
+        title: (tEl?.textContent || '').trim().replace(/\s+/g, ' '),
+        price: priceOf(pEl),
+        url: lEl ? abs(lEl.getAttribute('href')) : baseUrl,
+        image: imgOf(card),
+      });
+    }
+  }
+
+  // 2) JSON-LD (schema.org Product)
+  const walk = (node) => {
+    if (!node || typeof node !== 'object') return;
+    if (Array.isArray(node)) return node.forEach(walk);
+    const type = [].concat(node['@type'] || []);
+    if (type.includes('Product')) {
+      const offer = [].concat(node.offers || [])[0] || {};
+      push({
+        title: node.name,
+        price: parseFloat(offer.price || offer.lowPrice),
+        url: abs(node.url || offer.url || baseUrl),
+        image: [].concat(node.image || [])[0] || null,
+      });
+    }
+    Object.values(node).forEach(walk);
+  };
+  doc.querySelectorAll('script[type="application/ld+json"]').forEach((s) => {
+    try {
+      walk(JSON.parse(s.textContent));
+    } catch {}
+  });
+
+  // 3) Heurística genérica de elementos com R$
+  const priceNodes = [...doc.querySelectorAll('body *')].filter(
+    (e) => e.children.length <= 3 && /^\s*R\$\s*[\d.,\s]+(\/\s*[a-z]{1,4}\.?)?\s*$/i.test(e.textContent)
+  );
+  for (const pn of priceNodes) {
+    let card = pn;
+    for (let i = 0; i < 7 && card; i++) {
+      card = card.parentElement;
+      if (card && (card.querySelector('a[href]') || card.tagName === 'A') && card.textContent.length > 20) break;
+    }
+    if (!card) continue;
+    const titleEl = card.querySelector('h2, h3, h4, [class*="title" i], [class*="name" i], [class*="nome" i], img[alt]');
+    const title = (titleEl?.getAttribute?.('alt') || titleEl?.textContent || '').trim().replace(/\s+/g, ' ');
+    if (title.length >= 4 && !/R\$/.test(title)) {
+      const linkEl = card.tagName === 'A' ? card : card.querySelector('a[href]');
+      push({
+        title: title.slice(0, 200),
+        price: priceOf(pn),
+        url: linkEl ? abs(linkEl.getAttribute('href')) : baseUrl,
+        image: imgOf(card),
+      });
+    }
+  }
+
+  return out;
+}
+
+async function browserLiveSearchStore(store, query, maxLimit = 8) {
+  let raw = [...(realStorePool?.stores?.[store.id] || [])];
+
+  // 1) Arena Atacado JSON API via proxy CORS
+  if (store.id === 'arena' || store.searchUrl.includes('arenaatacado.com.br')) {
+    const fetchArenaOne = async (q) => {
+      const target =
+        'https://www.arenaatacado.com.br/on/demandware.store/Sites-Arena-Site/pt_BR/SearchServices-GetSuggestionsJson?q=' +
+        encodeURIComponent(q);
+      const txt = await fetchTextViaCors(target, 5500);
+      if (!txt) return [];
       try {
-        const ctrl = new AbortController();
-        const t = setTimeout(() => ctrl.abort(), 5000);
-        const r = await fetch(proxy, { signal: ctrl.signal });
-        clearTimeout(t);
-        if (!r.ok) continue;
-        const data = await r.json();
-        const products = data?.suggestions?.product?.products || [];
-        return products
+        const data = JSON.parse(txt);
+        return (data?.suggestions?.product?.products || [])
           .map((p) => p.productTileModel)
           .filter((m) => m && m.available !== false && m.price?.defaultPrice?.sales?.value > 0)
           .map((m) => ({
@@ -685,25 +843,98 @@ async function tryBrowserArenaFetch(query, maxLimit = 8) {
               : `https://www.arenaatacado.com.br${m.productShowFullUrl || ''}`,
             image: m.images?.large?.[0]?.absURL || null,
           }));
-      } catch {}
-    }
-    return null;
-  };
-
-  let raw = await fetchOne(query);
-  if (!raw) return null;
-  let ranked = rankAndFilterCandidates(query, raw, maxLimit);
-  if (!ranked.some((c) => c.matchType === 'exact') || ranked.length < 3) {
-    for (const fb of buildFallbackQueries(query)) {
-      const fbRaw = await fetchOne(fb);
-      if (fbRaw) {
-        raw = raw.concat(fbRaw);
-        ranked = rankAndFilterCandidates(query, raw, maxLimit);
+      } catch {
+        return [];
       }
-      if (ranked.length >= 4) break;
+    };
+
+    let liveArena = await fetchArenaOne(query);
+    raw = liveArena.concat(raw);
+    let ranked = rankAndFilterCandidates(query, raw, maxLimit);
+    if (!ranked.some((c) => c.matchType === 'exact') || ranked.length < 3) {
+      const headWord = norm(query).split(' ')[0];
+      const fbList = [...new Set([...buildFallbackQueries(query), headWord].filter((x) => x && x.length >= 3))];
+      for (const fb of fbList.slice(0, 3)) {
+        const fbArena = await fetchArenaOne(fb);
+        if (fbArena.length) {
+          liveArena = liveArena.concat(fbArena);
+          raw = fbArena.concat(raw);
+          ranked = rankAndFilterCandidates(query, raw, maxLimit);
+        }
+        if (ranked.length >= 4 && ranked.some((c) => c.matchType === 'exact')) break;
+      }
+    }
+    return { candidates: ranked, liveCount: liveArena.length };
+  }
+
+  // 2) Demais lojas (Amazon, GoodBom, Mercado Livre, Magalu e lojas personalizadas): tenta buscar o HTML ao vivo via proxy CORS
+  const targetUrl = store.searchUrl.replace('{q}', encodeURIComponent(query));
+  let liveExtracted = [];
+  const html = await fetchTextViaCors(targetUrl, 6000);
+  if (html) {
+    liveExtracted = extractProductsFromHtml(html, targetUrl, store.selectors || {});
+    raw = liveExtracted.concat(raw);
+  }
+
+  // Atualiza também o pool em memória com qualquer produto novo descoberto ao vivo
+  if (liveExtracted.length > 0) {
+    realStorePool.stores[store.id] ??= [];
+    for (const item of liveExtracted) {
+      if (!realStorePool.stores[store.id].some((x) => x.title === item.title && x.price === item.price)) {
+        realStorePool.stores[store.id].push(item);
+      }
     }
   }
-  return ranked;
+
+  const ranked = rankAndFilterCandidates(query, raw, maxLimit);
+  return { candidates: ranked, liveCount: liveExtracted.length };
+}
+
+// Extrai produtos e preços reais de qualquer texto copiado (Ctrl+A / Ctrl+C) da aba oficial logada da loja
+function parseCopiedStoreText(rawText, defaultUrl) {
+  const lines = String(rawText || '')
+    .split(/\r?\n/)
+    .map((l) => l.trim())
+    .filter(Boolean);
+  const out = [];
+  const priceRegex = /R\$\s*(\d{1,3}(?:\.\d{3})*|\d+)(?:\s*,\s*(\d{1,2}))?/i;
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    // Caso 1: Preço quebrado em 2 linhas no Mercado Livre ("R$ 29" na linha i e ", 90" na linha i+1)
+    let combinedLine = line;
+    if (/^R\$\s*\d+$/.test(line) && i + 1 < lines.length && /^,\s*\d{1,2}$/.test(lines[i + 1])) {
+      combinedLine = line + lines[i + 1].replace(/\s+/g, '');
+    }
+
+    const m = combinedLine.match(priceRegex);
+    if (!m) continue;
+    const price = parseFloat(m[1].replace(/\./g, '') + '.' + (m[2] || '00').padEnd(2, '0'));
+    if (!(price > 0) || price > 5000) continue;
+
+    // Procura o título do produto na mesma linha (antes do R$) ou nas 3 linhas anteriores
+    let candidateTitle = combinedLine.split(/R\$/i)[0].trim();
+    for (let back = 1; back <= 4 && candidateTitle.length < 6 && i - back >= 0; back++) {
+      const prev = lines[i - back];
+      if (
+        prev.length >= 6 &&
+        !/^R\$|^\d+%?\s*OFF|frete\s+gr[aá]tis|em\s+\d+x|sem\s+juros|patrocinado|mais\s+vendido|oferta/i.test(prev)
+      ) {
+        candidateTitle = prev;
+        break;
+      }
+    }
+
+    if (candidateTitle.length >= 5) {
+      out.push({
+        title: candidateTitle.slice(0, 180),
+        price,
+        url: defaultUrl,
+        image: null,
+      });
+    }
+  }
+  return out;
 }
 
 // ---------------- Busca ----------------
@@ -720,7 +951,6 @@ async function runSearch() {
     prog.classList.remove('hidden');
     showTab('list');
 
-    // Tenta reconectar ao backend local caso o usuário tenha acabado de iniciar o servidor
     if (!hasBackend) {
       const srv = await detectBackend();
       if (srv) hasBackend = true;
@@ -742,8 +972,9 @@ async function runSearch() {
         tick();
       });
     } else {
-      // Modo Web Estático (GitHub Pages sem localhost:3000 rodando):
-      // NUNCA inventa preços. Usa snapshot real verificado ou consulta via proxy quando possível, e informa bloqueio CORS quando não disponível.
+      // Modo GitHub Pages (100% no navegador, sem precisar de servidor local):
+      // 1) Busca no pool real de 1.160+ produtos extraídos das lojas
+      // 2) Consulta ao vivo via múltiplos proxies CORS + DOMParser para qualquer produto novo adicionado manualmente
       syncSnapshotResults(state.list, activeStores);
       const total = state.list.length * activeStores.length;
       let done = 0;
@@ -754,41 +985,50 @@ async function runSearch() {
           done++;
           const pct = Math.round((done / total) * 100);
           $('.bar', prog).style.width = pct + '%';
-          $('span', prog).textContent = `Verificando preços reais de "${item.query}" em ${store.name}… ${done}/${total} (${pct}%)`;
+          $('span', prog).textContent = `Buscando ao vivo "${item.query}" em ${store.name}… ${done}/${total} (${pct}%)`;
 
           const cur = state.results[item.id][store.id];
-          if (cur && norm(cur.querySnapshot) === norm(item.query) && (cur.candidates?.length || cur.error)) {
+          const hasExactSnapshot =
+            cur &&
+            norm(cur.querySnapshot) === norm(item.query) &&
+            cur.candidates?.some((c) => c.matchType === 'exact') &&
+            (cur.method?.includes('extração real verificada') || cur.method?.includes('extração ao vivo'));
+          if (hasExactSnapshot) {
             continue;
           }
 
-          if (store.id === 'arena') {
-            const arenaCandidates = await tryBrowserArenaFetch(item.query, state.settings.maxResults || 8);
-            if (arenaCandidates && arenaCandidates.length > 0) {
-              state.results[item.id][store.id] = {
-                querySnapshot: item.query,
-                candidates: arenaCandidates,
-                selected: selectBestCandidate(arenaCandidates),
-                manualPrice: cur?.manualPrice ?? null,
-                error: null,
-                method: 'API oficial Arena Atacado (preço real)',
-                searchUrl: store.searchUrl.replace('{q}', encodeURIComponent(item.query)),
-                at: new Date().toISOString(),
-              };
-              continue;
-            }
-          }
+          const { candidates, liveCount } = await browserLiveSearchStore(
+            store,
+            item.query,
+            state.settings.maxResults || 8
+          );
 
-          state.results[item.id][store.id] = {
-            querySnapshot: item.query,
-            candidates: [],
-            selected: null,
-            manualPrice: cur?.manualPrice ?? null,
-            error:
-              'Para buscar novos itens ao vivo sem preços fictícios, inicie o Servidor Local (npm start) devido ao bloqueio CORS dos sites no navegador, ou clique para abrir a busca real na loja.',
-            method: 'bloqueio CORS (navegador estático)',
-            searchUrl: store.searchUrl.replace('{q}', encodeURIComponent(item.query)),
-            at: new Date().toISOString(),
-          };
+          if (candidates && candidates.length > 0) {
+            state.results[item.id][store.id] = {
+              querySnapshot: item.query,
+              candidates,
+              selected: selectBestCandidate(candidates),
+              manualPrice: cur?.manualPrice ?? null,
+              error: null,
+              method: liveCount > 0 ? `extração ao vivo no navegador (${store.name})` : `banco real da loja (${store.name})`,
+              searchUrl: store.searchUrl.replace('{q}', encodeURIComponent(item.query)),
+              at: new Date().toISOString(),
+            };
+          } else {
+            const isLoginWall = store.id === 'mercadolivre' || store.id === 'magalu';
+            state.results[item.id][store.id] = {
+              querySnapshot: item.query,
+              candidates: [],
+              selected: null,
+              manualPrice: cur?.manualPrice ?? null,
+              error: isLoginWall
+                ? `Esta loja exige sua aba oficial logada. Clique aqui → "Abrir busca na loja ↗" → copie (Ctrl+A / Ctrl+C) e clique em "📋 Colar da aba da loja".`
+                : `Item não retornado pelo proxy público. Clique aqui para abrir na loja ou colar os preços da aba oficial.`,
+              method: 'aguardando aba oficial',
+              searchUrl: store.searchUrl.replace('{q}', encodeURIComponent(item.query)),
+              at: new Date().toISOString(),
+            };
+          }
         }
       }
     }
@@ -1125,6 +1365,78 @@ async function updatePick(body) {
   }
   renderResults();
 }
+
+function applyPastedStoreText(rawText) {
+  if (!picking) return;
+  const { itemId, storeId } = picking;
+  const item = state.list.find((i) => i.id === itemId);
+  const store = state.stores.find((s) => s.id === storeId);
+  if (!item || !store) return;
+
+  const searchUrl = store.searchUrl.replace('{q}', encodeURIComponent(item.query));
+  const parsed = parseCopiedStoreText(rawText, searchUrl);
+  if (!parsed.length) {
+    return toast('Nenhum preço no formato "R$ 00,00" foi encontrado no texto colado.', true);
+  }
+
+  // Salva também no pool real da loja para futuras buscas
+  realStorePool.stores[storeId] ??= [];
+  for (const p of parsed) {
+    if (!realStorePool.stores[storeId].some((x) => x.title === p.title && x.price === p.price)) {
+      realStorePool.stores[storeId].push(p);
+    }
+  }
+
+  let ranked = rankAndFilterCandidates(item.query, parsed, 12);
+  if (!ranked.length) {
+    // Se o usuário copiou um produto específico com nome diferente, exibe todos os extraídos
+    ranked = parsed.slice(0, 12).map((p) => ({
+      ...p,
+      score: 0.75,
+      matchType: 'similar',
+      similarReason: 'Importado da aba oficial da loja',
+    }));
+  }
+
+  state.results[itemId] ??= {};
+  state.results[itemId][storeId] = {
+    querySnapshot: item.query,
+    candidates: ranked,
+    selected: selectBestCandidate(ranked),
+    manualPrice: null,
+    error: null,
+    method: `importado da aba oficial (${store.name})`,
+    searchUrl,
+    at: new Date().toISOString(),
+  };
+
+  saveLocalState();
+  openPick();
+  renderResults();
+  toast(`✓ ${ranked.length} produto(s) real(is) importado(s) de ${store.name}!`);
+}
+
+$('#pick-paste-clip')?.addEventListener('click', async () => {
+  try {
+    const txt = await navigator.clipboard.readText();
+    if (!txt || !txt.trim()) {
+      return toast('A área de transferência está vazia. Copie (Ctrl+A e Ctrl+C) a página da loja primeiro.', true);
+    }
+    applyPastedStoreText(txt);
+  } catch {
+    toast('Permissão da área de transferência negada pelo navegador. Cole com Ctrl+V na caixa abaixo.', true);
+    $('#pick-paste-text')?.focus();
+  }
+});
+
+$('#pick-parse-text')?.addEventListener('click', () => {
+  const txt = $('#pick-paste-text')?.value || '';
+  if (!txt.trim()) {
+    return toast('Cole o texto copiado da loja na caixa ao lado primeiro.', true);
+  }
+  applyPastedStoreText(txt);
+  $('#pick-paste-text').value = '';
+});
 
 $('#pick-list').addEventListener('click', async (e) => {
   if (e.target.closest('a')) return;

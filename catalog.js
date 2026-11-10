@@ -264,7 +264,7 @@ const TRUE_DERIVATIVE_CONFLICTS = [
   { base: 'coco', modifiers: ['agua', 'leite', 'oleo', 'sabao', 'sabonete', 'detergente', 'biscoito', 'ralado'] },
   { base: 'frango', modifiers: ['caldo', 'tempero', 'miojo', 'macarrao', 'lasanha', 'pate', 'racao', 'petisco', 'biscoito'] },
   { base: 'carne', modifiers: ['caldo', 'tempero', 'miojo', 'macarrao', 'lasanha', 'racao', 'petisco'] },
-  { base: 'queijo', modifiers: ['pao', 'biscoito', 'salgadinho', 'pipoca', 'macarrao', 'miojo', 'molho', 'lasanha', 'pastel'] },
+  { base: 'queijo', modifiers: ['pao', 'biscoito', 'salgadinho', 'pipoca', 'macarrao', 'miojo', 'molho', 'lasanha', 'pastel', 'empanado', 'frango', 'carne', 'presunto', 'mortadela', 'nugget', 'tekitos', 'hamburguer', 'pizza', 'torrada', 'sopa'] },
   { base: 'chocolate', modifiers: ['biscoito', 'bolo', 'mistura', 'sorvete', 'leite', 'wafer', 'pao'] },
   { base: 'laranja', modifiers: ['refrigerante', 'fanta', 'refresco', 'tang', 'bolo', 'gelatina', 'sabonete', 'detergente', 'desinfetante'] },
   { base: 'limao', modifiers: ['refrigerante', 'sprite', 'refresco', 'tang', 'gelatina', 'detergente', 'desinfetante', 'sabao'] },
@@ -353,7 +353,13 @@ export function hasSubtypeConflict(qTokens, tTokens) {
 function matchesHeadProduct(qTokens, tSet) {
   const head = qTokens[0];
   if (tSet.has(head)) return true;
-  if ((head === 'lava' || head === 'sabao') && (tSet.has('lava') || (tSet.has('sabao') && (tSet.has('liquido') || tSet.has('roupa') || tSet.has('po'))))) {
+  if ((head === 'lava' || head === 'sabao' || head === 'omo') && (tSet.has('lava') || (tSet.has('sabao') && (tSet.has('liquido') || tSet.has('roupa') || tSet.has('po'))))) {
+    return true;
+  }
+  if ((head === 'coca' || head === 'guarana' || head === 'pepsi') && tSet.has('refrigerante')) {
+    return true;
+  }
+  if ((head === 'nescau' || head === 'toddy') && tSet.has('achocolatado')) {
     return true;
   }
   return false;
