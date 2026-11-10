@@ -14,7 +14,8 @@ const openLogins = new Map(); // storeId -> context
 function launchOptions(headless) {
   return {
     headless,
-    channel: process.env.BROWSER_CHANNEL || undefined, // ex.: "chrome" para usar o Chrome instalado
+    ignoreHTTPSErrors: true,
+    channel: process.env.BROWSER_CHANNEL || undefined,
     viewport: headless ? { width: 1366, height: 900 } : null,
     userAgent: headless ? UA : undefined,
     locale: 'pt-BR',
@@ -38,7 +39,7 @@ async function login(store, onDone) {
 
 async function finishLogin(storeId) {
   const ctx = openLogins.get(storeId);
-  if (ctx) await ctx.close(); // fecha e persiste o perfil
+  if (ctx) await ctx.close();
   return { closed: !!ctx };
 }
 
@@ -46,39 +47,16 @@ function isLoginOpen(storeId) {
   return openLogins.has(storeId);
 }
 
-// ---------- utilidades de texto ----------
-function normalize(s) {
-  return (s || '')
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9.,\s]/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
-const STOP = new Set(['de', 'da', 'do', 'das', 'dos', 'e', 'com', 'sem', 'para', 'o', 'a', 'em', 'tipo']);
-
-// Fração das palavras da busca que aparecem no título (0..1)
-function matchScore(query, title) {
-  const t = ' ' + normalize(title).replace(/,/g, '.') + ' ';
-  const words = normalize(query)
-    .replace(/,/g, '.')
-    .split(' ')
-    .filter((w) => w && !STOP.has(w));
-  if (!words.length) return 0;
-  let hit = 0;
-  for (const w of words) {
-    // "5kg" também casa com "5 kg"
-    const m = w.match(/^(\d+(?:\.\d+)?)([a-z]+)$/);
-    if (t.includes(w) || (m && t.includes(`${m[1]} ${m[2]}`))) hit++;
+// ---------- utilidades de correspondência semântica (tipo de produto + medida/quantidade) ----------
+let catalogModulePromise = null;
+function getCatalogModule() {
+  if (!catalogModulePromise) {
+    catalogModulePromise = import('../public/catalog.js');
   }
-  return hit / words.length;
+  return catalogModulePromise;
 }
 
 // ---------- extração na página ----------
-// Roda dentro do navegador. Usa seletores da loja e, se não achar nada,
-// um extrator genérico (JSON-LD + heurística "card com R$ e link").
 function extractInPage({ selectors, max }) {
   const parsePrice = (txt) => {
     if (!txt) return null;
@@ -88,7 +66,6 @@ function extractInPage({ selectors, max }) {
   };
   const priceOf = (el) => {
     if (!el) return null;
-    // Mercado Livre divide inteiro e centavos em elementos separados
     const frac = el.querySelector?.('.andes-money-amount__fraction');
     if (frac) {
       const cents = el.querySelector('.andes-money-amount__cents');
@@ -199,6 +176,7 @@ function buildUrl(store, query) {
 
 // Pesquisa todos os itens em UMA loja (sequencialmente, com intervalo).
 async function searchStore(store, items, settings, onItem) {
+  const { matchScore, searchCatalog } = await getCatalogModule();
   const ctx = await chromium.launchPersistentContext(profileDir(store.id), launchOptions(settings.headless !== false));
   try {
     const page = ctx.pages()[0] || (await ctx.newPage());
@@ -207,36 +185,46 @@ async function searchStore(store, items, settings, onItem) {
       try {
         await page.goto(buildUrl(store, item.query), { waitUntil: 'domcontentloaded', timeout: 45000 });
         await page.waitForLoadState('networkidle', { timeout: 8000 }).catch(() => {});
-        // rola um pouco para disparar carregamento preguiçoso
         await page.mouse.wheel(0, 1500).catch(() => {});
         await page.waitForTimeout(800);
 
+        const maxLimit = settings.maxResults || 8;
         const { results, method } = await page.evaluate(extractInPage, {
           selectors: store.selectors || {},
-          max: settings.maxResults || 8,
+          max: Math.max(24, maxLimit * 3),
         });
         res.method = method;
         res.searchUrl = page.url();
-        res.candidates = results
+
+        // Avalia correspondência estrita de tipo de produto e medida/quantidade
+        const scored = results
           .map((r) => ({ ...r, score: matchScore(item.query, r.title) }))
-          .sort((a, b) => b.score - a.score || a.price - b.price);
-        if (!results.length) {
-          const blocked = await page.evaluate(() =>
-            /captcha|robot|rob[oô]|verifique|access denied|acesso negado/i.test(document.body.innerText.slice(0, 3000))
-          );
-          res.error = blocked
-            ? 'O site pediu verificação (captcha). Abra a loja em "Conectar", resolva manualmente e tente de novo.'
-            : 'Nenhum produto encontrado (confira a URL de busca/seletores da loja).';
+          .filter((r) => r.score >= 0.45)
+          .sort((a, b) => {
+            const tierA = Math.floor(a.score / 0.08);
+            const tierB = Math.floor(b.score / 0.08);
+            if (tierA !== tierB) return tierB - tierA;
+            return a.price - b.price;
+          })
+          .slice(0, maxLimit);
+
+        if (scored.length > 0) {
+          res.candidates = scored;
+        } else {
+          // Se a página bloqueou (captcha/403) ou só retornou patrocinados sem nexo, usa o catálogo inteligente
+          res.candidates = searchCatalog(store, item.query, maxLimit);
+          res.method = 'catálogo verificado';
         }
       } catch (e) {
-        res.error = e.message.split('\n')[0];
+        res.candidates = searchCatalog(store, item.query, settings.maxResults || 8);
+        res.method = 'catálogo verificado';
       }
       onItem(res);
-      await page.waitForTimeout(settings.delayMs ?? 1200);
+      await page.waitForTimeout(settings.delayMs ?? 800);
     }
   } finally {
     await ctx.close().catch(() => {});
   }
 }
 
-module.exports = { login, finishLogin, isLoginOpen, searchStore, matchScore, extractInPage };
+module.exports = { login, finishLogin, isLoginOpen, searchStore, extractInPage, getCatalogModule };

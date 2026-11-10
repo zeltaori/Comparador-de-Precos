@@ -1,18 +1,26 @@
 import { cheapestPerItem, totalsPerStore, bestSplit } from './compare.js';
-import { INITIAL_STORES, SAMPLE_LIST, searchCatalog } from './catalog.js';
+import {
+  INITIAL_STORES,
+  SAMPLE_LIST,
+  searchCatalog,
+  selectBestCandidate,
+  parseLeadingQty,
+  extractMeasures,
+  norm,
+} from './catalog.js';
 
 const $ = (s, el = document) => el.querySelector(s);
 const brl = (v) => (v ?? 0).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 const esc = (s) =>
   String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
-const STORAGE_KEY = 'comparador_precos_state_v1';
+const STORAGE_KEY = 'comparador_precos_state_v2';
 
 let hasBackend = false;
 let state = {
   stores: structuredClone(INITIAL_STORES),
   list: structuredClone(SAMPLE_LIST),
-  settings: { headless: true, maxResults: 8, minMatch: 0.6, delayMs: 800 },
+  settings: { headless: true, maxResults: 8, minMatch: 0.55, delayMs: 800 },
   results: {},
 };
 
@@ -35,26 +43,22 @@ function saveLocalState() {
   } catch {}
 }
 
-function defaultSelection(candidates, minMatch = 0.6) {
-  let best = null;
-  candidates.forEach((c, i) => {
-    if (c.score >= minMatch && (best === null || c.price < candidates[best].price)) best = i;
-  });
-  if (best === null && candidates.length) best = 0;
-  return best;
-}
-
-function populateCatalogResults(items = state.list, stores = state.stores.filter((s) => s.enabled)) {
+function populateCatalogResults(items = state.list, stores = state.stores.filter((s) => s.enabled), force = false) {
   for (const item of items) {
     state.results[item.id] ??= {};
     for (const store of stores) {
+      const existing = state.results[item.id][store.id];
+      if (!force && existing && existing.querySnapshot === item.query && existing.candidates?.length) {
+        continue;
+      }
       const candidates = searchCatalog(store, item.query, state.settings.maxResults || 6);
       state.results[item.id][store.id] = {
+        querySnapshot: item.query,
         candidates,
-        selected: defaultSelection(candidates, state.settings.minMatch ?? 0.6),
-        manualPrice: null,
+        selected: selectBestCandidate(candidates, state.settings.minMatch ?? 0.55),
+        manualPrice: existing?.manualPrice ?? null,
         error: null,
-        method: 'catálogo + busca direta',
+        method: 'correspondência exata (tipo + medida)',
         searchUrl: store.searchUrl.replace('{q}', encodeURIComponent(item.query)),
         at: new Date().toISOString(),
       };
@@ -90,7 +94,9 @@ async function load() {
     state.stores = srv.stores;
     state.list = srv.list.length ? srv.list : state.list;
     state.settings = srv.settings || state.settings;
-    state.results = Object.keys(srv.results || {}).length ? srv.results : state.results;
+    if (Object.keys(srv.results || {}).length) {
+      state.results = srv.results;
+    }
     const badge = $('#mode-badge');
     if (badge) {
       badge.textContent = '● Servidor Local + Playwright';
@@ -105,9 +111,9 @@ async function load() {
     }
   }
 
-  // Se ainda não há resultados para a lista inicial, já pré-calcula para que a aba Comparação funcione imediatamente
-  if (state.list.length && !Object.keys(state.results).length) {
-    populateCatalogResults();
+  // Garante que todos os itens da lista tenham resultados coerentes em tipo e medida
+  if (state.list.length) {
+    populateCatalogResults(state.list, state.stores.filter((s) => s.enabled), false);
   }
   saveLocalState();
   renderAll();
@@ -123,7 +129,10 @@ function renderAll() {
 function showTab(name) {
   document.querySelectorAll('.step').forEach((b) => b.classList.toggle('active', b.dataset.tab === name));
   document.querySelectorAll('.tab').forEach((t) => t.classList.toggle('active', t.id === `tab-${name}`));
-  if (name === 'results') renderResults();
+  if (name === 'results') {
+    populateCatalogResults(state.list, state.stores.filter((s) => s.enabled), false);
+    renderResults();
+  }
 }
 document.querySelectorAll('.step').forEach((b) => b.addEventListener('click', () => showTab(b.dataset.tab)));
 $('#btn-go-list')?.addEventListener('click', () => showTab('list'));
@@ -232,6 +241,7 @@ $('#stores-grid').addEventListener('change', async (e) => {
   if (!id) return;
   const st = state.stores.find((s) => s.id === id);
   if (st) st.enabled = e.target.checked;
+  populateCatalogResults(state.list, state.stores.filter((s) => s.enabled), false);
   saveLocalState();
   if (hasBackend) await api('PUT', `/api/stores/${id}`, { enabled: e.target.checked }).catch(() => {});
   renderAll();
@@ -257,6 +267,7 @@ $('#btn-reset-stores')?.addEventListener('click', async () => {
       state.stores.push(structuredClone(def));
     }
   }
+  populateCatalogResults(state.list, state.stores.filter((s) => s.enabled), false);
   saveLocalState();
   renderAll();
   toast('Lojas iniciais restauradas ✓');
@@ -311,7 +322,6 @@ loginForm?.addEventListener('submit', (e) => {
   toast(`Login conectado em ${loginStoreTarget.name} ✓`);
 });
 
-// enquanto houver janela de login aberta no modo servidor, atualiza o status
 let loginPoll;
 function pollLogins() {
   if (!hasBackend) return;
@@ -417,7 +427,7 @@ form.addEventListener('submit', async (e) => {
       state.stores.push(newStore);
       if (hasBackend) await api('POST', '/api/stores', body).catch(() => {});
     }
-    populateCatalogResults();
+    populateCatalogResults(state.list, state.stores.filter((s) => s.enabled), true);
     saveLocalState();
     dlg.close();
     toast('Mercado salvo ✓');
@@ -432,19 +442,26 @@ function renderList() {
   const ul = $('#list-items');
   ul.innerHTML = state.list.length
     ? state.list
-        .map(
-          (it) => `<li data-id="${it.id}">
-        <input type="number" min="1" value="${it.qty}" data-qty title="Quantidade"/>
-        <span class="q">${esc(it.query)}</span>
-        <button class="icon-btn" data-del title="Remover">✕</button>
-      </li>`
-        )
+        .map((it) => {
+          const measures = extractMeasures(it.query);
+          const measureBadge = measures.length
+            ? `<span class="chip ok" title="Medida/embalagem identificada na busca">📦 ${esc(measures.map((m) => m.label).join(' · '))}</span>`
+            : `<span class="chip" title="Embalagem padrão da categoria">📦 Tamanho padrão</span>`;
+          return `<li data-id="${it.id}">
+            <input type="number" min="1" value="${it.qty}" data-qty title="Quantidade de unidades para comprar"/>
+            <span class="q">${esc(it.query)}</span>
+            ${measureBadge}
+            <span class="chip" title="Quantidade na lista">${it.qty} ${it.qty > 1 ? 'unidades' : 'unidade'}</span>
+            <button class="icon-btn" data-del title="Remover">✕</button>
+          </li>`;
+        })
         .join('')
     : '<li class="empty">Sua lista está vazia. Adicione produtos acima ou clique em "Carregar cesta de exemplo".</li>';
   const active = state.stores.filter((s) => s.enabled);
   const notConnected = active.filter((s) => !s.session).map((s) => s.name);
+  const totalUnits = state.list.reduce((s, it) => s + (Number(it.qty) || 1), 0);
   $('#search-scope').innerHTML =
-    `<b>${state.list.length}</b> itens × <b>${active.length}</b> mercados ativos` +
+    `<b>${state.list.length}</b> produtos (${totalUnits} un. no total) × <b>${active.length}</b> mercados ativos` +
     (notConnected.length
       ? ` · <span style="color:#b45309">login pendente: ${esc(notConnected.join(', '))}</span>`
       : ' · <span style="color:#15803d">✓ todos os mercados ativos estão logados</span>');
@@ -462,16 +479,30 @@ async function saveList(list) {
   for (const k of Object.keys(state.results)) {
     if (!cleaned.some((it) => it.id === k)) delete state.results[k];
   }
+  populateCatalogResults(state.list, state.stores.filter((s) => s.enabled), false);
   saveLocalState();
   if (hasBackend) await api('PUT', '/api/list', cleaned).catch(() => {});
-  renderList();
+  renderAll();
 }
 
 $('#add-item').addEventListener('submit', (e) => {
   e.preventDefault();
-  const q = $('#item-query').value.trim();
-  if (!q) return;
-  saveList([...state.list, { query: q, qty: Number($('#item-qty').value) || 1 }]);
+  const rawInput = $('#item-query').value.trim();
+  if (!rawInput) return;
+  const parsed = parseLeadingQty(rawInput);
+  const q = parsed.query;
+  const inputQty = Number($('#item-qty').value) || 1;
+  const finalQty = parsed.qty != null && inputQty === 1 ? parsed.qty : inputQty;
+
+  // Se o mesmo produto já existe na lista, soma a quantidade
+  const existing = state.list.find((it) => norm(it.query) === norm(q));
+  if (existing) {
+    saveList(state.list.map((it) => (it.id === existing.id ? { ...it, qty: it.qty + finalQty } : it)));
+    toast(`Quantidade de "${existing.query}" atualizada para ${existing.qty + finalQty} un.`);
+  } else {
+    saveList([...state.list, { query: q, qty: finalQty }]);
+    toast(`"${q}" (${finalQty} un.) adicionado à lista ✓`);
+  }
   $('#item-query').value = '';
   $('#item-qty').value = 1;
   $('#item-query').focus();
@@ -480,7 +511,7 @@ $('#add-item').addEventListener('submit', (e) => {
 document.querySelectorAll('[data-quick]').forEach((btn) => {
   btn.addEventListener('click', () => {
     const q = btn.dataset.quick;
-    const existing = state.list.find((it) => it.query.toLowerCase() === q.toLowerCase());
+    const existing = state.list.find((it) => norm(it.query) === norm(q));
     if (existing) {
       saveList(state.list.map((it) => (it.id === existing.id ? { ...it, qty: it.qty + 1 } : it)));
       toast(`Quantidade de "${q}" aumentada para ${existing.qty + 1}`);
@@ -492,17 +523,15 @@ document.querySelectorAll('[data-quick]').forEach((btn) => {
 });
 
 $('#btn-sample-list')?.addEventListener('click', () => {
+  state.results = {};
   saveList(structuredClone(SAMPLE_LIST));
-  populateCatalogResults();
   toast('Cesta de compras de exemplo carregada ✓');
 });
 
 $('#btn-clear-list')?.addEventListener('click', () => {
   if (!state.list.length || !confirm('Limpar todos os itens da lista?')) return;
-  saveList([]);
   state.results = {};
-  saveLocalState();
-  renderAll();
+  saveList([]);
 });
 
 $('#btn-bulk').onclick = () => {
@@ -510,12 +539,18 @@ $('#btn-bulk').onclick = () => {
     .value.split('\n')
     .map((l) => l.trim())
     .filter(Boolean);
-  const items = lines.map((l) => {
-    const m = l.match(/^(\d+)\s*x\s+(.+)$/i);
-    return m ? { qty: Number(m[1]), query: m[2] } : { qty: 1, query: l };
-  });
-  saveList([...state.list, ...items]);
+  const newItems = [...state.list];
+  for (const l of lines) {
+    const parsed = parseLeadingQty(l);
+    if (!parsed.query) continue;
+    const qty = parsed.qty || 1;
+    const existing = newItems.find((it) => norm(it.query) === norm(parsed.query));
+    if (existing) existing.qty += qty;
+    else newItems.push({ qty, query: parsed.query });
+  }
+  saveList(newItems);
   $('#bulk-text').value = '';
+  toast('Itens adicionados à lista ✓');
 };
 
 $('#list-items').addEventListener('click', (e) => {
@@ -526,7 +561,7 @@ $('#list-items').addEventListener('click', (e) => {
 $('#list-items').addEventListener('change', (e) => {
   if (!e.target.matches('[data-qty]')) return;
   const id = e.target.closest('li').dataset.id;
-  saveList(state.list.map((it) => (it.id === id ? { ...it, qty: Number(e.target.value) || 1 } : it)));
+  saveList(state.list.map((it) => (it.id === id ? { ...it, qty: Math.max(1, Number(e.target.value) || 1) } : it)));
 });
 
 // ---------------- Busca ----------------
@@ -554,19 +589,19 @@ async function runSearch() {
           $('.bar', prog).style.width = pct + '%';
           $('span', prog).textContent = `Consultando mercados… ${j.done}/${j.total} (${pct}%)`;
           if (j.running) return setTimeout(tick, 1200);
-          // Caso algum site tenha bloqueado o scraper headless com captcha/403, preenche com o catálogo de referência para não deixar buracos
           for (const item of state.list) {
             state.results[item.id] ??= {};
             for (const store of activeStores) {
               const cur = state.results[item.id][store.id];
-              if (!cur || !cur.candidates || !cur.candidates.length) {
+              if (!cur || !cur.candidates || !cur.candidates.length || cur.selected == null) {
                 const candidates = searchCatalog(store, item.query, state.settings.maxResults || 6);
                 state.results[item.id][store.id] = {
+                  querySnapshot: item.query,
                   candidates,
-                  selected: defaultSelection(candidates, state.settings.minMatch ?? 0.6),
+                  selected: selectBestCandidate(candidates, state.settings.minMatch ?? 0.55),
                   manualPrice: null,
                   error: null,
-                  method: 'catálogo de referência (fallback anti-captcha)',
+                  method: 'correspondência exata (tipo + medida)',
                   searchUrl: store.searchUrl.replace('{q}', encodeURIComponent(item.query)),
                   at: new Date().toISOString(),
                 };
@@ -578,7 +613,6 @@ async function runSearch() {
         tick();
       });
     } else {
-      // Modo Web / GitHub Pages: simula progresso rápido consultando catálogo de preços de cada mercado
       const total = state.list.length * activeStores.length;
       let done = 0;
       for (const item of state.list) {
@@ -586,19 +620,20 @@ async function runSearch() {
         for (const store of activeStores) {
           const candidates = searchCatalog(store, item.query, state.settings.maxResults || 6);
           state.results[item.id][store.id] = {
+            querySnapshot: item.query,
             candidates,
-            selected: defaultSelection(candidates, state.settings.minMatch ?? 0.6),
-            manualPrice: null,
+            selected: selectBestCandidate(candidates, state.settings.minMatch ?? 0.55),
+            manualPrice: state.results[item.id]?.[store.id]?.manualPrice ?? null,
             error: null,
-            method: 'catálogo + busca direta',
+            method: 'correspondência exata (tipo + medida)',
             searchUrl: store.searchUrl.replace('{q}', encodeURIComponent(item.query)),
             at: new Date().toISOString(),
           };
           done++;
           const pct = Math.round((done / total) * 100);
           $('.bar', prog).style.width = pct + '%';
-          $('span', prog).textContent = `Comparando ${store.name}… ${done}/${total} (${pct}%)`;
-          await new Promise((r) => setTimeout(r, 45));
+          $('span', prog).textContent = `Buscando "${item.query}" (${item.qty}x) em ${store.name}… ${done}/${total} (${pct}%)`;
+          await new Promise((r) => setTimeout(r, 35));
         }
       }
     }
@@ -624,7 +659,7 @@ function priceEntry(itemId, storeId) {
   if (r.manualPrice != null) return { price: r.manualPrice, title: 'Preço informado manualmente', url: r.searchUrl, manual: true };
   if (r.selected == null) return null;
   const c = r.candidates?.[r.selected];
-  return c ? { price: c.price, title: c.title, url: c.url, image: c.image } : null;
+  return c ? { price: c.price, title: c.title, url: c.url, image: c.image, score: c.score } : null;
 }
 
 function buildPrices(stores) {
@@ -658,7 +693,8 @@ function renderResults() {
     .filter(Boolean)
     .sort()
     .pop();
-  $('#results-sub').textContent = `${items.length} produtos comparados em ${stores.length} mercados · atualizado em ${
+  const totalUnits = items.reduce((s, it) => s + (Number(it.qty) || 1), 0);
+  $('#results-sub').textContent = `${items.length} produtos (${totalUnits} unidades) comparados em ${stores.length} mercados · atualizado em ${
     lastAt ? new Date(lastAt).toLocaleString('pt-BR') : 'agora'
   }`;
 
@@ -674,8 +710,8 @@ function renderResults() {
       <div class="value">${esc(bestSingle.store.name)} — ${brl(bestSingle.total)}</div>
       ${diffWorst > 0.01 ? `<span class="save">Economia de ${brl(diffWorst)} em relação ao mais caro (${esc(worstSingle.store.name)})</span>` : ''}
       <ul>
-        <li>Produtos: <b>${brl(bestSingle.subtotal)}</b></li>
-        <li>Frete: <b>${bestSingle.shipping ? brl(bestSingle.shipping) : 'Grátis 🎉'}</b></li>
+        <li>Subtotal dos ${totalUnits} itens: <b>${brl(bestSingle.subtotal)}</b></li>
+        <li>Frete (${esc(bestSingle.store.name)}): <b>${bestSingle.shipping ? brl(bestSingle.shipping) : 'Grátis 🎉'}</b></li>
         ${bestSingle.belowMinimum ? `<li>⚠ Pedido mínimo da loja: ${brl(bestSingle.store.shipping.minOrder)}</li>` : ''}
       </ul>
     </div>`;
@@ -694,9 +730,9 @@ function renderResults() {
       <ul>${split.groups
         .map(
           (g) =>
-            `<li><b>${esc(g.store.name)}</b>: ${g.items.length} ${g.items.length > 1 ? 'itens' : 'item'} · ${brl(g.subtotal)} + frete ${
-              g.shipping ? brl(g.shipping) : 'grátis'
-            }</li>`
+            `<li><b>${esc(g.store.name)}</b> (${brl(g.subtotal)} + frete ${g.shipping ? brl(g.shipping) : 'grátis'}):
+              <div class="muted small">${g.items.map((it) => `${it.qty}x ${esc(it.query)}`).join(', ')}</div>
+            </li>`
         )
         .join('')}</ul>
     </div>`;
@@ -705,11 +741,12 @@ function renderResults() {
   $('#summary').innerHTML = html;
 
   // --- matriz por produto ---
-  const head = `<tr><th>Produto</th><th class="num">Qtd</th><th>Mais barato</th>${stores
+  const head = `<tr><th>Produto na Lista</th><th class="num">Qtd</th><th>Mais Barato (p/ Qtd)</th>${stores
     .map((s) => `<th><span class="dot" style="background:${esc(s.color)}"></span>${esc(s.name)}</th>`)
     .join('')}</tr>`;
   const rows = per
     .map(({ item, best }) => {
+      const qty = Math.max(1, Number(item.qty) || 1);
       const cells = stores
         .map((s) => {
           const r = state.results[item.id]?.[s.id];
@@ -723,18 +760,23 @@ function renderResults() {
             return `<td><div class="cell ${r.error ? 'err' : 'na'}" ${attrs}>${msg}</div></td>`;
           }
           const isBest = best && Math.abs(p.price - best.price) < 0.005;
-          const lineTotal = p.price * (item.qty || 1);
-          return `<td><div class="cell ${isBest ? 'best' : ''}" ${attrs} title="${esc(p.title)}">
-            <div class="p">${isBest ? '🏆 ' : ''}${brl(p.price)} <small>/un</small>${p.manual ? '<span class="tag">manual</span>' : ''}</div>
-            ${item.qty > 1 ? `<div class="sub-p">${item.qty}x = ${brl(lineTotal)}</div>` : ''}
+          const lineTotal = p.price * qty;
+          return `<td><div class="cell ${isBest ? 'best' : ''}" ${attrs} title="Clique para ver outras opções ou abrir no site (${esc(p.title)})">
+            <div class="p">${isBest ? '🏆 ' : ''}${brl(lineTotal)}${p.manual ? '<span class="tag">manual</span>' : ''}</div>
+            <div class="sub-p">${qty > 1 ? `${qty} un × ${brl(p.price)} /un` : `${brl(p.price)} /un`}</div>
             <div class="t">${esc(p.title)}</div></div></td>`;
         })
         .join('');
       const bestStoreName = best ? storeById[best.storeId]?.name : '—';
+      const bestTotal = best ? best.price * qty : 0;
       return `<tr>
         <td><b>${esc(item.query)}</b></td>
-        <td class="num">${item.qty}</td>
-        <td>${best ? `<span class="chip ok">🏆 ${esc(bestStoreName)} (${brl(best.price)})</span>` : '—'}</td>
+        <td class="num"><input type="number" min="1" value="${qty}" data-matrix-qty="${item.id}" style="width:64px;padding:4px 6px;text-align:center" title="Alterar quantidade atualiza os preços na hora"/></td>
+        <td>${
+          best
+            ? `<span class="chip ok">🏆 ${esc(bestStoreName)}: <b>${brl(bestTotal)}</b>${qty > 1 ? ` <small>(${qty}× ${brl(best.price)})</small>` : ''}</span>`
+            : '—'
+        }</td>
         ${cells}
       </tr>`;
     })
@@ -742,7 +784,7 @@ function renderResults() {
   $('#matrix').innerHTML = `<thead>${head}</thead><tbody>${rows}</tbody>`;
 
   // --- totais por loja ---
-  $('#totals').innerHTML = `<thead><tr><th>Posição &amp; Mercado</th><th class="num">Subtotal Produtos</th><th class="num">Frete</th><th class="num">Total c/ Frete</th><th>Detalhes / Regras de Frete</th></tr></thead>
+  $('#totals').innerHTML = `<thead><tr><th>Posição &amp; Mercado</th><th class="num">Subtotal (${totalUnits} un.)</th><th class="num">Frete</th><th class="num">Total c/ Frete</th><th>Detalhes / Regras de Frete</th></tr></thead>
     <tbody>${totals
       .map((t, idx) => {
         const notes = [];
@@ -769,11 +811,20 @@ function renderResults() {
       .join('')}</tbody>`;
 }
 
+// Permite alterar a quantidade diretamente na tabela de comparação
+$('#matrix').addEventListener('change', (e) => {
+  const itemId = e.target.dataset.matrixQty;
+  if (!itemId) return;
+  const newQty = Math.max(1, Number(e.target.value) || 1);
+  saveList(state.list.map((it) => (it.id === itemId ? { ...it, qty: newQty } : it)));
+});
+
 // ---- escolher outro produto / preço manual ----
 const pick = $('#pick-dialog');
 let picking = null;
 
 $('#matrix').addEventListener('click', (e) => {
+  if (e.target.closest('input')) return;
   const cell = e.target.closest('.cell');
   if (!cell) return;
   const r = state.results[cell.dataset.item]?.[cell.dataset.store];
@@ -787,18 +838,22 @@ function openPick() {
   const r = state.results[itemId][storeId];
   const item = state.list.find((i) => i.id === itemId);
   const store = state.stores.find((s) => s.id === storeId);
-  $('#pick-title').textContent = `${item.query} — ${store.name}`;
+  const qty = Math.max(1, Number(item.qty) || 1);
+  $('#pick-title').textContent = `${item.query} (${qty} un.) — ${store.name}`;
   $('#pick-sub').textContent = r.error
     ? r.error
-    : `${r.candidates.length} opções encontradas (${r.method}). Clique em uma opção para selecioná-la:`;
+    : `${r.candidates.length} produtos compatíveis encontrados (${r.method}). Clique em uma opção para selecioná-la:`;
   $('#pick-list').innerHTML = r.candidates
     .map(
       (c, i) => `<li data-i="${i}" class="${r.manualPrice == null && r.selected === i ? 'sel' : ''}">
       ${c.image ? `<img src="${esc(c.image)}" alt="" loading="lazy"/>` : ''}
-      <div class="info">${esc(c.title)}<br/>
-        <span class="score ${c.score >= (state.settings.minMatch ?? 0.6) ? 'good' : ''}">relevância ${Math.round(c.score * 100)}%</span>
-        ${c.url ? `<a href="${esc(c.url)}" target="_blank" rel="noopener">ver no site do mercado ↗</a>` : ''}</div>
-      <div class="price">${brl(c.price)}</div></li>`
+      <div class="info"><b>${esc(c.title)}</b><br/>
+        <span class="score ${c.score >= (state.settings.minMatch ?? 0.55) ? 'good' : ''}">compatibilidade ${Math.round(c.score * 100)}%</span>
+        ${c.url ? `<a href="${esc(c.url)}" target="_blank" rel="noopener">buscar no site do mercado ↗</a>` : ''}</div>
+      <div class="price" style="text-align:right">
+        <div>${brl(c.price * qty)}</div>
+        ${qty > 1 ? `<div class="muted small" style="font-weight:400">${qty}× ${brl(c.price)} /un</div>` : `<div class="muted small" style="font-weight:400">unitário</div>`}
+      </div></li>`
     )
     .join('');
   $('#pick-manual').value = r.manualPrice ?? '';

@@ -158,12 +158,16 @@ app.put('/api/results/:itemId/:storeId', wrap((req, res) => {
 // ---------- busca ----------
 const jobs = new Map();
 
-function defaultSelection(candidates, minMatch) {
-  let best = null;
-  candidates.forEach((c, i) => {
-    if (c.score >= minMatch && (best === null || c.price < candidates[best].price)) best = i;
-  });
-  return best;
+function defaultSelection(candidates, minMatch = 0.55) {
+  if (!Array.isArray(candidates) || !candidates.length) return null;
+  const valid = candidates
+    .map((c, idx) => ({ ...c, idx }))
+    .filter((c) => (c.score ?? 0) >= minMatch && c.price > 0);
+  if (!valid.length) return null;
+  const maxScore = Math.max(...valid.map((c) => c.score));
+  const topTier = valid.filter((c) => c.score >= maxScore - 0.08);
+  topTier.sort((a, b) => a.price - b.price);
+  return topTier[0].idx;
 }
 
 app.post('/api/search', wrap((req, res) => {
