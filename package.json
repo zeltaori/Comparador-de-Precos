@@ -1,0 +1,19 @@
+{
+  "name": "comparador-de-precos",
+  "version": "1.0.0",
+  "description": "Comparador de preços de supermercado online com suporte a múltiplos mercados, login de sessão e cálculo de frete.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node -e \"import('./public/compare.js').then(() => console.log('OK'))\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeltaori/Comparador-de-Precos.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.22.3",
+    "playwright": "^1.65.0"
+  }
+}

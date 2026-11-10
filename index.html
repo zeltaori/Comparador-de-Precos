@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Comparador de Preços de Supermercado Online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">🛒 <span>Comparador</span> de Preços</div>
+    <nav class="steps">
+      <button class="step active" data-tab="stores"><b>1</b> Mercados &amp; Login</button>
+      <button class="step" data-tab="list"><b>2</b> Lista de Compras</button>
+      <button class="step" data-tab="results"><b>3</b> Comparação &amp; Frete</button>
+    </nav>
+    <div class="topbar-right">
+      <span id="mode-badge" class="mode-badge" title="Modo de execução">Carregando…</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- ETAPA 1: LOJAS & LOGIN -->
+    <section id="tab-stores" class="tab active">
+      <div class="section-head">
+        <div>
+          <h1>1. Sites dos Supermercados &amp; Login</h1>
+          <p class="muted">
+            Já incluímos <b>Mercado Livre, Amazon, Magalu, GoodBom e Arena Supermercado (Arena Atacado)</b> nos parâmetros iniciais, e você pode adicionar quantos sites quiser depois.
+            Faça o login nos sites dos mercados para liberar preços exclusivos/regionais, e em seguida monte sua lista de compras.
+          </p>
+        </div>
+        <div class="head-actions">
+          <button class="btn" id="btn-login-all">🔑 Conectar todos ativos</button>
+          <button class="btn primary" id="btn-add-store">+ Adicionar site</button>
+          <button class="btn sm" id="btn-reset-stores" title="Restaurar lojas iniciais">↺ Restaurar padrões</button>
+        </div>
+      </div>
+      <div id="stores-grid" class="grid"></div>
+      <div class="step-footer">
+        <span id="stores-summary" class="muted"></span>
+        <button class="btn primary big" id="btn-go-list">Próximo: Criar Lista de Compras →</button>
+      </div>
+    </section>
+
+    <!-- ETAPA 2: LISTA -->
+    <section id="tab-list" class="tab">
+      <div class="section-head">
+        <div>
+          <h1>2. Lista de Compras</h1>
+          <p class="muted">Adicione os produtos e quantidades desejadas. Seja específico (marca, peso/volume) para comparações ainda mais precisas — ex.: <i>"Arroz Tio João 5kg"</i>.</p>
+        </div>
+        <div class="head-actions">
+          <button class="btn" id="btn-sample-list">📋 Carregar cesta de exemplo</button>
+          <button class="btn danger sm" id="btn-clear-list">🗑 Limpar lista</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <form id="add-item" class="add-item">
+          <input id="item-query" placeholder="Produto (ex.: Café Pilão 500g, Leite Italac 1L, Arroz 5kg...)" autocomplete="off" required />
+          <input id="item-qty" type="number" min="1" value="1" title="Quantidade" />
+          <button class="btn primary">+ Adicionar item</button>
+        </form>
+
+        <div class="quick-chips">
+          <span class="muted small">Sugestões rápidas:</span>
+          <button type="button" class="chip-btn" data-quick="Arroz Tio João 5kg">+ Arroz 5kg</button>
+          <button type="button" class="chip-btn" data-quick="Feijão Carioca Camil 1kg">+ Feijão 1kg</button>
+          <button type="button" class="chip-btn" data-quick="Café Pilão Tradicional 500g">+ Café 500g</button>
+          <button type="button" class="chip-btn" data-quick="Leite Integral Italac 1L">+ Leite 1L</button>
+          <button type="button" class="chip-btn" data-quick="Óleo de Soja Liza 900ml">+ Óleo 900ml</button>
+          <button type="button" class="chip-btn" data-quick="Açúcar Refinado União 1kg">+ Açúcar 1kg</button>
+          <button type="button" class="chip-btn" data-quick="Azeite Extra Virgem Gallo 500ml">+ Azeite 500ml</button>
+          <button type="button" class="chip-btn" data-quick="Lava Roupas Líquido Omo 3L">+ Omo 3L</button>
+          <button type="button" class="chip-btn" data-quick="Macarrão Espaguete Renata 500g">+ Macarrão 500g</button>
+          <button type="button" class="chip-btn" data-quick="Papel Higiênico Neve 12 rolos">+ Papel Higiênico</button>
+        </div>
+
+        <details class="bulk">
+          <summary>Colar vários itens de uma vez</summary>
+          <textarea id="bulk-text" rows="5" placeholder="Um item por linha. Use '2x' para quantidade, ex.:&#10;2x Leite Integral Italac 1L&#10;Feijão Carioca Camil 1kg"></textarea>
+          <button class="btn" id="btn-bulk">Adicionar itens</button>
+        </details>
+        <ul id="list-items" class="list-items"></ul>
+      </div>
+
+      <div class="actions-row">
+        <span class="muted" id="search-scope"></span>
+        <button class="btn primary big" id="btn-search">🔎 Comparar Preços nos Mercados</button>
+      </div>
+      <div id="progress" class="progress hidden"><div class="bar"></div><span></span></div>
+    </section>
+
+    <!-- ETAPA 3: RESULTADOS -->
+    <section id="tab-results" class="tab">
+      <div class="section-head">
+        <div>
+          <h1>3. Comparação de Preços (Por Produto e Total com Frete)</h1>
+          <p class="muted" id="results-sub">Faça uma busca para ver os resultados.</p>
+        </div>
+        <div class="head-actions">
+          <button class="btn" id="btn-research">↻ Atualizar preços</button>
+        </div>
+      </div>
+
+      <div id="summary" class="summary"></div>
+
+      <div class="card">
+        <h2>Mais barato por produto (Unitário &amp; Subtotal do Item)</h2>
+        <p class="muted small">Clique em qualquer preço para ver outras marcas/opções encontradas na loja, abrir o produto direto no mercado ou ajustar o valor manualmente. 🏆 indica o menor preço daquele produto.</p>
+        <div class="table-wrap"><table id="matrix"></table></div>
+      </div>
+
+      <div class="card">
+        <h2>Total da compra em cada mercado (Produtos + Frete)</h2>
+        <p class="muted small">Compara quanto custaria comprar toda a lista em um único supermercado, já somando o frete configurado (ou aplicando frete grátis quando atingir o valor mínimo).</p>
+        <div class="table-wrap"><table id="totals"></table></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal de loja -->
+  <dialog id="store-dialog">
+    <form method="dialog" id="store-form">
+      <h2 id="store-dialog-title">Site de Supermercado</h2>
+      <label>Nome do Mercado / Site<input name="name" required placeholder="Ex.: Carrefour, Pão de Açúcar..." /></label>
+      <label>URL de busca <small>(use <code>{q}</code> onde entra o produto pesquisado)</small>
+        <input name="searchUrl" required placeholder="https://www.mercado.com.br/busca?q={q}" /></label>
+      <label>URL de login<input name="loginUrl" placeholder="https://www.mercado.com.br/login" /></label>
+      <div class="row3">
+        <label>Frete padrão (R$)<input name="fee" type="number" step="0.01" min="0" value="14.90" /></label>
+        <label>Frete grátis acima de (R$)<input name="freeAbove" type="number" step="0.01" min="0" placeholder="ex.: 150" /></label>
+        <label>Pedido mínimo (R$)<input name="minOrder" type="number" step="0.01" min="0" value="0" /></label>
+      </div>
+      <label class="inline">Cor de identificação <input name="color" type="color" value="#16a34a" /></label>
+      <details>
+        <summary>Seletores CSS (avançado, opcional)</summary>
+        <p class="muted small">Se vazios, o comparador detecta os produtos automaticamente.</p>
+        <label>Card do produto<input name="sel_item" placeholder=".product-card" /></label>
+        <label>Título<input name="sel_title" placeholder=".product-name" /></label>
+        <label>Preço<input name="sel_price" placeholder=".price" /></label>
+        <label>Link<input name="sel_link" placeholder="a" /></label>
+      </details>
+      <div class="dialog-actions">
+        <button type="button" class="btn danger" id="btn-delete-store">Excluir</button>
+        <span class="spacer"></span>
+        <button type="button" class="btn" value="cancel" id="btn-cancel-store">Cancelar</button>
+        <button class="btn primary" value="save">Salvar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Modal de Login nos Mercados -->
+  <dialog id="login-dialog">
+    <form method="dialog" id="login-form" class="login-modal">
+      <div class="login-header">
+        <span id="login-dot" class="dot-lg"></span>
+        <div>
+          <h2 id="login-title">Fazer Login no Mercado</h2>
+          <p class="muted small" id="login-url-display"></p>
+        </div>
+      </div>
+      <p class="muted small">
+        Informe sua conta/CEP para ativar os preços de cliente logado neste supermercado, ou clique em <b>Abrir página de login oficial</b> para autenticar diretamente na aba do site.
+      </p>
+      <label>E-mail ou CPF/CNPJ da sua conta
+        <input name="username" id="login-username" placeholder="seuemail@exemplo.com" required />
+      </label>
+      <label>Senha (guardada apenas localmente no seu navegador)
+        <input name="password" id="login-password" type="password" placeholder="••••••••" />
+      </label>
+      <label>CEP para cálculo de entrega e preços regionais
+        <input name="cep" id="login-cep" placeholder="13000-000" value="13087-500" />
+      </label>
+      <div class="login-ext-box">
+        <a id="login-open-site" class="btn sm" target="_blank" rel="noopener">↗ Abrir página de login oficial do mercado</a>
+        <button type="button" class="btn sm" id="login-playwright-btn" title="Abre navegador automatizado se estiver rodando servidor local">🖥 Janela Playwright (Local)</button>
+      </div>
+      <div class="dialog-actions">
+        <button type="button" class="btn" id="login-cancel">Cancelar</button>
+        <button type="submit" class="btn primary">✓ Confirmar Login &amp; Salvar Sessão</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Modal de escolha de produto -->
+  <dialog id="pick-dialog">
+    <div class="pick">
+      <h2 id="pick-title"></h2>
+      <p class="muted small" id="pick-sub"></p>
+      <ul id="pick-list"></ul>
+      <div class="manual">
+        <label>Ou informe o preço unitário manualmente (R$)
+          <input id="pick-manual" type="number" step="0.01" min="0" /></label>
+        <button class="btn" id="pick-manual-save">Usar preço manual</button>
+      </div>
+      <div class="dialog-actions">
+        <button class="btn danger" id="pick-none">Marcar como indisponível</button>
+        <span class="spacer"></span>
+        <a class="btn" id="pick-open" target="_blank" rel="noopener">Abrir busca na loja ↗</a>
+        <button class="btn primary" id="pick-close">Fechar</button>
+      </div>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
