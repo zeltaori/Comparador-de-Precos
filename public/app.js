@@ -176,13 +176,17 @@ function shipText(s) {
 }
 
 function sessionChip(s) {
-  if (s.loginOpen) return '<span class="chip open">● Janela de login aberta</span>';
-  if (s.session) {
-    const userLabel = s.session.username ? ` (${esc(s.session.username)})` : '';
-    const cepLabel = s.session.cep ? ` · CEP ${esc(s.session.cep)}` : '';
-    return `<span class="chip ok">✓ Logado${userLabel}${cepLabel}</span>`;
+  if (s.loginOpen) return '<span class="chip open">● Janela Playwright aberta</span>';
+  if (s.awaitingOfficialConfirm && !s.session) {
+    return '<span class="chip open">↗ Página oficial aberta — clique em "Avisar que está logado" após entrar</span>';
   }
-  return '<span class="chip pending">⚠ Login pendente</span>';
+  if (s.session) {
+    const viaLabel = s.session.method === 'playwright-oficial' ? ' (Playwright)' : ' (Página Oficial)';
+    const userLabel = s.session.username ? ` · ${esc(s.session.username)}` : '';
+    const cepLabel = s.session.cep ? ` · CEP ${esc(s.session.cep)}` : '';
+    return `<span class="chip ok">✓ Logado${viaLabel}${userLabel}${cepLabel}</span>`;
+  }
+  return '<span class="chip pending">⚠ Não logado — faça login na página oficial</span>';
 }
 
 function safeHost(url) {
@@ -191,6 +195,27 @@ function safeHost(url) {
   } catch {
     return url;
   }
+}
+
+async function markStoreLoggedIn(store, opts = {}) {
+  if (!store) return;
+  const sessionData = {
+    connectedAt: new Date().toISOString(),
+    method: opts.method || 'pagina-oficial',
+    username: opts.username !== undefined ? opts.username : store.session?.username || null,
+    cep: opts.cep !== undefined ? opts.cep : store.session?.cep || '13087-500',
+  };
+  store.session = sessionData;
+  store.awaitingOfficialConfirm = false;
+  saveLocalState();
+  if (hasBackend) {
+    await api('POST', `/api/stores/${store.id}/session`, {
+      ...sessionData,
+      cookieString: opts.cookieString || undefined,
+    }).catch(() => {});
+  }
+  renderAll();
+  toast(`✓ Comparador avisado: ${store.name} está marcado como LOGADO na página oficial!`);
 }
 
 function renderStores() {
@@ -213,11 +238,25 @@ function renderStores() {
       <div class="store-actions">
         ${
           s.loginOpen
-            ? `<button class="btn primary sm" data-finish="${s.id}">✓ Concluir login</button>`
-            : `<button class="btn primary sm" data-login="${s.id}">${s.session ? '🔑 Conta / CEP' : '🔑 Fazer Login'}</button>`
+            ? `<button class="btn primary sm" data-finish="${s.id}">✓ Concluir login no navegador</button>`
+            : `
+              <button class="btn ${s.session ? '' : 'primary'} sm" data-open-official="${s.id}" title="Abre a página oficial de login deste mercado em uma nova aba">
+                ↗ ${s.session ? 'Abrir Site Oficial' : '1. Login na Página Oficial'}
+              </button>
+              ${
+                !s.session
+                  ? `<button class="btn sm ${s.awaitingOfficialConfirm ? 'confirm-highlight' : ''}" data-confirm-logged="${s.id}" title="Avise ao comparador que você já fez login na página oficial deste mercado">
+                      ✓ 2. Avisar que está logado
+                    </button>`
+                  : ''
+              }
+              <button class="btn sm" data-login="${s.id}" title="Configurar CEP, apelido da conta ou abrir Playwright">${
+                s.session ? '🔑 CEP / Conta' : '⚙ Opções'
+              }</button>
+            `
         }
         <button class="btn sm" data-edit="${s.id}">✎ Editar</button>
-        ${s.session && !s.loginOpen ? `<button class="btn sm danger" data-logout="${s.id}" title="Apagar sessão salva">Sair</button>` : ''}
+        ${s.session && !s.loginOpen ? `<button class="btn sm danger" data-logout="${s.id}" title="Desmarcar login deste mercado">Sair</button>` : ''}
       </div>
     </div>`
     )
@@ -227,7 +266,7 @@ function renderStores() {
   const logged = active.filter((s) => s.session);
   const sumEl = $('#stores-summary');
   if (sumEl) {
-    sumEl.innerHTML = `<b>${active.length}</b> mercados ativos · <b>${logged.length}</b> de ${active.length} com login conectado`;
+    sumEl.innerHTML = `<b>${active.length}</b> mercados ativos · <b>${logged.length}</b> de ${active.length} com login confirmado pelo usuário`;
   }
 }
 
@@ -235,7 +274,23 @@ $('#stores-grid').addEventListener('click', async (e) => {
   const b = e.target.closest('button');
   if (!b) return;
   try {
-    if (b.dataset.login) {
+    if (b.dataset.openOfficial) {
+      const store = state.stores.find((s) => s.id === b.dataset.openOfficial);
+      if (store) {
+        window.open(store.loginUrl || store.homeUrl, '_blank', 'noopener');
+        if (!store.session) {
+          store.awaitingOfficialConfirm = true;
+          saveLocalState();
+          renderStores();
+          toast(`Página oficial de ${store.name} aberta! Após fazer login lá, clique em "✓ 2. Avisar que está logado".`);
+        }
+      }
+      return;
+    } else if (b.dataset.confirmLogged) {
+      const store = state.stores.find((s) => s.id === b.dataset.confirmLogged);
+      if (store) await markStoreLoggedIn(store, { method: 'pagina-oficial' });
+      return;
+    } else if (b.dataset.login) {
       const store = state.stores.find((s) => s.id === b.dataset.login);
       if (store) openLoginDialog(store);
       return;
@@ -244,15 +299,18 @@ $('#stores-grid').addEventListener('click', async (e) => {
       const st = state.stores.find((s) => s.id === b.dataset.finish);
       if (st) {
         st.loginOpen = false;
-        st.session = { connectedAt: new Date().toISOString() };
+        st.session = { connectedAt: new Date().toISOString(), method: 'playwright-oficial' };
       }
       saveLocalState();
       toast('Sessão salva ✓');
     } else if (b.dataset.logout) {
-      if (!confirm('Desconectar a conta deste mercado?')) return;
+      if (!confirm('Desmarcar o login deste mercado no comparador?')) return;
       if (hasBackend) await api('DELETE', `/api/stores/${b.dataset.logout}/session`).catch(() => {});
       const st = state.stores.find((s) => s.id === b.dataset.logout);
-      if (st) st.session = null;
+      if (st) {
+        st.session = null;
+        st.awaitingOfficialConfirm = false;
+      }
       saveLocalState();
       toast('Sessão desconectada.');
     } else if (b.dataset.edit) {
@@ -276,17 +334,14 @@ $('#stores-grid').addEventListener('change', async (e) => {
   renderAll();
 });
 
-$('#btn-login-all')?.addEventListener('click', () => {
+$('#btn-login-all')?.addEventListener('click', async () => {
   const active = state.stores.filter((s) => s.enabled);
-  const now = new Date().toISOString();
-  active.forEach((s) => {
+  for (const s of active) {
     if (!s.session) {
-      s.session = { connectedAt: now, username: 'cliente@mercado.com.br', cep: '13087-500' };
+      await markStoreLoggedIn(s, { method: 'pagina-oficial' });
     }
-  });
-  saveLocalState();
-  renderAll();
-  toast(`Sessões marcadas como conectadas (${active.length} mercados). Para Mercado Livre, use a Janela Playwright Local para autenticar os cookies.`);
+  }
+  toast(`✓ Todos os ${active.length} mercados ativos foram marcados como logados no comparador!`);
 });
 
 $('#btn-reset-stores')?.addEventListener('click', async () => {
@@ -310,15 +365,34 @@ let loginStoreTarget = null;
 function openLoginDialog(store) {
   loginStoreTarget = store;
   $('#login-dot').style.background = store.color || '#16a34a';
-  $('#login-title').textContent = `Login em ${store.name}`;
+  $('#login-title').textContent = `Login Oficial — ${store.name}`;
   $('#login-url-display').textContent = store.loginUrl || store.homeUrl;
   $('#login-username').value = store.session?.username || '';
-  $('#login-password').value = '';
   $('#login-cep').value = store.session?.cep || '13087-500';
+  if ($('#login-cookies')) $('#login-cookies').value = '';
   $('#login-open-site').href = store.loginUrl || store.homeUrl;
+  $('#step-confirm-box')?.classList.toggle('highlight', !!store.awaitingOfficialConfirm);
   $('#login-playwright-btn').classList.toggle('hidden', !hasBackend);
   loginDlg.showModal();
 }
+
+$('#login-open-site')?.addEventListener('click', () => {
+  if (loginStoreTarget) {
+    loginStoreTarget.awaitingOfficialConfirm = true;
+    $('#step-confirm-box')?.classList.add('highlight');
+    saveLocalState();
+    renderStores();
+  }
+});
+
+$('#btn-confirm-official-login')?.addEventListener('click', async () => {
+  if (!loginStoreTarget) return;
+  const username = $('#login-username')?.value.trim() || null;
+  const cep = $('#login-cep')?.value.trim() || '13087-500';
+  const cookieString = $('#login-cookies')?.value.trim() || '';
+  await markStoreLoggedIn(loginStoreTarget, { method: 'pagina-oficial', username, cep, cookieString });
+  loginDlg.close();
+});
 
 $('#login-cancel')?.addEventListener('click', () => loginDlg.close());
 
@@ -327,7 +401,7 @@ $('#login-playwright-btn')?.addEventListener('click', async () => {
   try {
     await api('POST', `/api/stores/${loginStoreTarget.id}/login`);
     loginDlg.close();
-    toast('Janela do navegador aberta! Faça login no site e depois clique em "Concluir login".');
+    toast('Janela do navegador aberta! Faça login no site oficial e depois clique em "Concluir login".');
     pollLogins();
     load();
   } catch (err) {
@@ -335,20 +409,14 @@ $('#login-playwright-btn')?.addEventListener('click', async () => {
   }
 });
 
-loginForm?.addEventListener('submit', (e) => {
+loginForm?.addEventListener('submit', async (e) => {
   e.preventDefault();
   if (!loginStoreTarget) return;
-  const username = $('#login-username').value.trim() || 'cliente';
-  const cep = $('#login-cep').value.trim() || '13087-500';
-  loginStoreTarget.session = {
-    connectedAt: new Date().toISOString(),
-    username,
-    cep,
-  };
-  saveLocalState();
+  const username = $('#login-username')?.value.trim() || null;
+  const cep = $('#login-cep')?.value.trim() || '13087-500';
+  const cookieString = $('#login-cookies')?.value.trim() || '';
+  await markStoreLoggedIn(loginStoreTarget, { method: 'pagina-oficial', username, cep, cookieString });
   loginDlg.close();
-  renderAll();
-  toast(`Login registrado em ${loginStoreTarget.name} ✓`);
 });
 
 let loginPoll;
@@ -1014,8 +1082,36 @@ function openPick() {
     .join('');
   $('#pick-manual').value = r.manualPrice ?? '';
   $('#pick-open').href = r.searchUrl || store.searchUrl.replace('{q}', encodeURIComponent(item.query));
+  if ($('#pick-open-login')) {
+    $('#pick-open-login').href = store.loginUrl || store.homeUrl;
+  }
+  if ($('#pick-confirm-logged')) {
+    $('#pick-confirm-logged').textContent = store.session ? '✓ Já marcado como logado' : '✓ Avisar que está logado';
+    $('#pick-confirm-logged').className = store.session ? 'btn sm confirm-highlight' : 'btn sm';
+  }
   pick.showModal();
 }
+
+$('#pick-open-login')?.addEventListener('click', () => {
+  if (!picking) return;
+  const store = state.stores.find((s) => s.id === picking.storeId);
+  if (store && !store.session) {
+    store.awaitingOfficialConfirm = true;
+    saveLocalState();
+    renderStores();
+  }
+});
+
+$('#pick-confirm-logged')?.addEventListener('click', async () => {
+  if (!picking) return;
+  const store = state.stores.find((s) => s.id === picking.storeId);
+  if (!store) return;
+  await markStoreLoggedIn(store, { method: 'pagina-oficial' });
+  if ($('#pick-confirm-logged')) {
+    $('#pick-confirm-logged').textContent = '✓ Já marcado como logado';
+    $('#pick-confirm-logged').className = 'btn sm confirm-highlight';
+  }
+});
 
 async function updatePick(body) {
   const { itemId, storeId } = picking;

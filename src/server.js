@@ -111,7 +111,32 @@ app.post('/api/stores/:id/login', wrap(async (req, res) => {
 }));
 
 app.post('/api/stores/:id/login/finish', wrap(async (req, res) => {
-  res.json(await scraper.finishLogin(req.params.id));
+  const r = await scraper.finishLogin(req.params.id);
+  const sessions = read('sessions');
+  sessions[req.params.id] = {
+    connectedAt: new Date().toISOString(),
+    method: 'playwright-oficial',
+  };
+  write('sessions', sessions);
+  res.json({ ...r, session: sessions[req.params.id] });
+}));
+
+// Avisar ao comparador que o usuário já fez login na página oficial do mercado
+app.post('/api/stores/:id/session', wrap(async (req, res) => {
+  const store = read('stores').find((s) => s.id === req.params.id);
+  if (!store) throw new Error('Loja não encontrada');
+  const sessions = read('sessions');
+  sessions[store.id] = {
+    connectedAt: new Date().toISOString(),
+    method: req.body?.method || 'pagina-oficial',
+    username: req.body?.username || null,
+    cep: req.body?.cep || null,
+  };
+  write('sessions', sessions);
+  if (req.body?.cookieString) {
+    await scraper.importCookieString(store, req.body.cookieString).catch(() => {});
+  }
+  res.json({ ok: true, session: sessions[store.id] });
 }));
 
 app.delete('/api/stores/:id/session', wrap(async (req, res) => {

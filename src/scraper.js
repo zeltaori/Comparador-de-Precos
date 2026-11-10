@@ -48,6 +48,36 @@ function isLoginOpen(storeId) {
   return openLogins.has(storeId);
 }
 
+async function importCookieString(store, cookieString) {
+  if (!cookieString || !String(cookieString).trim()) return;
+  let domain = '.mercadolivre.com.br';
+  try {
+    const u = new URL(store.homeUrl || store.loginUrl);
+    domain = '.' + u.hostname.replace(/^www\./, '');
+  } catch {}
+  const pairs = String(cookieString)
+    .split(';')
+    .map((p) => p.trim())
+    .filter(Boolean);
+  const cookies = [];
+  for (const pair of pairs) {
+    const eq = pair.indexOf('=');
+    if (eq <= 0) continue;
+    const name = pair.slice(0, eq).trim();
+    const value = pair.slice(eq + 1).trim();
+    if (name) {
+      cookies.push({ name, value, domain, path: '/' });
+    }
+  }
+  if (!cookies.length) return;
+  const ctx = await chromium.launchPersistentContext(profileDir(store.id), launchOptions(true));
+  try {
+    await ctx.addCookies(cookies);
+  } finally {
+    await ctx.close().catch(() => {});
+  }
+}
+
 let catalogModulePromise = null;
 function getCatalogModule() {
   if (!catalogModulePromise) {
@@ -448,4 +478,4 @@ async function searchStore(store, items, settings, onItem) {
   }
 }
 
-module.exports = { login, finishLogin, isLoginOpen, searchStore, extractInPage, getCatalogModule };
+module.exports = { login, finishLogin, isLoginOpen, importCookieString, searchStore, extractInPage, getCatalogModule };
