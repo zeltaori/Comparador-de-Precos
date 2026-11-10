@@ -1,0 +1,1981 @@
+{
+  "item-arroz": {
+    "mercadolivre": {
+      "querySnapshot": "Arroz Tio João 5kg",
+      "candidates": [],
+      "selected": null,
+      "manualPrice": null,
+      "error": "Esta loja exige login na conta para exibir os preços da busca. Conecte sua conta na Etapa 1.",
+      "method": "bloqueado-login",
+      "searchUrl": "https://www.mercadolivre.com.br/gz/account-verification?go=https%3A%2F%2Flista.mercadolivre.com.br%2Fsupermercado%2FArroz%2520Tio%2520Jo%25C3%25A3o%25205kg&tid=df64288f-24e7-4422-9924-75d790dd0732",
+      "at": "2026-11-10T18:58:14.042Z"
+    },
+    "amazon": {
+      "querySnapshot": "Arroz Tio João 5kg",
+      "candidates": [
+        {
+          "title": "Arroz Branco Tio João - 5Kg",
+          "price": 36.99,
+          "url": "https://www.amazon.com.br/Arroz-Branco-Tio-Jo%C3%A3o-Kg/dp/B086N45F5Q/ref=sr_1_1?dib=eyJ2IjoiMSJ9.pt4EU_ydaxbc-FTdb67MirTKQe2D7fxBYTsKJbjaK29-UrRMd5-EBl40AHMEZlVLQGCeB5c5x2S8rvsTlzoBVgSLefwsY9vHZaOT2bRqn5c_l7X7Qx2vPOXpw3dL2rkCI7pXYG0aZu-8OXyNjBkyBWFaxOhlEU1kZlqzs6TO7r0SIvNw4vMk2WJWPrM7fUHvt3rpDoFqcMahT9NahrswgicEhLuEIakMpgqZSh7oiU6JKo3F-0lLTaONMDaDHMN7o230EYzX9tdqJAA2Zzis2EABl_yEDbGww1ip0mhctWM.alpxkMdut8T2-pmDWsntJAPeQ_9wmp9MkvHzPACPufY&dib_tag=se&keywords=Arroz+Tio+Jo%C3%A3o+5kg&qid=1794337116&s=grocery&sr=1-1",
+          "image": "https://m.media-amazon.com/images/I/71Ax2pEiDLL._AC_UL320_.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "Arroz Branco Broto Legal, 5kg",
+          "price": 28.98,
+          "url": "https://www.amazon.com.br/Arroz-Branco-Broto-Legal-5kg/dp/B0C7Z18D9Y/ref=sr_1_6?dib=eyJ2IjoiMSJ9.pt4EU_ydaxbc-FTdb67MirTKQe2D7fxBYTsKJbjaK29-UrRMd5-EBl40AHMEZlVLQGCeB5c5x2S8rvsTlzoBVgSLefwsY9vHZaOT2bRqn5c_l7X7Qx2vPOXpw3dL2rkCI7pXYG0aZu-8OXyNjBkyBWFaxOhlEU1kZlqzs6TO7r0SIvNw4vMk2WJWPrM7fUHvt3rpDoFqcMahT9NahrswgicEhLuEIakMpgqZSh7oiU6JKo3F-0lLTaONMDaDHMN7o230EYzX9tdqJAA2Zzis2EABl_yEDbGww1ip0mhctWM.alpxkMdut8T2-pmDWsntJAPeQ_9wmp9MkvHzPACPufY&dib_tag=se&keywords=Arroz+Tio+Jo%C3%A3o+5kg&qid=1794337116&s=grocery&sr=1-6",
+          "image": "https://m.media-amazon.com/images/I/61eM7WO7rPL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Tio João Arroz Parboilizado - 5Kg",
+          "price": 29.99,
+          "url": "https://www.amazon.com.br/Arroz-Tio-Jo%C3%A3o-Parboilizado-5kg/dp/B09XJN6H92/ref=sr_1_2?dib=eyJ2IjoiMSJ9.pt4EU_ydaxbc-FTdb67MirTKQe2D7fxBYTsKJbjaK29-UrRMd5-EBl40AHMEZlVLQGCeB5c5x2S8rvsTlzoBVgSLefwsY9vHZaOT2bRqn5c_l7X7Qx2vPOXpw3dL2rkCI7pXYG0aZu-8OXyNjBkyBWFaxOhlEU1kZlqzs6TO7r0SIvNw4vMk2WJWPrM7fUHvt3rpDoFqcMahT9NahrswgicEhLuEIakMpgqZSh7oiU6JKo3F-0lLTaONMDaDHMN7o230EYzX9tdqJAA2Zzis2EABl_yEDbGww1ip0mhctWM.alpxkMdut8T2-pmDWsntJAPeQ_9wmp9MkvHzPACPufY&dib_tag=se&keywords=Arroz+Tio+Jo%C3%A3o+5kg&qid=1794337116&s=grocery&sr=1-2",
+          "image": "https://m.media-amazon.com/images/I/818g9++WcpL._AC_UL320_.jpg",
+          "score": 0.82,
+          "matchType": "similar",
+          "similarReason": "Similar (variação similar)"
+        },
+        {
+          "title": "Arroz Nikkoh Longo - 5kg",
+          "price": 51.04,
+          "url": "https://www.amazon.com.br/Nikkoh-Arroz-Longo-5kg/dp/B08CM6WRBL/ref=sr_1_21?dib=eyJ2IjoiMSJ9.pt4EU_ydaxbc-FTdb67MirTKQe2D7fxBYTsKJbjaK29-UrRMd5-EBl40AHMEZlVLQGCeB5c5x2S8rvsTlzoBVgSLefwsY9vHZaOT2bRqn5c_l7X7Qx2vPOXpw3dL2rkCI7pXYG0aZu-8OXyNjBkyBWFaxOhlEU1kZlqzs6TO7r0SIvNw4vMk2WJWPrM7fUHvt3rpDoFqcMahT9NahrswgicEhLuEIakMpgqZSh7oiU6JKo3F-0lLTaONMDaDHMN7o230EYzX9tdqJAA2Zzis2EABl_yEDbGww1ip0mhctWM.alpxkMdut8T2-pmDWsntJAPeQ_9wmp9MkvHzPACPufY&dib_tag=se&keywords=Arroz+Tio+Jo%C3%A3o+5kg&qid=1794337116&s=grocery&sr=1-21&ufe=app_do%3Aamzn1.fos.2fb4d624-b7be-441e-af6d-3c953cfae5bf",
+          "image": "https://m.media-amazon.com/images/I/71fijEVC77L._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Arroz Tio João Parbolizado - 1kg",
+          "price": 6.48,
+          "url": "https://www.amazon.com.br/Arroz-Tio-Jo%C3%A3o-Parbolizado-1kg/dp/B08CMH67Q5/ref=sr_1_5?dib=eyJ2IjoiMSJ9.pt4EU_ydaxbc-FTdb67MirTKQe2D7fxBYTsKJbjaK29-UrRMd5-EBl40AHMEZlVLQGCeB5c5x2S8rvsTlzoBVgSLefwsY9vHZaOT2bRqn5c_l7X7Qx2vPOXpw3dL2rkCI7pXYG0aZu-8OXyNjBkyBWFaxOhlEU1kZlqzs6TO7r0SIvNw4vMk2WJWPrM7fUHvt3rpDoFqcMahT9NahrswgicEhLuEIakMpgqZSh7oiU6JKo3F-0lLTaONMDaDHMN7o230EYzX9tdqJAA2Zzis2EABl_yEDbGww1ip0mhctWM.alpxkMdut8T2-pmDWsntJAPeQ_9wmp9MkvHzPACPufY&dib_tag=se&keywords=Arroz+Tio+Jo%C3%A3o+5kg&qid=1794337116&s=grocery&sr=1-5",
+          "image": "https://m.media-amazon.com/images/I/81Prxd1w6dL._AC_UL320_.jpg",
+          "score": 0.76,
+          "matchType": "similar",
+          "similarReason": "Similar (outro tamanho/embalagem)"
+        },
+        {
+          "title": "Arroz Branco Tio João - 1kg",
+          "price": 7.29,
+          "url": "https://www.amazon.com.br/Arroz-Tio-Jo%C3%A3o-Gr%C3%A3os-Nobres/dp/B015XQOWBS/ref=sr_1_3?dib=eyJ2IjoiMSJ9.pt4EU_ydaxbc-FTdb67MirTKQe2D7fxBYTsKJbjaK29-UrRMd5-EBl40AHMEZlVLQGCeB5c5x2S8rvsTlzoBVgSLefwsY9vHZaOT2bRqn5c_l7X7Qx2vPOXpw3dL2rkCI7pXYG0aZu-8OXyNjBkyBWFaxOhlEU1kZlqzs6TO7r0SIvNw4vMk2WJWPrM7fUHvt3rpDoFqcMahT9NahrswgicEhLuEIakMpgqZSh7oiU6JKo3F-0lLTaONMDaDHMN7o230EYzX9tdqJAA2Zzis2EABl_yEDbGww1ip0mhctWM.alpxkMdut8T2-pmDWsntJAPeQ_9wmp9MkvHzPACPufY&dib_tag=se&keywords=Arroz+Tio+Jo%C3%A3o+5kg&qid=1794337116&s=grocery&sr=1-3",
+          "image": "https://m.media-amazon.com/images/I/71hqpyKf4HL._AC_UL320_.jpg",
+          "score": 0.76,
+          "matchType": "similar",
+          "similarReason": "Similar (outro tamanho/embalagem)"
+        },
+        {
+          "title": "Arroz Branco Tio João - 2kg",
+          "price": 15.1,
+          "url": "https://www.amazon.com.br/Arroz-Tio-Jo%C3%A3o-Gr%C3%A3os-Nobres/dp/B08CM9XBV6/ref=sr_1_4?dib=eyJ2IjoiMSJ9.pt4EU_ydaxbc-FTdb67MirTKQe2D7fxBYTsKJbjaK29-UrRMd5-EBl40AHMEZlVLQGCeB5c5x2S8rvsTlzoBVgSLefwsY9vHZaOT2bRqn5c_l7X7Qx2vPOXpw3dL2rkCI7pXYG0aZu-8OXyNjBkyBWFaxOhlEU1kZlqzs6TO7r0SIvNw4vMk2WJWPrM7fUHvt3rpDoFqcMahT9NahrswgicEhLuEIakMpgqZSh7oiU6JKo3F-0lLTaONMDaDHMN7o230EYzX9tdqJAA2Zzis2EABl_yEDbGww1ip0mhctWM.alpxkMdut8T2-pmDWsntJAPeQ_9wmp9MkvHzPACPufY&dib_tag=se&keywords=Arroz+Tio+Jo%C3%A3o+5kg&qid=1794337116&s=grocery&sr=1-4",
+          "image": "https://m.media-amazon.com/images/I/71qSx0n4rlL._AC_UL320_.jpg",
+          "score": 0.76,
+          "matchType": "similar",
+          "similarReason": "Similar (outro tamanho/embalagem)"
+        },
+        {
+          "title": "Tio João Arroz Basmati Variedades Mundiais - 500G",
+          "price": 18.3,
+          "url": "https://www.amazon.com.br/Tio-Jo%C3%A3o-Variedades-Mundiais-Basmati/dp/B08GM6JJF4/ref=sr_1_17?dib=eyJ2IjoiMSJ9.pt4EU_ydaxbc-FTdb67MirTKQe2D7fxBYTsKJbjaK29-UrRMd5-EBl40AHMEZlVLQGCeB5c5x2S8rvsTlzoBVgSLefwsY9vHZaOT2bRqn5c_l7X7Qx2vPOXpw3dL2rkCI7pXYG0aZu-8OXyNjBkyBWFaxOhlEU1kZlqzs6TO7r0SIvNw4vMk2WJWPrM7fUHvt3rpDoFqcMahT9NahrswgicEhLuEIakMpgqZSh7oiU6JKo3F-0lLTaONMDaDHMN7o230EYzX9tdqJAA2Zzis2EABl_yEDbGww1ip0mhctWM.alpxkMdut8T2-pmDWsntJAPeQ_9wmp9MkvHzPACPufY&dib_tag=se&keywords=Arroz+Tio+Jo%C3%A3o+5kg&qid=1794337116&s=grocery&sr=1-17",
+          "image": "https://m.media-amazon.com/images/I/71Q3QB8Q6dL._AC_UL320_.jpg",
+          "score": 0.76,
+          "matchType": "similar",
+          "similarReason": "Similar (outro tamanho/embalagem)"
+        }
+      ],
+      "selected": 0,
+      "manualPrice": null,
+      "error": null,
+      "method": "seletores da loja",
+      "searchUrl": "https://www.amazon.com.br/s?k=Arroz+Tio+Jo%C3%A3o+5kg&i=grocery",
+      "at": "2026-11-10T18:58:44.405Z"
+    },
+    "magalu": {
+      "querySnapshot": "Arroz Tio João 5kg",
+      "candidates": [],
+      "selected": null,
+      "manualPrice": null,
+      "error": "Busca automatizada bloqueada pelo firewall anti-bot (Erro 403) da loja. Clique para abrir a busca direta no navegador.",
+      "method": "bloqueado-waf",
+      "searchUrl": "https://www.magazineluiza.com.br/busca/Arroz%20Tio%20Jo%C3%A3o%205kg/",
+      "at": "2026-11-10T18:59:57.236Z"
+    },
+    "goodbom": {
+      "querySnapshot": "Arroz Tio João 5kg",
+      "candidates": [
+        {
+          "title": "ARROZ TIPO 1 OLIRON 5KG",
+          "price": 18.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/arroz-tp-1-oliron-5kg",
+          "image": "https://phygital-files.mercafacil.com/good-bom/uploads/produto/arroz_tp_1_oliron_5kg_7565c4c1-661b-4473-ad6a-4f94fb29e01c.jpeg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "ARROZ TIPO 1 RAROZ 5KG",
+          "price": 23.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/arroz-tp-1-raroz-5kg",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/arroz_raroz_branco_t1_5kg_fb4a6f9e-eb18-4574-abe0-513c89216987.png",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "ARROZ TIPO 1 GRÃO DE CAMPO 5KG",
+          "price": 24.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/arroz-tp-1-grao-de-campo-5k",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/arroz_polido_tipo_1_gr_o_de_campo_pacote_5kg_e633691f-bc28-42f9-8d1a-04b6231fd4a9.png",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "ARROZ TIPO 1 PILECCO NOBRE 5KG",
+          "price": 28.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/arroz-tp-1-pilecco-nobre-5kg",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/arroz_polido_tipo_1_pilecco_nobre_pacote_5kg_b76bd123-4941-4dda-a604-c8406e4d552f.png",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "ARROZ TIPO 1 BROTO LEGAL 5KG",
+          "price": 31.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/arroz-tp-1-broto-legal-5kg",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/arroz_broto_legal_5kg_96d70bd8-0023-4785-aff2-779266ca7192.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "ARROZ TIPO 1 PRATO FINO 5KG",
+          "price": 31.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/arroz-tp-1-prato-fino-5kg",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/arroz_branco_tipo_1_prato_fino_pacote_5kg_264e2a1e-6d5e-4d00-91c0-a7c46ae1db03.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "ARROZ PARBOILIZADO RAROZ 5KG",
+          "price": 23.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/arroz-parbraroz-5kg",
+          "image": "https://phygital-files.mercafacil.com/good-bom/uploads/produto/arroz_parboilizado_raroz_5kg_a01060be-ed01-499b-8c3c-d1aa4fdb510f.png",
+          "score": 0.72,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca, variação similar)"
+        },
+        {
+          "title": "ARROZ PARBOILIZADO GRÃO DE CAMPO 5KG",
+          "price": 24.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/arroz-parbgrao-de-campo-5kg",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/arroz_parboilizado_tipo_1_gr_o_de_campo_pacote_5kg_4bff4903-2247-48b1-98f2-cfa1718e6099.png",
+          "score": 0.72,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca, variação similar)"
+        }
+      ],
+      "selected": 0,
+      "manualPrice": null,
+      "error": null,
+      "method": "Catálogo em tempo real GoodBom (preço real)",
+      "searchUrl": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/busca?q=Arroz%20Tio%20Jo%C3%A3o%205kg",
+      "at": "2026-11-10T19:00:18.768Z"
+    },
+    "arena": {
+      "querySnapshot": "Arroz Tio João 5kg",
+      "candidates": [
+        {
+          "title": "Arroz Tipo 1 Puro & Nobre Pacote 5kg",
+          "price": 19.4,
+          "url": "https://www.arenaatacado.com.br/Arroz-Tipo-1-Puro-%26-Nobre-Pacote-5kg-242756.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw871f351b/Produtos/242756-7898014490640-arroz tipo 1 puro  nobre pacote 5 kg-puro e nobre-1.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Arroz Tipo 1 Grão De Campo Pacote 5kg",
+          "price": 21.85,
+          "url": "https://www.arenaatacado.com.br/Arroz-Tipo-1-Gr%C3%A3o-De-Campo-Pacote-5kg-95787.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw2a279836/Produtos/95787-7896901200082-arroz tipo 1 grao de campo pacote 5 kg-grao de campo-1.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Arroz Tipo 1 Namorado Pacote 5kg",
+          "price": 22.9,
+          "url": "https://www.arenaatacado.com.br/Arroz-Tipo-1-Namorado-Pacote-5kg-31364.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw55818852/Produtos/31364-7896079481016-arroz tipo 1 namorado pacote 5kg-namorado-1.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Arroz Tipo 1 Camil Pacote 5kg",
+          "price": 26.39,
+          "url": "https://www.arenaatacado.com.br/Arroz-Tipo-1-Camil-Pacote-5kg-78166.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw603bbec5/Produtos/78166-7896006711155-arroz tipo 1 camil pacote 5kg-camil-1.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Arroz Tipo 1 Broto Legal Pacote 5kg",
+          "price": 27.49,
+          "url": "https://www.arenaatacado.com.br/Arroz-Tipo-1-Broto-Legal-Pacote-5kg-15037.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dwa06125df/Produtos/15037-7896901200143-arroz tipo 1 broto legal pacote 5kg-broto legal-1.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Arroz Tipo 1 Prato Fino Pacote 5kg",
+          "price": 28.99,
+          "url": "https://www.arenaatacado.com.br/Arroz-Tipo-1-Prato-Fino-Pacote-5kg-31313.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dwd9d8e573/Produtos/31313-7896290300011-arroz tipo 1 prato fino pacote 5kg-prato fino-1.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Arroz Tipo 1 Empório São João Pacote 5kg",
+          "price": 29.39,
+          "url": "https://www.arenaatacado.com.br/Arroz-Tipo-1-Emp%C3%B3rio-S%C3%A3o-Jo%C3%A3o-Pacote-5kg-26222.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw7f7fab2a/Produtos/26222-7896086420312-arroz tipo 1 emporio sao joao pacote 5kg-emporio sao joao-1.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        }
+      ],
+      "selected": 0,
+      "manualPrice": null,
+      "error": null,
+      "method": "API oficial Arena Atacado (preço real)",
+      "searchUrl": "https://www.arenaatacado.com.br/on/demandware.store/Sites-Arena-Site/pt_BR/Search-Show?q=Arroz%20Tio%20Jo%C3%A3o%205kg",
+      "at": "2026-11-10T19:03:13.267Z"
+    }
+  },
+  "item-feijao": {
+    "mercadolivre": {
+      "querySnapshot": "Feijão Carioca Camil 1kg",
+      "candidates": [],
+      "selected": null,
+      "manualPrice": null,
+      "error": "Esta loja exige login na conta para exibir os preços da busca. Conecte sua conta na Etapa 1.",
+      "method": "bloqueado-login",
+      "searchUrl": "https://www.mercadolivre.com.br/gz/account-verification?go=https%3A%2F%2Flista.mercadolivre.com.br%2Fsupermercado%2FFeij%25C3%25A3o%2520Carioca%2520Camil%25201kg&tid=aaa388db-8616-42c1-9ee4-b0142e3dec85",
+      "at": "2026-11-10T18:58:16.842Z"
+    },
+    "amazon": {
+      "querySnapshot": "Feijão Carioca Camil 1kg",
+      "candidates": [
+        {
+          "title": "Feijão Carioca Urbano 1kg",
+          "price": 8.23,
+          "url": "https://www.amazon.com.br/Urbano-Feijao-Carioca-1kg/dp/B0BS1S6Q8V/ref=sr_1_1?dib=eyJ2IjoiMSJ9.51-lkGx05SkEjeoxq3yvG7oN00hvCVN1MlXbR-RoqVYjY44246RoNl0WIsjZTIZyGiNN0uCXFckjXsE8QZz8EyYr1EzUqsdpYf1ySo9X-aZppQlQ8N5JI5W3ORbJtgsTTwOhN4VLnotEhB3XMKfOcJjSKS1nKA7ipFs_tnw7Gaiwk5YD3zWVcfMlvw9oc3bDEWSshoZmXLzKR_FStAa581PwtzeZwSDf-r3fVW3-rtPn4VFz2I8-VX1hpHqcxmqXSOG9qaYM4OsY2rYue2G4_rrtJzKm4ok5uMLK9IImIoU.G7r0XXCDi_NarSD0TabdX3ZZGYGOuEH24CJgiCa9L30&dib_tag=se&keywords=Feij%C3%A3o+Carioca+Camil+1kg&qid=1794337125&s=grocery&sr=1-1",
+          "image": "https://m.media-amazon.com/images/I/51ZMwECF+TL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Feijão Carioca Broto Legal 1kg",
+          "price": 10.9,
+          "url": "https://www.amazon.com.br/Feij%C3%A3o-Carioca-Broto-Legal-1kg/dp/B00ZO93YT6/ref=sr_1_2?dib=eyJ2IjoiMSJ9.51-lkGx05SkEjeoxq3yvG7oN00hvCVN1MlXbR-RoqVYjY44246RoNl0WIsjZTIZyGiNN0uCXFckjXsE8QZz8EyYr1EzUqsdpYf1ySo9X-aZppQlQ8N5JI5W3ORbJtgsTTwOhN4VLnotEhB3XMKfOcJjSKS1nKA7ipFs_tnw7Gaiwk5YD3zWVcfMlvw9oc3bDEWSshoZmXLzKR_FStAa581PwtzeZwSDf-r3fVW3-rtPn4VFz2I8-VX1hpHqcxmqXSOG9qaYM4OsY2rYue2G4_rrtJzKm4ok5uMLK9IImIoU.G7r0XXCDi_NarSD0TabdX3ZZGYGOuEH24CJgiCa9L30&dib_tag=se&keywords=Feij%C3%A3o+Carioca+Camil+1kg&qid=1794337125&s=grocery&sr=1-2",
+          "image": "https://m.media-amazon.com/images/I/611nfGfUMtL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Feijão Carioca Urbano 1kg",
+          "price": 17.85,
+          "url": "https://www.amazon.com.br/Urbano-Feij%C3%A3o-Carioca-1kg/dp/B0D4B1QHM4/ref=sr_1_15?dib=eyJ2IjoiMSJ9.51-lkGx05SkEjeoxq3yvG7oN00hvCVN1MlXbR-RoqVYjY44246RoNl0WIsjZTIZyGiNN0uCXFckjXsE8QZz8EyYr1EzUqsdpYf1ySo9X-aZppQlQ8N5JI5W3ORbJtgsTTwOhN4VLnotEhB3XMKfOcJjSKS1nKA7ipFs_tnw7Gaiwk5YD3zWVcfMlvw9oc3bDEWSshoZmXLzKR_FStAa581PwtzeZwSDf-r3fVW3-rtPn4VFz2I8-VX1hpHqcxmqXSOG9qaYM4OsY2rYue2G4_rrtJzKm4ok5uMLK9IImIoU.G7r0XXCDi_NarSD0TabdX3ZZGYGOuEH24CJgiCa9L30&dib_tag=se&keywords=Feij%C3%A3o+Carioca+Camil+1kg&qid=1794337125&s=grocery&sr=1-15",
+          "image": "https://m.media-amazon.com/images/I/61iTan7rfQL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Broto Legal Feijão Carioca 1kg | Tradição na Mesa dos Brasileiros | Qualidade e Sabor para Todas as Refeições (Embalagem com 3)",
+          "price": 32.7,
+          "url": "https://www.amazon.com.br/Broto-Brasileiros-Qualidade-Refei%C3%A7%C3%B5es-Embalagem/dp/B0HK28KMP1/ref=sr_1_5?dib=eyJ2IjoiMSJ9.51-lkGx05SkEjeoxq3yvG7oN00hvCVN1MlXbR-RoqVYjY44246RoNl0WIsjZTIZyGiNN0uCXFckjXsE8QZz8EyYr1EzUqsdpYf1ySo9X-aZppQlQ8N5JI5W3ORbJtgsTTwOhN4VLnotEhB3XMKfOcJjSKS1nKA7ipFs_tnw7Gaiwk5YD3zWVcfMlvw9oc3bDEWSshoZmXLzKR_FStAa581PwtzeZwSDf-r3fVW3-rtPn4VFz2I8-VX1hpHqcxmqXSOG9qaYM4OsY2rYue2G4_rrtJzKm4ok5uMLK9IImIoU.G7r0XXCDi_NarSD0TabdX3ZZGYGOuEH24CJgiCa9L30&dib_tag=se&keywords=Feij%C3%A3o+Carioca+Camil+1kg&qid=1794337125&s=grocery&sr=1-5",
+          "image": "https://m.media-amazon.com/images/I/61Vl6fInM+L._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Feijão Carioca Orgânico Coopernatural 1kg",
+          "price": 39.99,
+          "url": "https://www.amazon.com.br/Feij%C3%A3o-Carioca-Org%C3%A2nico-Coopernatural-1kg/dp/B07XSMSQPG/ref=sr_1_16?dib=eyJ2IjoiMSJ9.51-lkGx05SkEjeoxq3yvG7oN00hvCVN1MlXbR-RoqVYjY44246RoNl0WIsjZTIZyGiNN0uCXFckjXsE8QZz8EyYr1EzUqsdpYf1ySo9X-aZppQlQ8N5JI5W3ORbJtgsTTwOhN4VLnotEhB3XMKfOcJjSKS1nKA7ipFs_tnw7Gaiwk5YD3zWVcfMlvw9oc3bDEWSshoZmXLzKR_FStAa581PwtzeZwSDf-r3fVW3-rtPn4VFz2I8-VX1hpHqcxmqXSOG9qaYM4OsY2rYue2G4_rrtJzKm4ok5uMLK9IImIoU.G7r0XXCDi_NarSD0TabdX3ZZGYGOuEH24CJgiCa9L30&dib_tag=se&keywords=Feij%C3%A3o+Carioca+Camil+1kg&qid=1794337125&s=grocery&sr=1-16",
+          "image": "https://m.media-amazon.com/images/I/61uOLSuKTJL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Feijão Carioca Orgânico Vapza",
+          "price": 8.99,
+          "url": "https://www.amazon.com.br/Feij%C3%A3o-Carioca-Org%C3%A2nico-Vapza-250g/dp/B07XTK7JGK/ref=sr_1_7?dib=eyJ2IjoiMSJ9.51-lkGx05SkEjeoxq3yvG7oN00hvCVN1MlXbR-RoqVYjY44246RoNl0WIsjZTIZyGiNN0uCXFckjXsE8QZz8EyYr1EzUqsdpYf1ySo9X-aZppQlQ8N5JI5W3ORbJtgsTTwOhN4VLnotEhB3XMKfOcJjSKS1nKA7ipFs_tnw7Gaiwk5YD3zWVcfMlvw9oc3bDEWSshoZmXLzKR_FStAa581PwtzeZwSDf-r3fVW3-rtPn4VFz2I8-VX1hpHqcxmqXSOG9qaYM4OsY2rYue2G4_rrtJzKm4ok5uMLK9IImIoU.G7r0XXCDi_NarSD0TabdX3ZZGYGOuEH24CJgiCa9L30&dib_tag=se&keywords=Feij%C3%A3o+Carioca+Camil+1kg&qid=1794337125&s=grocery&sr=1-7",
+          "image": "https://m.media-amazon.com/images/I/617T16KLoPL._AC_UL320_.jpg",
+          "score": 0.74,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca, outro tamanho/embalagem)"
+        },
+        {
+          "title": "Feijão Carioca Cozido com Linguiça Calabresa Oderich, 420g",
+          "price": 30.8,
+          "url": "https://www.amazon.com.br/sspa/click?ie=UTF8&spc=MToyNDc0OTYzNTA0MDM3MzIwOjE3OTQzMzcxMjY6c3BfbXRmOjMwMTUyMzM2MjAwMzIwMjo6MDo6&url=%2FOderich-Calabresa-Temperada-Encorpado-Especiarias%2Fdp%2FB0BP8KKTSQ%2Fref%3Dsr_1_13_sspa%3Fdib%3DeyJ2IjoiMSJ9.51-lkGx05SkEjeoxq3yvG7oN00hvCVN1MlXbR-RoqVYjY44246RoNl0WIsjZTIZyGiNN0uCXFckjXsE8QZz8EyYr1EzUqsdpYf1ySo9X-aZppQlQ8N5JI5W3ORbJtgsTTwOhN4VLnotEhB3XMKfOcJjSKS1nKA7ipFs_tnw7Gaiwk5YD3zWVcfMlvw9oc3bDEWSshoZmXLzKR_FStAa581PwtzeZwSDf-r3fVW3-rtPn4VFz2I8-VX1hpHqcxmqXSOG9qaYM4OsY2rYue2G4_rrtJzKm4ok5uMLK9IImIoU.G7r0XXCDi_NarSD0TabdX3ZZGYGOuEH24CJgiCa9L30%26dib_tag%3Dse%26keywords%3DFeij%25C3%25A3o%2BCarioca%2BCamil%2B1kg%26qid%3D1794337125%26s%3Dgrocery%26sr%3D1-13-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1",
+          "image": "https://m.media-amazon.com/images/I/61a1G8FOslL._AC_UL320_.jpg",
+          "score": 0.66,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca, outro tamanho/embalagem)"
+        },
+        {
+          "title": "Feijão Fradinho Tipo 1 Camil Pct 1kg",
+          "price": 10.15,
+          "url": "https://www.amazon.com.br/Camil-Feij%C3%A3o-Fradinho/dp/B084357JB4/ref=sr_1_11?dib=eyJ2IjoiMSJ9.51-lkGx05SkEjeoxq3yvG7oN00hvCVN1MlXbR-RoqVYjY44246RoNl0WIsjZTIZyGiNN0uCXFckjXsE8QZz8EyYr1EzUqsdpYf1ySo9X-aZppQlQ8N5JI5W3ORbJtgsTTwOhN4VLnotEhB3XMKfOcJjSKS1nKA7ipFs_tnw7Gaiwk5YD3zWVcfMlvw9oc3bDEWSshoZmXLzKR_FStAa581PwtzeZwSDf-r3fVW3-rtPn4VFz2I8-VX1hpHqcxmqXSOG9qaYM4OsY2rYue2G4_rrtJzKm4ok5uMLK9IImIoU.G7r0XXCDi_NarSD0TabdX3ZZGYGOuEH24CJgiCa9L30&dib_tag=se&keywords=Feij%C3%A3o+Carioca+Camil+1kg&qid=1794337125&s=grocery&sr=1-11",
+          "image": "https://m.media-amazon.com/images/I/513c2fD46CL._AC_UL320_.jpg",
+          "score": 0.57,
+          "matchType": "similar",
+          "similarReason": "Similar (variação similar)"
+        }
+      ],
+      "selected": 0,
+      "manualPrice": null,
+      "error": null,
+      "method": "seletores da loja",
+      "searchUrl": "https://www.amazon.com.br/s?k=Feij%C3%A3o+Carioca+Camil+1kg&i=grocery",
+      "at": "2026-11-10T18:58:53.735Z"
+    },
+    "magalu": {
+      "querySnapshot": "Feijão Carioca Camil 1kg",
+      "candidates": [],
+      "selected": null,
+      "manualPrice": null,
+      "error": "Busca automatizada bloqueada pelo firewall anti-bot (Erro 403) da loja. Clique para abrir a busca direta no navegador.",
+      "method": "bloqueado-waf",
+      "searchUrl": "https://www.magazineluiza.com.br/busca/Feij%C3%A3o%20Carioca%20Camil%201kg/",
+      "at": "2026-11-10T18:59:58.831Z"
+    },
+    "goodbom": {
+      "querySnapshot": "Feijão Carioca Camil 1kg",
+      "candidates": [
+        {
+          "title": "FEIJÃO CARIOCA OLIRON 1KG",
+          "price": 7.49,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/feijao-carioca-oliron-1kg",
+          "image": "https://phygital-files.mercafacil.com/good-bom/uploads/produto/feij_o_carioca_oliron_1kg_42b4283f-4a20-470b-a1d9-5b01fe6bc4bc.jpeg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "FEIJÃO CARIOCA GRÃO DE CAMPO 1KG",
+          "price": 8.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/feijao-carioca-grao-de-campo-1kg",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/feij_o_carioca_tipo_1_gr_o_de_campo_pacote_1kg_fe43d86d-acd9-4373-bbb4-78512e770115.png",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "FEIJÃO  CARIOCA BROTO LEGAL 1KG",
+          "price": 9.98,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/feijao-carioca-broto-legal-1kg",
+          "image": "https://phygital-files.mercafacil.com/good-bom/uploads/produto/feij_o_carioca_broto_legal_1kg_887ac044-1574-4d98-a205-832bcc7192bb.png",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "FEIJÃO CARIOCA PRÉ-COZIDO DE MARCHI 1,02KG",
+          "price": 18.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/feijao-carioca-cozde-marchi-102kg",
+          "image": "https://phygital-files.mercafacil.com/good-bom/uploads/produto/feij_o_carioca_pr_cozido_de_marchi_1_02kg_fceba0a8-09c3-4ec7-bde5-5ffdc0a4a02c.jpeg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "FEIJÃO  PRONTO CARIOCA COZIDO CAMIL 380G",
+          "price": 8.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/feijao-pronto-carioca-cozido-camil-380g",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/feij_o_carioca_pronto_com_tempero_camil_caixa_380g_93458570-96e9-494a-a1ff-da90a5755761.png",
+          "score": 0.76,
+          "matchType": "similar",
+          "similarReason": "Similar (outro tamanho/embalagem)"
+        },
+        {
+          "title": "FEIJÃO CARIOCA VAPZA SÓ AQUECER 200G",
+          "price": 8.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/feijao-carioca-vapza-so-aquecer-200g",
+          "image": "https://phygital-files.mercafacil.com/good-bom/uploads/produto/feij_o_carioca_vapza_s_aquecer_200g_3d7f9c40-ed5e-4f27-a901-e3bdf7914024.jpeg",
+          "score": 0.66,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca, outro tamanho/embalagem)"
+        },
+        {
+          "title": "FEIJÃO  RAJADO CAMIL 500G",
+          "price": 11.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/feijao-rajado-camil-500g",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/feij_o_rajado_tipo_1_camil_pacote_500g_2a6da318-b900-4d54-b799-e7c1e2a5645b.png",
+          "score": 0.51,
+          "matchType": "similar",
+          "similarReason": "Similar (outro tamanho/embalagem)"
+        },
+        {
+          "title": "FEIJÃO  RAJADO BROTO LEGAL 500G",
+          "price": 5.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/feijao-rajado-broto-legal-500g",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/feij_o_rajado_tipo_1_broto_legal_pacote_500g_cb65201f-ced7-4e74-8e6e-3da39213b346.png",
+          "score": 0.41,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca, outro tamanho/embalagem)"
+        }
+      ],
+      "selected": 0,
+      "manualPrice": null,
+      "error": null,
+      "method": "Catálogo em tempo real GoodBom (preço real)",
+      "searchUrl": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/busca?q=Feij%C3%A3o%20Carioca%20Camil%201kg",
+      "at": "2026-11-10T19:00:25.288Z"
+    },
+    "arena": {
+      "querySnapshot": "Feijão Carioca Camil 1kg",
+      "candidates": [
+        {
+          "title": "Feijão Carioca Camil Pacote 1kg",
+          "price": 7.99,
+          "url": "https://www.arenaatacado.com.br/Feij%C3%A3o-Carioca-Camil-Pacote-1kg-672076.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dwc0311153/Produtos/672076-7896006744115-feijao carioca camil pacote 1kg-camil-1.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "Feijão Carioca Camil Pacote 1kg",
+          "price": 8.39,
+          "url": "https://www.arenaatacado.com.br/Feij%C3%A3o-Carioca-Camil-Pacote-1kg-672076.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dwc0311153/Produtos/672076-7896006744115-feijao carioca camil pacote 1kg-camil-1.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "Feijão Carioca Du Divino 1kg",
+          "price": 6.99,
+          "url": "https://www.arenaatacado.com.br/Feij%C3%A3o-Carioca-Du-Divino-1kg-819441.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw54af8a48/Produtos/819441-7898916153049-feijao carioca du divino 1kg-du divino-1.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Feijão Carioca Puro E Nobre Pacote 1 Kg",
+          "price": 7.49,
+          "url": "https://www.arenaatacado.com.br/Feij%C3%A3o-Carioca-Puro-E-Nobre-Pacote-1-Kg-540170.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw9619fe51/Produtos/540170-7898014490855-feijao carioca puro e nobre pacote 1 kg-puro e nobre-1.jpeg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Feijão Carioca Grão De Campo 1kg",
+          "price": 8.39,
+          "url": "https://www.arenaatacado.com.br/Feij%C3%A3o-Carioca-Gr%C3%A3o-De-Campo-1kg-80136.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw99a18466/Produtos/80136-7896200115353-feijao carioca grao de campo 1kg-grao de campo-1.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Feijão Carioca Pantera 1kg",
+          "price": 8.99,
+          "url": "https://www.arenaatacado.com.br/Feij%C3%A3o-Carioca-Pantera-1kg-819450.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw779257ac/Produtos/819450-7896070800014-feijao carioca pantera 1kg-pantera-1.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Feijão Carioca Broto Legal Pacote 1kg",
+          "price": 9.39,
+          "url": "https://www.arenaatacado.com.br/Feij%C3%A3o-Carioca-Broto-Legal-Pacote-1kg-59307.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw59f9e6d9/Produtos/59307-7896200115346-feijao carioca broto legal pacote 1 kg-broto legal-1.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        }
+      ],
+      "selected": 0,
+      "manualPrice": null,
+      "error": null,
+      "method": "API oficial Arena Atacado (preço real)",
+      "searchUrl": "https://www.arenaatacado.com.br/on/demandware.store/Sites-Arena-Site/pt_BR/Search-Show?q=Feij%C3%A3o%20Carioca%20Camil%201kg",
+      "at": "2026-11-10T19:03:14.549Z"
+    }
+  },
+  "item-cafe": {
+    "mercadolivre": {
+      "querySnapshot": "Café Pilão Tradicional 500g",
+      "candidates": [],
+      "selected": null,
+      "manualPrice": null,
+      "error": "Esta loja exige login na conta para exibir os preços da busca. Conecte sua conta na Etapa 1.",
+      "method": "bloqueado-login",
+      "searchUrl": "https://www.mercadolivre.com.br/gz/account-verification?go=https%3A%2F%2Flista.mercadolivre.com.br%2Fsupermercado%2FCaf%25C3%25A9%2520Pil%25C3%25A3o%2520Tradicional%2520500g&tid=ecf840d7-8a7c-4042-aaf0-a172574f74fd",
+      "at": "2026-11-10T18:58:20.031Z"
+    },
+    "amazon": {
+      "querySnapshot": "Café Pilão Tradicional 500g",
+      "candidates": [
+        {
+          "title": "Cafe Torrado e Moido Tradicional Almofada 500G Pilão",
+          "price": 29.99,
+          "url": "https://www.amazon.com.br/Torrado-Mo%C3%ADdo-Tradicional-Almofada-Pil%C3%A3o/dp/B07YCNZBRY/ref=sr_1_8?dib=eyJ2IjoiMSJ9.pF2-X4ZxXZolsdHUYASPfpkbWBny2mRvRyFpjUODyDelUK1BD1qENUv1fkVD4xCEdlQXW5UVZjco9TnqFmwYm_pCLP-_ps6PvHO_dA4TLUUB205NdMp6_sr6McMSxztqXsdJuiYQHRrWiBcV7A5H6Dmb6MqkogwgAdxHe8MVA-UnKQrwEPTex0cH-wX5PyHuSDNWM1fO9X4ogvYX-ibGXM0EQSLbICE2BsCLeqZNjrwtTd5dkwy7yTQ-GzUlZK9oGKQH8tnbcrKVl_OX5LImboe8FNGW9cOUIiptqeexSa0.ACUhNr-lhteAO66jQMpGEuoIx_VQVl8NO-kKhouADvs&dib_tag=se&keywords=Caf%C3%A9+Pil%C3%A3o+Tradicional+500g&qid=1794337135&s=grocery&sr=1-8",
+          "image": "https://m.media-amazon.com/images/I/61D1Jg6YpHL._AC_UL320_.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "Cápsula Café Pilão Tradicional",
+          "price": 14.89,
+          "url": "https://www.amazon.com.br/C%C3%A1psulas-Caf%C3%A9-Espresso-Pil%C3%A3o-com/dp/B07X94QLC3/ref=sr_1_24?dib=eyJ2IjoiMSJ9.pF2-X4ZxXZolsdHUYASPfpkbWBny2mRvRyFpjUODyDelUK1BD1qENUv1fkVD4xCEdlQXW5UVZjco9TnqFmwYm_pCLP-_ps6PvHO_dA4TLUUB205NdMp6_sr6McMSxztqXsdJuiYQHRrWiBcV7A5H6Dmb6MqkogwgAdxHe8MVA-UnKQrwEPTex0cH-wX5PyHuSDNWM1fO9X4ogvYX-ibGXM0EQSLbICE2BsCLeqZNjrwtTd5dkwy7yTQ-GzUlZK9oGKQH8tnbcrKVl_OX5LImboe8FNGW9cOUIiptqeexSa0.ACUhNr-lhteAO66jQMpGEuoIx_VQVl8NO-kKhouADvs&dib_tag=se&keywords=Caf%C3%A9+Pil%C3%A3o+Tradicional+500g&qid=1794337135&s=grocery&sr=1-24",
+          "image": "https://m.media-amazon.com/images/I/61EV+tTxOPL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outro tamanho/embalagem)"
+        },
+        {
+          "title": "Café Pilão Torrado e Moído Tradicional Sachê",
+          "price": 16.05,
+          "url": "https://www.amazon.com.br/Torrado-Mo%C3%ADdo-Tradicional-Pil%C3%A3o-Fecha/dp/B07Y4Z89JT/ref=sr_1_25?dib=eyJ2IjoiMSJ9.pF2-X4ZxXZolsdHUYASPfpkbWBny2mRvRyFpjUODyDelUK1BD1qENUv1fkVD4xCEdlQXW5UVZjco9TnqFmwYm_pCLP-_ps6PvHO_dA4TLUUB205NdMp6_sr6McMSxztqXsdJuiYQHRrWiBcV7A5H6Dmb6MqkogwgAdxHe8MVA-UnKQrwEPTex0cH-wX5PyHuSDNWM1fO9X4ogvYX-ibGXM0EQSLbICE2BsCLeqZNjrwtTd5dkwy7yTQ-GzUlZK9oGKQH8tnbcrKVl_OX5LImboe8FNGW9cOUIiptqeexSa0.ACUhNr-lhteAO66jQMpGEuoIx_VQVl8NO-kKhouADvs&dib_tag=se&keywords=Caf%C3%A9+Pil%C3%A3o+Tradicional+500g&qid=1794337135&s=grocery&sr=1-25",
+          "image": "https://m.media-amazon.com/images/I/71DgnsIgo1L._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outro tamanho/embalagem)"
+        },
+        {
+          "title": "Café Pilão Torrado e Moído Tradicional",
+          "price": 16.49,
+          "url": "https://www.amazon.com.br/sspa/click?ie=UTF8&spc=MTo1Mjc3NjY3OTYyNDY3NDM4OjE3OTQzMzcxMzU6c3BfYXRmOjMwMTQ5MzkxNTQxODMwMjo6MDo6&url=%2FPil%25C3%25A3o-Torrado-Mo%25C3%25ADdo-Tradicional-V%25C3%25A1cuo%2Fdp%2FB0044BW6U8%2Fref%3Dsr_1_2_sspa%3Fdib%3DeyJ2IjoiMSJ9.pF2-X4ZxXZolsdHUYASPfpkbWBny2mRvRyFpjUODyDelUK1BD1qENUv1fkVD4xCEdlQXW5UVZjco9TnqFmwYm_pCLP-_ps6PvHO_dA4TLUUB205NdMp6_sr6McMSxztqXsdJuiYQHRrWiBcV7A5H6Dmb6MqkogwgAdxHe8MVA-UnKQrwEPTex0cH-wX5PyHuSDNWM1fO9X4ogvYX-ibGXM0EQSLbICE2BsCLeqZNjrwtTd5dkwy7yTQ-GzUlZK9oGKQH8tnbcrKVl_OX5LImboe8FNGW9cOUIiptqeexSa0.ACUhNr-lhteAO66jQMpGEuoIx_VQVl8NO-kKhouADvs%26dib_tag%3Dse%26keywords%3DCaf%25C3%25A9%2BPil%25C3%25A3o%2BTradicional%2B500g%26qid%3D1794337135%26s%3Dgrocery%26sr%3D1-2-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1",
+          "image": "https://m.media-amazon.com/images/I/71-SvfLZ6NL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outro tamanho/embalagem)"
+        },
+        {
+          "title": "Café Tradicional Melitta Vácuo 500g",
+          "price": 24.6,
+          "url": "https://www.amazon.com.br/Caf%C3%A9-Tradicional-Melitta-V%C3%A1cuo-500g/dp/B0034W0X0I/ref=sr_1_10?dib=eyJ2IjoiMSJ9.pF2-X4ZxXZolsdHUYASPfpkbWBny2mRvRyFpjUODyDelUK1BD1qENUv1fkVD4xCEdlQXW5UVZjco9TnqFmwYm_pCLP-_ps6PvHO_dA4TLUUB205NdMp6_sr6McMSxztqXsdJuiYQHRrWiBcV7A5H6Dmb6MqkogwgAdxHe8MVA-UnKQrwEPTex0cH-wX5PyHuSDNWM1fO9X4ogvYX-ibGXM0EQSLbICE2BsCLeqZNjrwtTd5dkwy7yTQ-GzUlZK9oGKQH8tnbcrKVl_OX5LImboe8FNGW9cOUIiptqeexSa0.ACUhNr-lhteAO66jQMpGEuoIx_VQVl8NO-kKhouADvs&dib_tag=se&keywords=Caf%C3%A9+Pil%C3%A3o+Tradicional+500g&qid=1794337135&s=grocery&sr=1-10",
+          "image": "https://m.media-amazon.com/images/I/71v0iQ95N-L._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Café Tradicional Melitta Pouch 500g",
+          "price": 24.6,
+          "url": "https://www.amazon.com.br/Caf%C3%A9-Tradicional-Melitta-Pouch-500g/dp/B01HBW0Q4E/ref=sr_1_18?dib=eyJ2IjoiMSJ9.pF2-X4ZxXZolsdHUYASPfpkbWBny2mRvRyFpjUODyDelUK1BD1qENUv1fkVD4xCEdlQXW5UVZjco9TnqFmwYm_pCLP-_ps6PvHO_dA4TLUUB205NdMp6_sr6McMSxztqXsdJuiYQHRrWiBcV7A5H6Dmb6MqkogwgAdxHe8MVA-UnKQrwEPTex0cH-wX5PyHuSDNWM1fO9X4ogvYX-ibGXM0EQSLbICE2BsCLeqZNjrwtTd5dkwy7yTQ-GzUlZK9oGKQH8tnbcrKVl_OX5LImboe8FNGW9cOUIiptqeexSa0.ACUhNr-lhteAO66jQMpGEuoIx_VQVl8NO-kKhouADvs&dib_tag=se&keywords=Caf%C3%A9+Pil%C3%A3o+Tradicional+500g&qid=1794337135&s=grocery&sr=1-18",
+          "image": "https://m.media-amazon.com/images/I/718-tyhB6vL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Café Pilão Torrado e Moído Tradicional",
+          "price": 24.89,
+          "url": "https://www.amazon.com.br/sspa/click?ie=UTF8&spc=MTo1Mjc3NjY3OTYyNDY3NDM4OjE3OTQzMzcxMzU6c3BfYXRmOjMwMTQ5MzkxNTQxODAwMjo6MDo6&url=%2FTorrado-Mo%25C3%25ADdo-Tradicional-Pil%25C3%25A3o-Fecha%2Fdp%2FB07Y4XP8HQ%2Fref%3Dsr_1_1_sspa%3Fdib%3DeyJ2IjoiMSJ9.pF2-X4ZxXZolsdHUYASPfpkbWBny2mRvRyFpjUODyDelUK1BD1qENUv1fkVD4xCEdlQXW5UVZjco9TnqFmwYm_pCLP-_ps6PvHO_dA4TLUUB205NdMp6_sr6McMSxztqXsdJuiYQHRrWiBcV7A5H6Dmb6MqkogwgAdxHe8MVA-UnKQrwEPTex0cH-wX5PyHuSDNWM1fO9X4ogvYX-ibGXM0EQSLbICE2BsCLeqZNjrwtTd5dkwy7yTQ-GzUlZK9oGKQH8tnbcrKVl_OX5LImboe8FNGW9cOUIiptqeexSa0.ACUhNr-lhteAO66jQMpGEuoIx_VQVl8NO-kKhouADvs%26dib_tag%3Dse%26keywords%3DCaf%25C3%25A9%2BPil%25C3%25A3o%2BTradicional%2B500g%26qid%3D1794337135%26s%3Dgrocery%26sr%3D1-1-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1",
+          "image": "https://m.media-amazon.com/images/I/91zzps9E3TL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outro tamanho/embalagem)"
+        },
+        {
+          "title": "3 Corações Café Torrado E Moído Tradicional Pacote 500G",
+          "price": 31.89,
+          "url": "https://www.amazon.com.br/Torrado-Mo%C3%ADdo-Tradicional-Pacote-Cora%C3%A7%C3%B5es/dp/B07CZZLJQ8/ref=sr_1_29?dib=eyJ2IjoiMSJ9.pF2-X4ZxXZolsdHUYASPfpkbWBny2mRvRyFpjUODyDelUK1BD1qENUv1fkVD4xCEdlQXW5UVZjco9TnqFmwYm_pCLP-_ps6PvHO_dA4TLUUB205NdMp6_sr6McMSxztqXsdJuiYQHRrWiBcV7A5H6Dmb6MqkogwgAdxHe8MVA-UnKQrwEPTex0cH-wX5PyHuSDNWM1fO9X4ogvYX-ibGXM0EQSLbICE2BsCLeqZNjrwtTd5dkwy7yTQ-GzUlZK9oGKQH8tnbcrKVl_OX5LImboe8FNGW9cOUIiptqeexSa0.ACUhNr-lhteAO66jQMpGEuoIx_VQVl8NO-kKhouADvs&dib_tag=se&keywords=Caf%C3%A9+Pil%C3%A3o+Tradicional+500g&qid=1794337135&s=grocery&sr=1-29",
+          "image": "https://m.media-amazon.com/images/I/61ybzna4AML._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        }
+      ],
+      "selected": 0,
+      "manualPrice": null,
+      "error": null,
+      "method": "seletores da loja",
+      "searchUrl": "https://www.amazon.com.br/s?k=Caf%C3%A9+Pil%C3%A3o+Tradicional+500g&i=grocery",
+      "at": "2026-11-10T18:59:03.400Z"
+    },
+    "magalu": {
+      "querySnapshot": "Café Pilão Tradicional 500g",
+      "candidates": [],
+      "selected": null,
+      "manualPrice": null,
+      "error": "Busca automatizada bloqueada pelo firewall anti-bot (Erro 403) da loja. Clique para abrir a busca direta no navegador.",
+      "method": "bloqueado-waf",
+      "searchUrl": "https://www.magazineluiza.com.br/busca/Caf%C3%A9%20Pil%C3%A3o%20Tradicional%20500g/",
+      "at": "2026-11-10T19:00:00.388Z"
+    },
+    "goodbom": {
+      "querySnapshot": "Café Pilão Tradicional 500g",
+      "candidates": [
+        {
+          "title": "CAFÉ PILÃO TRADICIONAL 500G",
+          "price": 22.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/cafe-pilao-trad500g",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/caf_em_p_pil_o_tradicional_pouch_500_g_e2e40c8b-510a-4df2-a1a8-23f4e9ba232f.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "CAFÉ PILÃO TRADICIONAL VÁCUO 500G",
+          "price": 22.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/cafe-vacpilao-trad500g",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/caf_torrado_e_mo_do_a_v_cuo_tradicional_pil_o_pacote_500g_39acb4d5-f3c2-48ff-8ba0-64ea6212276b.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "CAFÉ  TRADICIONAL PILÃO 500G",
+          "price": 22.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/cafe-tradpilao-500g",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/caf_pil_o_tradicional_almofada_500g_4bb0919d-54ee-402b-a194-0061932140f2.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "CAFÉ TRADICIONAL SÃO JOAQUIM 500G",
+          "price": 18.9,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/cafe-tradsao-joaquim-500g",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/caf_torrado_e_mo_do_tradicional_s_o_joaquim_pacote_500g_dc622653-2d2f-4353-928f-39fb0fc117bf.png",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "CAFÉ A VACUO SÃO JOAQUIM TRADICIONAL 500G",
+          "price": 18.9,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/cafe-vac-sao-joaquim-trad500g",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/caf_torrado_e_mo_do_a_v_cuo_tradicional_s_o_joaquim_pacote_500g_c6cd006a-5859-4d95-a23f-2512e97cd74f.png",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "CAFÉ  TRADICIONAL MORAES 500G",
+          "price": 19.89,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/cafe-tradmoraes-500g",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/caf_torrado_e_mo_do_tradicional_moraes_pacote_500g_39b54e98-28e9-4f9d-843f-b858b3241524.png",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "CAFÉ TRADICIONAL MORAES EXTRA FORTE 500G",
+          "price": 19.89,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/cafe-tradmoraes-eforte-500g",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/caf_torrado_e_mo_do_extraforte_moraes_pacote_500g_abbc5b58-bfab-4a9c-be2a-9b2f5c890e98.png",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "CAFÉ TRADICIONAL CABOCLO 500G",
+          "price": 19.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/cafe-tradcaboclo-500g",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/caf_caboclo_tradicional_almofada_500g_a9024075-81b8-499f-8a0a-1ef801ccb42d.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        }
+      ],
+      "selected": 0,
+      "manualPrice": null,
+      "error": null,
+      "method": "Catálogo em tempo real GoodBom (preço real)",
+      "searchUrl": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/busca?q=Caf%C3%A9%20Pil%C3%A3o%20Tradicional%20500g",
+      "at": "2026-11-10T19:00:29.838Z"
+    },
+    "arena": {
+      "querySnapshot": "Café Pilão Tradicional 500g",
+      "candidates": [
+        {
+          "title": "Café Moraes Tradicional Almofada 500g",
+          "price": 19.88,
+          "url": "https://www.arenaatacado.com.br/Caf%C3%A9-Moraes-Tradicional-Almofada-500g-14495.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw0e9df990/Produtos/14495-7896235100027-cafe moraes tradicional almofada 500g-moraes-1.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Café Canecão Tradicional Almofada 500g",
+          "price": 21.9,
+          "url": "https://www.arenaatacado.com.br/Caf%C3%A9-Canec%C3%A3o-Tradicional-Almofada-500g-22122.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw519d173d/Produtos/22122-7896014500024-cafe canecao tradicional almofada 500g-canecao-1.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Café União Tradicional Pouch 500g",
+          "price": 22.89,
+          "url": "https://www.arenaatacado.com.br/Caf%C3%A9-Uni%C3%A3o-Tradicional-Pouch-500g-932515.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw7498eda3/Produtos/932515-7891910030347-cafe uniao tradicional pouch 500g-uniao-1.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Café Brasileiro Tradicional Pouch 500g",
+          "price": 23.89,
+          "url": "https://www.arenaatacado.com.br/Caf%C3%A9-Brasileiro-Tradicional-Pouch-500g-870307.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dwbb9d4b7d/Produtos/870307-7891018001386-cafe brasileiro tradiciona pouch 500g-brasileiro-1.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Café Melitta Tradicional Pouch 500g",
+          "price": 24.9,
+          "url": "https://www.arenaatacado.com.br/Caf%C3%A9-Melitta-Tradicional-Pouch-500g-658863.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dwcfe24795/Produtos/658863-7891021005043-cafe melitta tradicional pouch 500g-melitta-1.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        }
+      ],
+      "selected": 0,
+      "manualPrice": null,
+      "error": null,
+      "method": "API oficial Arena Atacado (preço real)",
+      "searchUrl": "https://www.arenaatacado.com.br/on/demandware.store/Sites-Arena-Site/pt_BR/Search-Show?q=Caf%C3%A9%20Pil%C3%A3o%20Tradicional%20500g",
+      "at": "2026-11-10T19:03:16.173Z"
+    }
+  },
+  "item-leite": {
+    "mercadolivre": {
+      "querySnapshot": "Leite Integral Italac 1L",
+      "candidates": [],
+      "selected": null,
+      "manualPrice": null,
+      "error": "Esta loja exige login na conta para exibir os preços da busca. Conecte sua conta na Etapa 1.",
+      "method": "bloqueado-login",
+      "searchUrl": "https://www.mercadolivre.com.br/gz/account-verification?go=https%3A%2F%2Flista.mercadolivre.com.br%2Fsupermercado%2FLeite%2520Integral%2520Italac%25201L&tid=87d55ce2-b187-4b01-bc53-3f0b33dd8da5",
+      "at": "2026-11-10T18:58:23.108Z"
+    },
+    "amazon": {
+      "querySnapshot": "Leite Integral Italac 1L",
+      "candidates": [
+        {
+          "title": "Leite UHT Integral Betânia, 1L",
+          "price": 7.89,
+          "url": "https://www.amazon.com.br/Leite-UHT-Integral-Edge-Bet%C3%A2nia/dp/B07RWDQWZM/ref=sr_1_9?dib=eyJ2IjoiMSJ9.npItsU6DBl_I_-IaJ6fyy_j2MlDEN-NinV4cKS6aGgTXRFdlAY-6ir0QjAnFO7-Lwcl6ArcMfCz1wE2tjNttGk8XpAUy-PMyXfm57-lBOaAa5TtJWAOfyAJr4xzRPRsJS_UYKZQHwguGopz19rrX1oGkLyHPVoXC0cD-rZnHYbngRfy2m8_7GY3XB9j_aOIJFGIWkqmEOHpLeO_ISFOWg_FtTnnBcFeLTeSD0gKONcOQMp0OUJc3-oanyttg728djr3I4EJ7C6LLS3bWUdoEp5wEyZRnuRX4O-WczppEYo8.DAdsOnxNr6F6LKLAgM2tBjnRaqamtPf3aswovgZmKtg&dib_tag=se&keywords=Leite+Integral+Italac+1L&qid=1794337576&s=grocery&sr=1-9",
+          "image": "https://m.media-amazon.com/images/I/71AyTKyfZCL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Leite UHT Integral Camponesa, 1l",
+          "price": 7.99,
+          "url": "https://www.amazon.com.br/Leite-Camponesa-Integral-1-L/dp/B09VYF7G5B/ref=sr_1_8?dib=eyJ2IjoiMSJ9.npItsU6DBl_I_-IaJ6fyy_j2MlDEN-NinV4cKS6aGgTXRFdlAY-6ir0QjAnFO7-Lwcl6ArcMfCz1wE2tjNttGk8XpAUy-PMyXfm57-lBOaAa5TtJWAOfyAJr4xzRPRsJS_UYKZQHwguGopz19rrX1oGkLyHPVoXC0cD-rZnHYbngRfy2m8_7GY3XB9j_aOIJFGIWkqmEOHpLeO_ISFOWg_FtTnnBcFeLTeSD0gKONcOQMp0OUJc3-oanyttg728djr3I4EJ7C6LLS3bWUdoEp5wEyZRnuRX4O-WczppEYo8.DAdsOnxNr6F6LKLAgM2tBjnRaqamtPf3aswovgZmKtg&dib_tag=se&keywords=Leite+Integral+Italac+1L&qid=1794337576&s=grocery&sr=1-8",
+          "image": "https://m.media-amazon.com/images/I/71tEMZWXNfL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "LEITE UHT NATURAL MILK ITAMBÉ INTEGRAL 1L",
+          "price": 19,
+          "url": "https://www.amazon.com.br/LEITE-NATURAL-MILK-ITAMB%C3%89-INTEGRAL/dp/B09KXK3RJ3/ref=sr_1_6?dib=eyJ2IjoiMSJ9.npItsU6DBl_I_-IaJ6fyy_j2MlDEN-NinV4cKS6aGgTXRFdlAY-6ir0QjAnFO7-Lwcl6ArcMfCz1wE2tjNttGk8XpAUy-PMyXfm57-lBOaAa5TtJWAOfyAJr4xzRPRsJS_UYKZQHwguGopz19rrX1oGkLyHPVoXC0cD-rZnHYbngRfy2m8_7GY3XB9j_aOIJFGIWkqmEOHpLeO_ISFOWg_FtTnnBcFeLTeSD0gKONcOQMp0OUJc3-oanyttg728djr3I4EJ7C6LLS3bWUdoEp5wEyZRnuRX4O-WczppEYo8.DAdsOnxNr6F6LKLAgM2tBjnRaqamtPf3aswovgZmKtg&dib_tag=se&keywords=Leite+Integral+Italac+1L&qid=1794337576&s=grocery&sr=1-6",
+          "image": "https://m.media-amazon.com/images/I/51nUkL1NkbL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Leite Leitissimo Integral 1L",
+          "price": 20.98,
+          "url": "https://www.amazon.com.br/Leit%C3%ADssimo-Leite-Leitissimo-Integral-1L/dp/B07Y2FKKGF/ref=sr_1_4?dib=eyJ2IjoiMSJ9.npItsU6DBl_I_-IaJ6fyy_j2MlDEN-NinV4cKS6aGgTXRFdlAY-6ir0QjAnFO7-Lwcl6ArcMfCz1wE2tjNttGk8XpAUy-PMyXfm57-lBOaAa5TtJWAOfyAJr4xzRPRsJS_UYKZQHwguGopz19rrX1oGkLyHPVoXC0cD-rZnHYbngRfy2m8_7GY3XB9j_aOIJFGIWkqmEOHpLeO_ISFOWg_FtTnnBcFeLTeSD0gKONcOQMp0OUJc3-oanyttg728djr3I4EJ7C6LLS3bWUdoEp5wEyZRnuRX4O-WczppEYo8.DAdsOnxNr6F6LKLAgM2tBjnRaqamtPf3aswovgZmKtg&dib_tag=se&keywords=Leite+Integral+Italac+1L&qid=1794337576&s=grocery&sr=1-4",
+          "image": "https://m.media-amazon.com/images/I/51Cah-69HCL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Leite Zero Lactose Integral Ninho 1L",
+          "price": 21.74,
+          "url": "https://www.amazon.com.br/sspa/click?ie=UTF8&spc=MToyOTcyNTY5NzQwMzg0OTAxOjE3OTQzMzc1NzY6c3BfbXRmOjMwMTU5NTQ5MjM1NjgwMjo6MDo6&url=%2FLeite-Zero-Lactose-Integral-Ninho%2Fdp%2FB081QW4D42%2Fref%3Dsr_1_13_sspa%3Fdib%3DeyJ2IjoiMSJ9.npItsU6DBl_I_-IaJ6fyy_j2MlDEN-NinV4cKS6aGgTXRFdlAY-6ir0QjAnFO7-Lwcl6ArcMfCz1wE2tjNttGk8XpAUy-PMyXfm57-lBOaAa5TtJWAOfyAJr4xzRPRsJS_UYKZQHwguGopz19rrX1oGkLyHPVoXC0cD-rZnHYbngRfy2m8_7GY3XB9j_aOIJFGIWkqmEOHpLeO_ISFOWg_FtTnnBcFeLTeSD0gKONcOQMp0OUJc3-oanyttg728djr3I4EJ7C6LLS3bWUdoEp5wEyZRnuRX4O-WczppEYo8.DAdsOnxNr6F6LKLAgM2tBjnRaqamtPf3aswovgZmKtg%26dib_tag%3Dse%26keywords%3DLeite%2BIntegral%2BItalac%2B1L%26qid%3D1794337576%26s%3Dgrocery%26sr%3D1-13-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1",
+          "image": "https://m.media-amazon.com/images/I/614Wonc9P3L._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Leite UHT Integral Italac, Zero Lactose, 1L",
+          "price": 22.9,
+          "url": "https://www.amazon.com.br/Leite-Integral-Zero-Lactose-Italac/dp/B09C84GY6C/ref=sr_1_5?dib=eyJ2IjoiMSJ9.npItsU6DBl_I_-IaJ6fyy_j2MlDEN-NinV4cKS6aGgTXRFdlAY-6ir0QjAnFO7-Lwcl6ArcMfCz1wE2tjNttGk8XpAUy-PMyXfm57-lBOaAa5TtJWAOfyAJr4xzRPRsJS_UYKZQHwguGopz19rrX1oGkLyHPVoXC0cD-rZnHYbngRfy2m8_7GY3XB9j_aOIJFGIWkqmEOHpLeO_ISFOWg_FtTnnBcFeLTeSD0gKONcOQMp0OUJc3-oanyttg728djr3I4EJ7C6LLS3bWUdoEp5wEyZRnuRX4O-WczppEYo8.DAdsOnxNr6F6LKLAgM2tBjnRaqamtPf3aswovgZmKtg&dib_tag=se&keywords=Leite+Integral+Italac+1L&qid=1794337576&s=grocery&sr=1-5",
+          "image": "https://m.media-amazon.com/images/I/61yFcRuVkuL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Leite em Pó Integral Italac 400g",
+          "price": 25.99,
+          "url": "https://www.amazon.com.br/Leite-P%C3%B3-Integral-Italac-400g/dp/B08HFS98GT/ref=sr_1_24?dib=eyJ2IjoiMSJ9.npItsU6DBl_I_-IaJ6fyy_j2MlDEN-NinV4cKS6aGgTXRFdlAY-6ir0QjAnFO7-Lwcl6ArcMfCz1wE2tjNttGk8XpAUy-PMyXfm57-lBOaAa5TtJWAOfyAJr4xzRPRsJS_UYKZQHwguGopz19rrX1oGkLyHPVoXC0cD-rZnHYbngRfy2m8_7GY3XB9j_aOIJFGIWkqmEOHpLeO_ISFOWg_FtTnnBcFeLTeSD0gKONcOQMp0OUJc3-oanyttg728djr3I4EJ7C6LLS3bWUdoEp5wEyZRnuRX4O-WczppEYo8.DAdsOnxNr6F6LKLAgM2tBjnRaqamtPf3aswovgZmKtg&dib_tag=se&keywords=Leite+Integral+Italac+1L&qid=1794337576&s=grocery&sr=1-24",
+          "image": "https://m.media-amazon.com/images/I/71x4uF-F9pL._AC_UL320_.jpg",
+          "score": 0.68,
+          "matchType": "similar",
+          "similarReason": "Similar (outro tamanho/embalagem, variação similar)"
+        },
+        {
+          "title": "Leite Vegetal de Amêndoas Barista Sem Açúcar Natuterra 1L",
+          "price": 18.99,
+          "url": "https://www.amazon.com.br/sspa/click?ie=UTF8&spc=MToyOTcyNTY5NzQwMzg0OTAxOjE3OTQzMzc1NzY6c3BfYnRmOjMwMTE3MTk2MzU5OTYwMjo6MDo6&url=%2FVegetal-Am%25C3%25AAndoas-Natuterra-am%25C3%25AAndoas-colesterol%2Fdp%2FB0D31Y8LZV%2Fref%3Dsr_1_33_sspa%3Fdib%3DeyJ2IjoiMSJ9.npItsU6DBl_I_-IaJ6fyy_j2MlDEN-NinV4cKS6aGgTXRFdlAY-6ir0QjAnFO7-Lwcl6ArcMfCz1wE2tjNttGk8XpAUy-PMyXfm57-lBOaAa5TtJWAOfyAJr4xzRPRsJS_UYKZQHwguGopz19rrX1oGkLyHPVoXC0cD-rZnHYbngRfy2m8_7GY3XB9j_aOIJFGIWkqmEOHpLeO_ISFOWg_FtTnnBcFeLTeSD0gKONcOQMp0OUJc3-oanyttg728djr3I4EJ7C6LLS3bWUdoEp5wEyZRnuRX4O-WczppEYo8.DAdsOnxNr6F6LKLAgM2tBjnRaqamtPf3aswovgZmKtg%26dib_tag%3Dse%26keywords%3DLeite%2BIntegral%2BItalac%2B1L%26qid%3D1794337576%26s%3Dgrocery%26sr%3D1-33-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1",
+          "image": "https://m.media-amazon.com/images/I/716o39UdJ+L._AC_UL320_.jpg",
+          "score": 0.63,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        }
+      ],
+      "selected": 0,
+      "manualPrice": null,
+      "error": null,
+      "method": "seletores da loja",
+      "searchUrl": "https://www.amazon.com.br/s?k=Leite+Integral+Italac+1L&i=grocery",
+      "at": "2026-11-10T19:06:24.125Z"
+    },
+    "magalu": {
+      "querySnapshot": "Leite Integral Italac 1L",
+      "candidates": [],
+      "selected": null,
+      "manualPrice": null,
+      "error": "Busca automatizada bloqueada pelo firewall anti-bot (Erro 403) da loja. Clique para abrir a busca direta no navegador.",
+      "method": "bloqueado-waf",
+      "searchUrl": "https://www.magazineluiza.com.br/busca/Leite%20Integral%20Italac%201L/",
+      "at": "2026-11-10T19:00:01.956Z"
+    },
+    "goodbom": {
+      "querySnapshot": "Leite Integral Italac 1L",
+      "candidates": [
+        {
+          "title": "LEITE UHT EDGE ITALAC INTEGRAL 1L",
+          "price": 5.69,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/leite-uht-edge-italac-integral-1l",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/leite_uht_integral_italac_1l_c13054e3-3221-4823-95b1-40c7f3a20915.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "LEITE UHT LIDER INTEGRAL 1L",
+          "price": 4.69,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/leite-uht-lider-integral-1l",
+          "image": "https://phygital-files.mercafacil.com/good-bom/uploads/produto/leite_uht_lider_integral_1l_f6181be7-a9ce-4c2f-9ba6-97ae27357e25.jpeg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "LEITE UHT SHEFA INTEGRAL 1L",
+          "price": 5.29,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/leite-uht-shefa-integral-1l",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/leite_uht_integral_shefa_caixa_1l_e2135652-a143-4580-acdd-20fcecacb31f.png",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "LEITE UHT EDGE PIRACANJUBA INTEGRAL 1L",
+          "price": 5.49,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/leite-uht-edge-piracanjuba-integral-1l",
+          "image": "https://phygital-files.mercafacil.com/good-bom/uploads/produto/leite_uht_edge_piracanjuba_integral_1l_e66668e0-8c8a-45b5-935f-66dbcb51f3b6.png",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "LEITE UHT SHEFA GARRAFA INTEGRAL 1L",
+          "price": 5.79,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/leite-uht-shefa-gfaintegral-1l",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/leite_uht_integral_shefa_garrafa_1l_c976b747-2a1b-42d1-a4d2-23840e81531f.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "LEITE UHT ZERO LACTOSE INTEGRAL JUSSARA 1L",
+          "price": 6.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/leite-uht-zero-lactose-integjussara-1l",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/leite_integral_zero_lactose_jussara_garrafa_1l_6524e8af-3151-4efb-a019-cb2ab986d2f9.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "LEITE UHT NINHO INTEGRAL 1L",
+          "price": 7.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/leite-uht-ninho-integral-1l",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/leite_ninho_integral_1l_8632041a-e75b-4520-85bb-bd3055893429.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "LEITE TIPO A XANDÔ INTEGRAL GARRAFA 1L",
+          "price": 9.49,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/leite-xando-integral-gfa1l",
+          "image": "https://phygital-files.mercafacil.com/good-bom/uploads/produto/leite_tipo_a_xand_integral_garrafa_1l_37668b03-7213-4618-8c71-a9b891ffb097.png",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        }
+      ],
+      "selected": 0,
+      "manualPrice": null,
+      "error": null,
+      "method": "Catálogo em tempo real GoodBom (preço real)",
+      "searchUrl": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/busca?q=Leite%20Integral%20Italac%201L",
+      "at": "2026-11-10T19:00:33.415Z"
+    },
+    "arena": {
+      "querySnapshot": "Leite Integral Italac 1L",
+      "candidates": [
+        {
+          "title": "Leite Longa Vida Italac Integral 1l",
+          "price": 5.55,
+          "url": "https://www.arenaatacado.com.br/Leite-Longa-Vida-Italac-Integral-1l-604348.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dwfe3c3a4f/Produtos/604348-7898080640611-leite longa vida italac integral 1l-italac-1.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "Leite Longa Vida Lider Integral 1l",
+          "price": 5.19,
+          "url": "https://www.arenaatacado.com.br/Leite-Longa-Vida-Lider-Integral-1l-63894.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dwb747c333/Produtos/63894-7896569405003-leite longa vida lider integral 1l-lider-1.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Leite Longa Vida Garrafa Shefa Integral 1l",
+          "price": 5.49,
+          "url": "https://www.arenaatacado.com.br/Leite-Longa-Vida-Garrafa-Shefa-Integral-1l-489344.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dwc69f971d/Produtos/489344-7896185312396-leite longa vida garrafa shefa integral 1lt-shefa-1.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Leite Longa Vida Ninho Integral Edge 1l",
+          "price": 6.99,
+          "url": "https://www.arenaatacado.com.br/Leite-Longa-Vida-Ninho-Integral-Edge-1l-853631.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dwa22d3fcd/Produtos/853631-7898215157403-leite longa vida ninho integral edge 1l-ninho-1.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Leite Longa Vida Ninho Integral Zero Lactose Edge 1l",
+          "price": 7.79,
+          "url": "https://www.arenaatacado.com.br/Leite-Longa-Vida-Ninho-Integral-Zero-Lactose-Edge-1l-853585.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw8bb8a844/Produtos/853585-7898215157410-leite longa vida ninho integral zero lactose edge 1l-ninho-1.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        }
+      ],
+      "selected": 0,
+      "manualPrice": null,
+      "error": null,
+      "method": "API oficial Arena Atacado (preço real)",
+      "searchUrl": "https://www.arenaatacado.com.br/on/demandware.store/Sites-Arena-Site/pt_BR/Search-Show?q=Leite%20Integral%20Italac%201L",
+      "at": "2026-11-10T19:03:17.606Z"
+    }
+  },
+  "item-oleo": {
+    "mercadolivre": {
+      "querySnapshot": "Óleo de Soja Liza 900ml",
+      "candidates": [],
+      "selected": null,
+      "manualPrice": null,
+      "error": "Esta loja exige login na conta para exibir os preços da busca. Conecte sua conta na Etapa 1.",
+      "method": "bloqueado-login",
+      "searchUrl": "https://www.mercadolivre.com.br/gz/account-verification?go=https%3A%2F%2Flista.mercadolivre.com.br%2Fsupermercado%2F%25C3%2593leo%2520de%2520Soja%2520Liza%2520900ml&tid=212b61e5-4a56-4c53-b1ba-f1cee478b5f2",
+      "at": "2026-11-10T18:58:25.857Z"
+    },
+    "amazon": {
+      "querySnapshot": "Óleo de Soja Liza 900ml",
+      "candidates": [
+        {
+          "title": "ÓLEO DE SOJA VITALIV 900ML PET",
+          "price": 14.71,
+          "url": "https://www.amazon.com.br/%C3%93LEO-SOJA-VITALIV-900ML-PET/dp/B07QDNRQTL/ref=sr_1_9?dib=eyJ2IjoiMSJ9.TpWatsYz0lZ-5G9O8yNaQHv4cfJ0HoxIght61gMl6CrD2ZRlxjncDWzuwlWycUCTpNEw0qGBn82GNKCvlmZP--IzkR5qodYNzGRRsZ-r2hsb3L1kuM4l5-WWbdWbLOSvjesZG-euwlG6eiLWzecQJnfHV6xKV520NnOb3_AFI9BuOnPyOG_2eQT9xnu_I4gam4TosQP_LpWTgH6i4ylrv_GABu37zngHdI4ipbpPrKo6IiJQ7phPYt8gpioZgSOjfXKGU5iRDUl22XgTEVcaSvHtxTLX0orJF9lP793vGkM.onzWqDf2jTQQ1R61uGZjsTo-F3ZgtiQaOx-q2aY493U&dib_tag=se&keywords=oleo+de+soja+liza+900ml&qid=1794337417&s=grocery&sr=1-9",
+          "image": "https://m.media-amazon.com/images/I/71ZThdwNRBL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Liza Óleo Soja",
+          "price": 17.78,
+          "url": "https://www.amazon.com.br/Liza-%C3%93leo-Soja/dp/B083LFS3L2/ref=sr_1_3?dib=eyJ2IjoiMSJ9.TpWatsYz0lZ-5G9O8yNaQHv4cfJ0HoxIght61gMl6CrD2ZRlxjncDWzuwlWycUCTpNEw0qGBn82GNKCvlmZP--IzkR5qodYNzGRRsZ-r2hsb3L1kuM4l5-WWbdWbLOSvjesZG-euwlG6eiLWzecQJnfHV6xKV520NnOb3_AFI9BuOnPyOG_2eQT9xnu_I4gam4TosQP_LpWTgH6i4ylrv_GABu37zngHdI4ipbpPrKo6IiJQ7phPYt8gpioZgSOjfXKGU5iRDUl22XgTEVcaSvHtxTLX0orJF9lP793vGkM.onzWqDf2jTQQ1R61uGZjsTo-F3ZgtiQaOx-q2aY493U&dib_tag=se&keywords=oleo+de+soja+liza+900ml&qid=1794337417&s=grocery&sr=1-3",
+          "image": "https://m.media-amazon.com/images/I/71q8qSfk3xL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outro tamanho/embalagem)"
+        },
+        {
+          "title": "Liza - Óleo de algodão, 900ml",
+          "price": 21.7,
+          "url": "https://www.amazon.com.br/Liza-%C3%93leo-de-algod%C3%A3o-900ml/dp/B0BN4SJDNR/ref=sr_1_4?dib=eyJ2IjoiMSJ9.TpWatsYz0lZ-5G9O8yNaQHv4cfJ0HoxIght61gMl6CrD2ZRlxjncDWzuwlWycUCTpNEw0qGBn82GNKCvlmZP--IzkR5qodYNzGRRsZ-r2hsb3L1kuM4l5-WWbdWbLOSvjesZG-euwlG6eiLWzecQJnfHV6xKV520NnOb3_AFI9BuOnPyOG_2eQT9xnu_I4gam4TosQP_LpWTgH6i4ylrv_GABu37zngHdI4ipbpPrKo6IiJQ7phPYt8gpioZgSOjfXKGU5iRDUl22XgTEVcaSvHtxTLX0orJF9lP793vGkM.onzWqDf2jTQQ1R61uGZjsTo-F3ZgtiQaOx-q2aY493U&dib_tag=se&keywords=oleo+de+soja+liza+900ml&qid=1794337417&s=grocery&sr=1-4",
+          "image": "https://m.media-amazon.com/images/I/51buCrtR72L._AC_UL320_.jpg",
+          "score": 0.73,
+          "matchType": "similar",
+          "similarReason": "Opção similar"
+        },
+        {
+          "title": "Mariza Azeite de Dendê, Óleo de Palma Premium, 900ml",
+          "price": 30,
+          "url": "https://www.amazon.com.br/sspa/click?ie=UTF8&spc=MTo3NjM2MTUxOTk1MTc0MTk5OjE3OTQzMzc0MTc6c3BfbXRmOjMwMTQ3MjQ5MzkzMjYwMjo6MDo6&url=%2FMariza-Azeite-Dend%25C3%25AA-Palma-Premium%2Fdp%2FB0GD8RCXX5%2Fref%3Dsr_1_13_sspa%3Fdib%3DeyJ2IjoiMSJ9.TpWatsYz0lZ-5G9O8yNaQHv4cfJ0HoxIght61gMl6CrD2ZRlxjncDWzuwlWycUCTpNEw0qGBn82GNKCvlmZP--IzkR5qodYNzGRRsZ-r2hsb3L1kuM4l5-WWbdWbLOSvjesZG-euwlG6eiLWzecQJnfHV6xKV520NnOb3_AFI9BuOnPyOG_2eQT9xnu_I4gam4TosQP_LpWTgH6i4ylrv_GABu37zngHdI4ipbpPrKo6IiJQ7phPYt8gpioZgSOjfXKGU5iRDUl22XgTEVcaSvHtxTLX0orJF9lP793vGkM.onzWqDf2jTQQ1R61uGZjsTo-F3ZgtiQaOx-q2aY493U%26dib_tag%3Dse%26keywords%3Doleo%2Bde%2Bsoja%2Bliza%2B900ml%26qid%3D1794337417%26s%3Dgrocery%26sr%3D1-13-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1%26smid%3DA39LEGGHDDEDT5",
+          "image": "https://m.media-amazon.com/images/I/61ikcWfkMGL._AC_UL320_.jpg",
+          "score": 0.63,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Óleo de Linhaça Dourada Extra Virgem 1 L",
+          "price": 79,
+          "url": "https://www.amazon.com.br/sspa/click?ie=UTF8&spc=MTo3NjM2MTUxOTk1MTc0MTk5OjE3OTQzMzc0MTc6c3BfbXRmOjMwMTU5NTQ5MDMwNTcwMjo6MDo6&url=%2F%25C3%2593leo-Linha%25C3%25A7a-Dourada-Extra-Virgem%2Fdp%2FB0BYB8NPWT%2Fref%3Dsr_1_14_sspa%3Fdib%3DeyJ2IjoiMSJ9.TpWatsYz0lZ-5G9O8yNaQHv4cfJ0HoxIght61gMl6CrD2ZRlxjncDWzuwlWycUCTpNEw0qGBn82GNKCvlmZP--IzkR5qodYNzGRRsZ-r2hsb3L1kuM4l5-WWbdWbLOSvjesZG-euwlG6eiLWzecQJnfHV6xKV520NnOb3_AFI9BuOnPyOG_2eQT9xnu_I4gam4TosQP_LpWTgH6i4ylrv_GABu37zngHdI4ipbpPrKo6IiJQ7phPYt8gpioZgSOjfXKGU5iRDUl22XgTEVcaSvHtxTLX0orJF9lP793vGkM.onzWqDf2jTQQ1R61uGZjsTo-F3ZgtiQaOx-q2aY493U%26dib_tag%3Dse%26keywords%3Doleo%2Bde%2Bsoja%2Bliza%2B900ml%26qid%3D1794337417%26s%3Dgrocery%26sr%3D1-14-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1",
+          "image": "https://m.media-amazon.com/images/I/61dJwXeQ9wL._AC_UL320_.jpg",
+          "score": 0.63,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Olivia Oleo Composto",
+          "price": 8.9,
+          "url": "https://www.amazon.com.br/Olivia-Oleo-Composto/dp/B08898S6WG/ref=sr_1_11?dib=eyJ2IjoiMSJ9.TpWatsYz0lZ-5G9O8yNaQHv4cfJ0HoxIght61gMl6CrD2ZRlxjncDWzuwlWycUCTpNEw0qGBn82GNKCvlmZP--IzkR5qodYNzGRRsZ-r2hsb3L1kuM4l5-WWbdWbLOSvjesZG-euwlG6eiLWzecQJnfHV6xKV520NnOb3_AFI9BuOnPyOG_2eQT9xnu_I4gam4TosQP_LpWTgH6i4ylrv_GABu37zngHdI4ipbpPrKo6IiJQ7phPYt8gpioZgSOjfXKGU5iRDUl22XgTEVcaSvHtxTLX0orJF9lP793vGkM.onzWqDf2jTQQ1R61uGZjsTo-F3ZgtiQaOx-q2aY493U&dib_tag=se&keywords=oleo+de+soja+liza+900ml&qid=1794337417&s=grocery&sr=1-11",
+          "image": "https://m.media-amazon.com/images/I/71NdrMx4dqL._AC_UL320_.jpg",
+          "score": 0.49,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca, outro tamanho/embalagem)"
+        },
+        {
+          "title": "Óleo Refinado de Girassol Rodini, 900ml",
+          "price": 36.8,
+          "url": "https://www.amazon.com.br/Rodini-Alimentos-Comest%C3%ADvel-Agricultura-Embalagem/dp/B0CDQQLR7W/ref=sr_1_24?dib=eyJ2IjoiMSJ9.TpWatsYz0lZ-5G9O8yNaQHv4cfJ0HoxIght61gMl6CrD2ZRlxjncDWzuwlWycUCTpNEw0qGBn82GNKCvlmZP--IzkR5qodYNzGRRsZ-r2hsb3L1kuM4l5-WWbdWbLOSvjesZG-euwlG6eiLWzecQJnfHV6xKV520NnOb3_AFI9BuOnPyOG_2eQT9xnu_I4gam4TosQP_LpWTgH6i4ylrv_GABu37zngHdI4ipbpPrKo6IiJQ7phPYt8gpioZgSOjfXKGU5iRDUl22XgTEVcaSvHtxTLX0orJF9lP793vGkM.onzWqDf2jTQQ1R61uGZjsTo-F3ZgtiQaOx-q2aY493U&dib_tag=se&keywords=oleo+de+soja+liza+900ml&qid=1794337417&s=grocery&sr=1-24",
+          "image": "https://m.media-amazon.com/images/I/51E+Ve8emTL._AC_UL320_.jpg",
+          "score": 0.47,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca, variação similar)"
+        },
+        {
+          "title": "Óleo de Girassol Giroil Extra Virgem - 1 Litro",
+          "price": 39.9,
+          "url": "https://www.amazon.com.br/Giroil-%C3%93leo-Girassol-Extra-Virgem/dp/B0BYB1GLH7/ref=sr_1_21?dib=eyJ2IjoiMSJ9.TpWatsYz0lZ-5G9O8yNaQHv4cfJ0HoxIght61gMl6CrD2ZRlxjncDWzuwlWycUCTpNEw0qGBn82GNKCvlmZP--IzkR5qodYNzGRRsZ-r2hsb3L1kuM4l5-WWbdWbLOSvjesZG-euwlG6eiLWzecQJnfHV6xKV520NnOb3_AFI9BuOnPyOG_2eQT9xnu_I4gam4TosQP_LpWTgH6i4ylrv_GABu37zngHdI4ipbpPrKo6IiJQ7phPYt8gpioZgSOjfXKGU5iRDUl22XgTEVcaSvHtxTLX0orJF9lP793vGkM.onzWqDf2jTQQ1R61uGZjsTo-F3ZgtiQaOx-q2aY493U&dib_tag=se&keywords=oleo+de+soja+liza+900ml&qid=1794337417&s=grocery&sr=1-21",
+          "image": "https://m.media-amazon.com/images/I/610eN6tOj0L._AC_UL320_.jpg",
+          "score": 0.47,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca, variação similar)"
+        }
+      ],
+      "selected": 0,
+      "manualPrice": null,
+      "error": null,
+      "method": "seletores da loja",
+      "searchUrl": "https://www.amazon.com.br/s?k=%C3%93leo+de+Soja+Liza+900ml&i=grocery",
+      "at": "2026-11-10T19:03:45.025Z"
+    },
+    "magalu": {
+      "querySnapshot": "Óleo de Soja Liza 900ml",
+      "candidates": [],
+      "selected": null,
+      "manualPrice": null,
+      "error": "Busca automatizada bloqueada pelo firewall anti-bot (Erro 403) da loja. Clique para abrir a busca direta no navegador.",
+      "method": "bloqueado-waf",
+      "searchUrl": "https://www.magazineluiza.com.br/busca/%C3%93leo%20de%20Soja%20Liza%20900ml/",
+      "at": "2026-11-10T19:00:03.541Z"
+    },
+    "goodbom": {
+      "querySnapshot": "Óleo de Soja Liza 900ml",
+      "candidates": [
+        {
+          "title": "ÓLEO DE SOJA LIZA PET 900ML",
+          "price": 7.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/oleo-soja-liza-pet-900ml",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/_leo_de_soja_liza_900ml_c4d79eef-869d-4757-9d2c-7aaade6d87e3.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "ÓLEO  DE SOJA VITALIV PET 900ML",
+          "price": 7.79,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/oleo-soja-vitaliv-pet-900ml",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/_leo_de_soja_vitaliv_garrafa_900ml_4738606f-b30b-4a87-9792-e52728547805.png",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "ÓLEO DE  SOJA SOYA PET 900ML",
+          "price": 7.89,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/oleo-soja-soya-pet-900ml",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/_leo_de_soja_soya_garrafa_900ml_797d514e-53c5-4f8e-a4dd-317d1599076b.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "ÓLEO DE ALGODÃO LIZA 900ML",
+          "price": 16.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/oleo-algodao-liza-900ml",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/_leo_de_algod_o_tipo_1_liza_especiais_garrafa_900ml_db68f7bd-ecf4-4899-86f5-8b9694e2991f.png",
+          "score": 0.57,
+          "matchType": "similar",
+          "similarReason": "Similar (variação similar)"
+        },
+        {
+          "title": "ÓLEO DE MILHO LIZA PET 900ML",
+          "price": 16.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/oleo-milho-liza-pet-900ml",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/_leo_de_milho_liza_900ml_d9a6c8e4-2c53-4171-a077-d1597710ab2b.jpg",
+          "score": 0.57,
+          "matchType": "similar",
+          "similarReason": "Similar (variação similar)"
+        },
+        {
+          "title": "ÓLEO DE GIRASSOL LIZA PET 900ML",
+          "price": 17.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/oleo-girassol-liza-pet-900ml",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/_leo_de_girassol_liza_900ml_3f1398b4-1afe-4441-928c-4af8d5a9642c.jpg",
+          "score": 0.57,
+          "matchType": "similar",
+          "similarReason": "Similar (variação similar)"
+        },
+        {
+          "title": "ÓLEO DE CANOLA LIZA PET 900ML",
+          "price": 18.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/oleo-canola-liza-pet-900ml",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/_leo_de_canola_liza_900ml_6847abc5-e8c5-45c2-ab63-5d922c9c3718.jpg",
+          "score": 0.57,
+          "matchType": "similar",
+          "similarReason": "Similar (variação similar)"
+        },
+        {
+          "title": "ÓLEO DE GIRASSOL SOYA PET 900ML",
+          "price": 13.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/oleo-girassol-soya-pet-900ml",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/oleo_de_girassol_soya_900ml_da5fb73b-95ce-495d-9acf-de8a08a5a4ec.jpg",
+          "score": 0.47,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca, variação similar)"
+        }
+      ],
+      "selected": 0,
+      "manualPrice": null,
+      "error": null,
+      "method": "Catálogo em tempo real GoodBom (preço real)",
+      "searchUrl": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/busca?q=%C3%93leo%20de%20Soja%20Liza%20900ml",
+      "at": "2026-11-10T19:00:38.040Z"
+    },
+    "arena": {
+      "querySnapshot": "Óleo de Soja Liza 900ml",
+      "candidates": [
+        {
+          "title": "Óleo De Soja Liza Pet 900ml",
+          "price": 7.19,
+          "url": "https://www.arenaatacado.com.br/%C3%93leo-De-Soja-Liza-Pet-900ml-76546.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw6a018101/Produtos/76546-7896036090244-oleo de soja liza pet 900ml-liza-1.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "Óleo De Soja Soya Pet 900ml",
+          "price": 7.69,
+          "url": "https://www.arenaatacado.com.br/%C3%93leo-De-Soja-Soya-Pet-900ml-9016.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw7272e8c0/Produtos/9016-7891107101621-oleo de soja soya pet 900ml-soya-1.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Óleo De Algodão Liza Pet 900ml",
+          "price": 14.29,
+          "url": "https://www.arenaatacado.com.br/%C3%93leo-De-Algod%C3%A3o-Liza-Pet-900ml-904953.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dwd3b96cf9/Produtos/904953-7896036099254-oleo de algodao liza pet 900ml-liza-1.jpg",
+          "score": 0.57,
+          "matchType": "similar",
+          "similarReason": "Similar (variação similar)"
+        },
+        {
+          "title": "Óleo De Canola Liza Pet 900ml",
+          "price": 15.19,
+          "url": "https://www.arenaatacado.com.br/%C3%93leo-De-Canola-Liza-Pet-900ml-4074.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw6a7d0963/Produtos/4074-7896036090626-oleo de canola liza pet 900ml-liza-1.jpg",
+          "score": 0.57,
+          "matchType": "similar",
+          "similarReason": "Similar (variação similar)"
+        },
+        {
+          "title": "Óleo De Milho Liza Pet 900ml",
+          "price": 15.9,
+          "url": "https://www.arenaatacado.com.br/%C3%93leo-De-Milho-Liza-Pet-900ml-4075.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw8ccfe08e/Produtos/4075-7896036090619-oleo de milho liza pet 900ml-liza-1.jpg",
+          "score": 0.57,
+          "matchType": "similar",
+          "similarReason": "Similar (variação similar)"
+        },
+        {
+          "title": "Óleo De Girassol Liza Pet 900ml",
+          "price": 15.9,
+          "url": "https://www.arenaatacado.com.br/%C3%93leo-De-Girassol-Liza-Pet-900ml-4076.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dwffc2f3f2/Produtos/4076-7896036090602-oleo de girassol liza pet 900ml-liza-1.jpg",
+          "score": 0.57,
+          "matchType": "similar",
+          "similarReason": "Similar (variação similar)"
+        },
+        {
+          "title": "Óleo De Girassol Soya Pet 900ml",
+          "price": 13.09,
+          "url": "https://www.arenaatacado.com.br/%C3%93leo-De-Girassol-Soya-Pet-900ml-932078.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dwd4e6ab7e/Produtos/932078-7891080150463-oleo de girassol soya pet 900ml-soya-1.jpg",
+          "score": 0.47,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca, variação similar)"
+        },
+        {
+          "title": "Óleo De Canola Soya Pet 900ml",
+          "price": 13.69,
+          "url": "https://www.arenaatacado.com.br/%C3%93leo-De-Canola-Soya-Pet-900ml-932086.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dwd37de1d8/Produtos/932086-7891080150449-oleo de canola soya pet 900ml-soya-1.jpg",
+          "score": 0.47,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca, variação similar)"
+        }
+      ],
+      "selected": 0,
+      "manualPrice": null,
+      "error": null,
+      "method": "API oficial Arena Atacado (preço real)",
+      "searchUrl": "https://www.arenaatacado.com.br/on/demandware.store/Sites-Arena-Site/pt_BR/Search-Show?q=%C3%93leo%20de%20Soja%20Liza%20900ml",
+      "at": "2026-11-10T19:03:19.596Z"
+    }
+  },
+  "item-acucar": {
+    "mercadolivre": {
+      "querySnapshot": "Açúcar Refinado União 1kg",
+      "candidates": [],
+      "selected": null,
+      "manualPrice": null,
+      "error": "Esta loja exige login na conta para exibir os preços da busca. Conecte sua conta na Etapa 1.",
+      "method": "bloqueado-login",
+      "searchUrl": "https://www.mercadolivre.com.br/gz/account-verification?go=https%3A%2F%2Flista.mercadolivre.com.br%2Fsupermercado%2FA%25C3%25A7%25C3%25BAcar%2520Refinado%2520Uni%25C3%25A3o%25201kg&tid=ff2be9c9-a599-41a7-81be-0dca8edc7a23",
+      "at": "2026-11-10T18:58:28.638Z"
+    },
+    "amazon": {
+      "querySnapshot": "Açúcar Refinado União 1kg",
+      "candidates": [
+        {
+          "title": "Açúcar Refinado Especial União Pct 1kg",
+          "price": 8.87,
+          "url": "https://www.amazon.com.br/UNI%C3%83O-A%C3%A7%C3%BAcar-Refinado/dp/B00IMOHUIQ/ref=sr_1_1?dib=eyJ2IjoiMSJ9.kBLgJQV2OTxWp6DUqRQhNGgVYFprXn8g6LqsrvI1wVFUf3x3sAMI2FSV4vRYv71d38vFYV-5uxXVwpCs-Wt9P9MwXGP_HbK_aHhpp4YrYVsB-rgtSOL6GUe2JZKMI2ytauEI_1ojw2B4pMBA0V6bjuS2ULLFaGaC_jv1K95adZJAXAWjKlevn0QZqp429BK7t1hEXskemB-QPj1JrhGPxFfJ6Ipnfb1Kg_l5MnpOJnceou4aw6n0wsJHuTaI1d_MSlSvaKoahwl8WvSY2bBYFmlTtb0aq2J1vNxaecsORLU.-Luw1XTBzHn8TbPJuaYByIjX8rvsL5l2z7VHQsAvC1Y&dib_tag=se&keywords=A%C3%A7%C3%BAcar+Refinado+Uni%C3%A3o+1kg&qid=1794337163&s=grocery&sr=1-1",
+          "image": "https://m.media-amazon.com/images/I/61xCjwlbmML._AC_UL320_.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "AÇÚCAR REFINADO UNIÃO 1KG - KIT COM 3 UNIDADES",
+          "price": 24.9,
+          "url": "https://www.amazon.com.br/A%C3%87%C3%9ACAR-REFINADO-UNI%C3%83O-1KG-UNIDADES/dp/B0GYGH4HDB/ref=sr_1_3?dib=eyJ2IjoiMSJ9.kBLgJQV2OTxWp6DUqRQhNGgVYFprXn8g6LqsrvI1wVFUf3x3sAMI2FSV4vRYv71d38vFYV-5uxXVwpCs-Wt9P9MwXGP_HbK_aHhpp4YrYVsB-rgtSOL6GUe2JZKMI2ytauEI_1ojw2B4pMBA0V6bjuS2ULLFaGaC_jv1K95adZJAXAWjKlevn0QZqp429BK7t1hEXskemB-QPj1JrhGPxFfJ6Ipnfb1Kg_l5MnpOJnceou4aw6n0wsJHuTaI1d_MSlSvaKoahwl8WvSY2bBYFmlTtb0aq2J1vNxaecsORLU.-Luw1XTBzHn8TbPJuaYByIjX8rvsL5l2z7VHQsAvC1Y&dib_tag=se&keywords=A%C3%A7%C3%BAcar+Refinado+Uni%C3%A3o+1kg&qid=1794337163&s=grocery&sr=1-3",
+          "image": "https://m.media-amazon.com/images/I/71zOwSvHO4L._AC_UL320_.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "AÇÚCAR REFINADO UNIÃO 1KG - KIT COM 3 UNIDADES",
+          "price": 37.88,
+          "url": "https://www.amazon.com.br/A%C3%87%C3%9ACAR-REFINADO-UNI%C3%83O-1KG-UNIDADES/dp/B0GJTSJPLZ/ref=sr_1_4?dib=eyJ2IjoiMSJ9.kBLgJQV2OTxWp6DUqRQhNGgVYFprXn8g6LqsrvI1wVFUf3x3sAMI2FSV4vRYv71d38vFYV-5uxXVwpCs-Wt9P9MwXGP_HbK_aHhpp4YrYVsB-rgtSOL6GUe2JZKMI2ytauEI_1ojw2B4pMBA0V6bjuS2ULLFaGaC_jv1K95adZJAXAWjKlevn0QZqp429BK7t1hEXskemB-QPj1JrhGPxFfJ6Ipnfb1Kg_l5MnpOJnceou4aw6n0wsJHuTaI1d_MSlSvaKoahwl8WvSY2bBYFmlTtb0aq2J1vNxaecsORLU.-Luw1XTBzHn8TbPJuaYByIjX8rvsL5l2z7VHQsAvC1Y&dib_tag=se&keywords=A%C3%A7%C3%BAcar+Refinado+Uni%C3%A3o+1kg&qid=1794337163&s=grocery&sr=1-4",
+          "image": "https://m.media-amazon.com/images/I/41MKl3HV-uL._AC_UL320_.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "Açúcar Refinado 1kg Fardo 10 UN União",
+          "price": 52.07,
+          "url": "https://www.amazon.com.br/A%C3%A7%C3%BAcar-Refinado-1kg-Fardo-Uni%C3%A3o/dp/B07WJVPKCW/ref=sr_1_2?dib=eyJ2IjoiMSJ9.kBLgJQV2OTxWp6DUqRQhNGgVYFprXn8g6LqsrvI1wVFUf3x3sAMI2FSV4vRYv71d38vFYV-5uxXVwpCs-Wt9P9MwXGP_HbK_aHhpp4YrYVsB-rgtSOL6GUe2JZKMI2ytauEI_1ojw2B4pMBA0V6bjuS2ULLFaGaC_jv1K95adZJAXAWjKlevn0QZqp429BK7t1hEXskemB-QPj1JrhGPxFfJ6Ipnfb1Kg_l5MnpOJnceou4aw6n0wsJHuTaI1d_MSlSvaKoahwl8WvSY2bBYFmlTtb0aq2J1vNxaecsORLU.-Luw1XTBzHn8TbPJuaYByIjX8rvsL5l2z7VHQsAvC1Y&dib_tag=se&keywords=A%C3%A7%C3%BAcar+Refinado+Uni%C3%A3o+1kg&qid=1794337163&s=grocery&sr=1-2&ufe=app_do%3Aamzn1.fos.6d798eae-cadf-45de-946a-f477d47705b9",
+          "image": "https://m.media-amazon.com/images/I/61wtQslFAlL._AC_UL320_.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "Açúcar Refinado DA BARRA Pct 1kg",
+          "price": 6.55,
+          "url": "https://www.amazon.com.br/DA-BARRA-A%C3%A7%C3%BAcar-Refinado/dp/B08434QZT2/ref=sr_1_6?dib=eyJ2IjoiMSJ9.kBLgJQV2OTxWp6DUqRQhNGgVYFprXn8g6LqsrvI1wVFUf3x3sAMI2FSV4vRYv71d38vFYV-5uxXVwpCs-Wt9P9MwXGP_HbK_aHhpp4YrYVsB-rgtSOL6GUe2JZKMI2ytauEI_1ojw2B4pMBA0V6bjuS2ULLFaGaC_jv1K95adZJAXAWjKlevn0QZqp429BK7t1hEXskemB-QPj1JrhGPxFfJ6Ipnfb1Kg_l5MnpOJnceou4aw6n0wsJHuTaI1d_MSlSvaKoahwl8WvSY2bBYFmlTtb0aq2J1vNxaecsORLU.-Luw1XTBzHn8TbPJuaYByIjX8rvsL5l2z7VHQsAvC1Y&dib_tag=se&keywords=A%C3%A7%C3%BAcar+Refinado+Uni%C3%A3o+1kg&qid=1794337163&s=grocery&sr=1-6",
+          "image": "https://m.media-amazon.com/images/I/81LfRlA0ftL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Açúcar Petribu Refinado Speciale 1kg",
+          "price": 7.69,
+          "url": "https://www.amazon.com.br/A%C3%A7%C3%BAcar-Petribu-Refinado-Speciale-1kg/dp/B0G5BDXJ17/ref=sr_1_5?dib=eyJ2IjoiMSJ9.kBLgJQV2OTxWp6DUqRQhNGgVYFprXn8g6LqsrvI1wVFUf3x3sAMI2FSV4vRYv71d38vFYV-5uxXVwpCs-Wt9P9MwXGP_HbK_aHhpp4YrYVsB-rgtSOL6GUe2JZKMI2ytauEI_1ojw2B4pMBA0V6bjuS2ULLFaGaC_jv1K95adZJAXAWjKlevn0QZqp429BK7t1hEXskemB-QPj1JrhGPxFfJ6Ipnfb1Kg_l5MnpOJnceou4aw6n0wsJHuTaI1d_MSlSvaKoahwl8WvSY2bBYFmlTtb0aq2J1vNxaecsORLU.-Luw1XTBzHn8TbPJuaYByIjX8rvsL5l2z7VHQsAvC1Y&dib_tag=se&keywords=A%C3%A7%C3%BAcar+Refinado+Uni%C3%A3o+1kg&qid=1794337163&s=grocery&sr=1-5",
+          "image": "https://m.media-amazon.com/images/I/51-CvOX7WPL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Açúcar Refinado 1Kg Caravelas",
+          "price": 8.81,
+          "url": "https://www.amazon.com.br/CARAVELAS-MS9520-Voyager-refinado-Caravelas/dp/B0099V4SNG/ref=sr_1_11?dib=eyJ2IjoiMSJ9.kBLgJQV2OTxWp6DUqRQhNGgVYFprXn8g6LqsrvI1wVFUf3x3sAMI2FSV4vRYv71d38vFYV-5uxXVwpCs-Wt9P9MwXGP_HbK_aHhpp4YrYVsB-rgtSOL6GUe2JZKMI2ytauEI_1ojw2B4pMBA0V6bjuS2ULLFaGaC_jv1K95adZJAXAWjKlevn0QZqp429BK7t1hEXskemB-QPj1JrhGPxFfJ6Ipnfb1Kg_l5MnpOJnceou4aw6n0wsJHuTaI1d_MSlSvaKoahwl8WvSY2bBYFmlTtb0aq2J1vNxaecsORLU.-Luw1XTBzHn8TbPJuaYByIjX8rvsL5l2z7VHQsAvC1Y&dib_tag=se&keywords=A%C3%A7%C3%BAcar+Refinado+Uni%C3%A3o+1kg&qid=1794337163&s=grocery&sr=1-11",
+          "image": "https://m.media-amazon.com/images/I/61FTlZl+QeL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Açúcar Petribu Refinado Speciale 1kg (Embalagem com 4)",
+          "price": 30.76,
+          "url": "https://www.amazon.com.br/A%C3%A7%C3%BAcar-Petribu-Refinado-Speciale-Embalagem/dp/B0H2NVG1RL/ref=sr_1_21?dib=eyJ2IjoiMSJ9.kBLgJQV2OTxWp6DUqRQhNGgVYFprXn8g6LqsrvI1wVFUf3x3sAMI2FSV4vRYv71d38vFYV-5uxXVwpCs-Wt9P9MwXGP_HbK_aHhpp4YrYVsB-rgtSOL6GUe2JZKMI2ytauEI_1ojw2B4pMBA0V6bjuS2ULLFaGaC_jv1K95adZJAXAWjKlevn0QZqp429BK7t1hEXskemB-QPj1JrhGPxFfJ6Ipnfb1Kg_l5MnpOJnceou4aw6n0wsJHuTaI1d_MSlSvaKoahwl8WvSY2bBYFmlTtb0aq2J1vNxaecsORLU.-Luw1XTBzHn8TbPJuaYByIjX8rvsL5l2z7VHQsAvC1Y&dib_tag=se&keywords=A%C3%A7%C3%BAcar+Refinado+Uni%C3%A3o+1kg&qid=1794337163&s=grocery&sr=1-21",
+          "image": "https://m.media-amazon.com/images/I/419Q5wY25eL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        }
+      ],
+      "selected": 0,
+      "manualPrice": null,
+      "error": null,
+      "method": "seletores da loja",
+      "searchUrl": "https://www.amazon.com.br/s?k=A%C3%A7%C3%BAcar+Refinado+Uni%C3%A3o+1kg&i=grocery",
+      "at": "2026-11-10T18:59:31.432Z"
+    },
+    "magalu": {
+      "querySnapshot": "Açúcar Refinado União 1kg",
+      "candidates": [],
+      "selected": null,
+      "manualPrice": null,
+      "error": "Busca automatizada bloqueada pelo firewall anti-bot (Erro 403) da loja. Clique para abrir a busca direta no navegador.",
+      "method": "bloqueado-waf",
+      "searchUrl": "https://www.magazineluiza.com.br/busca/A%C3%A7%C3%BAcar%20Refinado%20Uni%C3%A3o%201kg/",
+      "at": "2026-11-10T19:00:05.123Z"
+    },
+    "goodbom": {
+      "querySnapshot": "Açúcar Refinado União 1kg",
+      "candidates": [
+        {
+          "title": "AÇÚCAR REFINADO UNIÃO 1KG",
+          "price": 3.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/acucar-refuniao-1kg",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/a_car_refinado_uni_o_1kg_772e8784-f601-4628-8617-b3d724ea8c8e.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "AÇUCAR REFINADO CARAVELAS 1KG",
+          "price": 3.89,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/acucar-refcaravelas-1kg",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/a_car_refinado_especial_caravelas_1kg_6c61607c-060b-48ab-a46b-4cd0a4492fc1.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "AÇUCAR REFINADO UNIÃO SACHES 200G",
+          "price": 4.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/acucar-refuniao-saches-200g",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/pack_a_car_refinado_granulado_uni_o_premium_caixa_200g_40_unidades_f0fe2566-e957-4a19-8f7a-e3195437682e.png",
+          "score": 0.76,
+          "matchType": "similar",
+          "similarReason": "Similar (outro tamanho/embalagem)"
+        },
+        {
+          "title": "AÇUCAR PURINHA EXTRA FINO 1KG",
+          "price": 3.79,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/acucar-purinha-extra-fino-1kg",
+          "image": "https://phygital-files.mercafacil.com/good-bom/uploads/produto/acucar_purinha_extra_fino_1kg_6722159f-2bbc-480c-8217-d0e6993c48a0.jpeg",
+          "score": 0.63,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "CHÁ BRANCO LEÃO LICHIA ZERO AÇÚCAR 1,5L",
+          "price": 8.59,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/cha-bcoleao-lichia-zero-acucar-15l",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/cha_leao_1_5l_zero_lichia_branco_0373aab7-aa59-4c9b-be75-39364f664ba2.png",
+          "score": 0.49,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca, outro tamanho/embalagem)"
+        },
+        {
+          "title": "AÇUCAR DEMERARA CARAVELAS 1KG",
+          "price": 5.49,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/acucar-demerara-caravelas-1kg",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/a_car_demerara_caravelas_1kg_5a00cbce-ee37-487f-85f3-5dc9fb366ce5.jpg",
+          "score": 0.47,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca, variação similar)"
+        },
+        {
+          "title": "AÇUCAR  DE COCO COPRA 100G",
+          "price": 14.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/acucar-coco-copra-100g",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/a_car_de_coco_copra_pouch_100g_5bed3e0c-153d-4174-a578-2a826ce03ae7.png",
+          "score": 0.41,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca, outro tamanho/embalagem)"
+        },
+        {
+          "title": "AÇUCAR MASCAVO FALEX 1KG",
+          "price": 18.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/acucar-mascavo-falex-1kg",
+          "image": "https://phygital-files.mercafacil.com/good-bom/uploads/produto/a_ucar_mascavo_falex_1kg_e488b2bf-096e-4e0e-81b6-086098886f9b.jpeg",
+          "score": 0.47,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca, variação similar)"
+        }
+      ],
+      "selected": 0,
+      "manualPrice": null,
+      "error": null,
+      "method": "Catálogo em tempo real GoodBom (preço real)",
+      "searchUrl": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/busca?q=A%C3%A7%C3%BAcar%20Refinado%20Uni%C3%A3o%201kg",
+      "at": "2026-11-10T19:00:41.801Z"
+    },
+    "arena": {
+      "querySnapshot": "Açúcar Refinado União 1kg",
+      "candidates": [
+        {
+          "title": "Açúcar Refinado União Pacote 1kg",
+          "price": 3.69,
+          "url": "https://www.arenaatacado.com.br/A%C3%A7%C3%BAcar-Refinado-Uni%C3%A3o-Pacote-1kg-31399.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw9f0d4781/Produtos/31399-7891910000197-acucar refinado uniao pacote 1kg-uniao-1.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "Açúcar Refinado Guarani Pacote - 1kg",
+          "price": 3.09,
+          "url": "https://www.arenaatacado.com.br/A%C3%A7%C3%BAcar-Refinado-Guarani-Pacote---1kg-95114.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dwc0002c58/Produtos/95114-7896109801005-acucar refinado guarani pacote - 1kg-guarani-1.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Açúcar Demerara União Naturale 1kg",
+          "price": 6.89,
+          "url": "https://www.arenaatacado.com.br/A%C3%A7%C3%BAcar-Demerara-Uni%C3%A3o-Naturale-1kg-381837.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw38691582/Produtos/381837-7891910020065-acucar demerara uniao naturale 1kg-uniao-1.jpg",
+          "score": 0.57,
+          "matchType": "similar",
+          "similarReason": "Similar (variação similar)"
+        },
+        {
+          "title": "Açúcar Mascavo União Pacote - 1kg",
+          "price": 20.9,
+          "url": "https://www.arenaatacado.com.br/A%C3%A7%C3%BAcar-Mascavo-Uni%C3%A3o-Pacote---1kg-811319.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dwb73cdda3/Produtos/811319-7891910030293-acucar mascavo uniao pacote 1kg-uniao-1.jpg",
+          "score": 0.57,
+          "matchType": "similar",
+          "similarReason": "Similar (variação similar)"
+        },
+        {
+          "title": "Açúcar Cristal Colombo 1kg",
+          "price": 3.18,
+          "url": "https://www.arenaatacado.com.br/A%C3%A7%C3%BAcar-Cristal-Colombo-1kg-818917.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw920bb3c4/Produtos/818917-7896894900068-acucar cristal colombo 1kg-colombo-1.jpg",
+          "score": 0.47,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca, variação similar)"
+        },
+        {
+          "title": "Açúcar Demerara Caravelas 1kg",
+          "price": 5.69,
+          "url": "https://www.arenaatacado.com.br/A%C3%A7%C3%BAcar-Demerara-Caravelas-1kg-893994.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dwca900330/Produtos/893994-7896894900235-acucar demerara caravelas 1kg-caravelas-1.jpg",
+          "score": 0.47,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca, variação similar)"
+        }
+      ],
+      "selected": 0,
+      "manualPrice": null,
+      "error": null,
+      "method": "API oficial Arena Atacado (preço real)",
+      "searchUrl": "https://www.arenaatacado.com.br/on/demandware.store/Sites-Arena-Site/pt_BR/Search-Show?q=A%C3%A7%C3%BAcar%20Refinado%20Uni%C3%A3o%201kg",
+      "at": "2026-11-10T19:03:22.253Z"
+    }
+  },
+  "item-azeite": {
+    "mercadolivre": {
+      "querySnapshot": "Azeite Extra Virgem Gallo 500ml",
+      "candidates": [],
+      "selected": null,
+      "manualPrice": null,
+      "error": "Esta loja exige login na conta para exibir os preços da busca. Conecte sua conta na Etapa 1.",
+      "method": "bloqueado-login",
+      "searchUrl": "https://www.mercadolivre.com.br/gz/account-verification?go=https%3A%2F%2Flista.mercadolivre.com.br%2Fsupermercado%2FAzeite%2520Extra%2520Virgem%2520Gallo%2520500ml&tid=b52a6971-7538-4187-877b-b7e4f80b9ca5",
+      "at": "2026-11-10T18:58:31.817Z"
+    },
+    "amazon": {
+      "querySnapshot": "Azeite Extra Virgem Gallo 500ml",
+      "candidates": [
+        {
+          "title": "Azeite Gallo Extra Virgem 500ml - Classico",
+          "price": 27.99,
+          "url": "https://www.amazon.com.br/Azeite-Oliva-Extravirgem-Gallo-500ml/dp/B07MNJNXSL/ref=sr_1_4?dib=eyJ2IjoiMSJ9.ShqvaXKhZzMV5Q5dENbt3ANL2TAcitYEZMdqZIHJWtr8H7-C3Jfk_Z3kAbmHox1Znu_AWaPJwvtKZkSPCm7XOTaXXUXO2cHvkVi48H0S3jCzcIJSk_PTOmP_pNnxdL6QyKkaT-0L1FBMbLvueuuTHU3Yp5VCdmJGksK4FjkNsrsgvSt1-1cAxf9cqXIRyU6O21PPh61oh_Q9-5GJTpQ3-4g40gEo7HtAp53N_AmRI9sv_mL5Ba5aQL20OV1k9CwVA3NkkicYQ8ec58SX5Afq-AcrjKZOmia9GIUl-BhrQws.ZHr3ODf_nZi2IPpGfj27P6rw_hvlyz7QFlx8ragBg9A&dib_tag=se&keywords=Azeite+Extra+Virgem+Gallo+500ml&qid=1794337173&s=grocery&sr=1-4",
+          "image": "https://m.media-amazon.com/images/I/61lhRjjLiXL._AC_UL320_.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "Azeite Gallo Extra Virgem Reserva - 500Ml",
+          "price": 42.04,
+          "url": "https://www.amazon.com.br/Azeite-Virgem-Reserva-Garrafa-Gallo/dp/B07KYQHHBY/ref=sr_1_7?dib=eyJ2IjoiMSJ9.ShqvaXKhZzMV5Q5dENbt3ANL2TAcitYEZMdqZIHJWtr8H7-C3Jfk_Z3kAbmHox1Znu_AWaPJwvtKZkSPCm7XOTaXXUXO2cHvkVi48H0S3jCzcIJSk_PTOmP_pNnxdL6QyKkaT-0L1FBMbLvueuuTHU3Yp5VCdmJGksK4FjkNsrsgvSt1-1cAxf9cqXIRyU6O21PPh61oh_Q9-5GJTpQ3-4g40gEo7HtAp53N_AmRI9sv_mL5Ba5aQL20OV1k9CwVA3NkkicYQ8ec58SX5Afq-AcrjKZOmia9GIUl-BhrQws.ZHr3ODf_nZi2IPpGfj27P6rw_hvlyz7QFlx8ragBg9A&dib_tag=se&keywords=Azeite+Extra+Virgem+Gallo+500ml&qid=1794337173&s=grocery&sr=1-7&ufe=app_do%3Aamzn1.fos.2fb4d624-b7be-441e-af6d-3c953cfae5bf",
+          "image": "https://m.media-amazon.com/images/I/61X6ZdxSssL._AC_UL320_.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "Casa Gallo Rossio de Abrantes Azeite de Oliva Extra Virgem Verde, Fresco e Intenso, 500 ml",
+          "price": 112,
+          "url": "https://www.amazon.com.br/Rossio-Abrantes-Azeite-Virgem-Intenso/dp/B0GX7LVVX3/ref=sr_1_28?dib=eyJ2IjoiMSJ9.ShqvaXKhZzMV5Q5dENbt3ANL2TAcitYEZMdqZIHJWtr8H7-C3Jfk_Z3kAbmHox1Znu_AWaPJwvtKZkSPCm7XOTaXXUXO2cHvkVi48H0S3jCzcIJSk_PTOmP_pNnxdL6QyKkaT-0L1FBMbLvueuuTHU3Yp5VCdmJGksK4FjkNsrsgvSt1-1cAxf9cqXIRyU6O21PPh61oh_Q9-5GJTpQ3-4g40gEo7HtAp53N_AmRI9sv_mL5Ba5aQL20OV1k9CwVA3NkkicYQ8ec58SX5Afq-AcrjKZOmia9GIUl-BhrQws.ZHr3ODf_nZi2IPpGfj27P6rw_hvlyz7QFlx8ragBg9A&dib_tag=se&keywords=Azeite+Extra+Virgem+Gallo+500ml&qid=1794337173&s=grocery&sr=1-28&ufe=app_do%3Aamzn1.fos.6121c6c4-c969-43ae-92f7-cc248fc6181d",
+          "image": "https://m.media-amazon.com/images/I/518KC5bMZvL._AC_UL320_.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "Azeite de Oliva Extra Virgem Vicente Só 500ml - Turquia",
+          "price": 27.9,
+          "url": "https://www.amazon.com.br/Vicente-S%C3%B3-Azeite-Importado-Turquia/dp/B0FT8SQYZJ/ref=sr_1_22?dib=eyJ2IjoiMSJ9.ShqvaXKhZzMV5Q5dENbt3ANL2TAcitYEZMdqZIHJWtr8H7-C3Jfk_Z3kAbmHox1Znu_AWaPJwvtKZkSPCm7XOTaXXUXO2cHvkVi48H0S3jCzcIJSk_PTOmP_pNnxdL6QyKkaT-0L1FBMbLvueuuTHU3Yp5VCdmJGksK4FjkNsrsgvSt1-1cAxf9cqXIRyU6O21PPh61oh_Q9-5GJTpQ3-4g40gEo7HtAp53N_AmRI9sv_mL5Ba5aQL20OV1k9CwVA3NkkicYQ8ec58SX5Afq-AcrjKZOmia9GIUl-BhrQws.ZHr3ODf_nZi2IPpGfj27P6rw_hvlyz7QFlx8ragBg9A&dib_tag=se&keywords=Azeite+Extra+Virgem+Gallo+500ml&qid=1794337173&s=grocery&sr=1-22",
+          "image": "https://m.media-amazon.com/images/I/4143VTKxXXL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Azeite De Oliva Extra Virgem Andorinha - 500ml",
+          "price": 29.9,
+          "url": "https://www.amazon.com.br/Azeite-Andorinha-500ml-Extra-Virgem/dp/B00P9VQCXY/ref=sr_1_5?dib=eyJ2IjoiMSJ9.ShqvaXKhZzMV5Q5dENbt3ANL2TAcitYEZMdqZIHJWtr8H7-C3Jfk_Z3kAbmHox1Znu_AWaPJwvtKZkSPCm7XOTaXXUXO2cHvkVi48H0S3jCzcIJSk_PTOmP_pNnxdL6QyKkaT-0L1FBMbLvueuuTHU3Yp5VCdmJGksK4FjkNsrsgvSt1-1cAxf9cqXIRyU6O21PPh61oh_Q9-5GJTpQ3-4g40gEo7HtAp53N_AmRI9sv_mL5Ba5aQL20OV1k9CwVA3NkkicYQ8ec58SX5Afq-AcrjKZOmia9GIUl-BhrQws.ZHr3ODf_nZi2IPpGfj27P6rw_hvlyz7QFlx8ragBg9A&dib_tag=se&keywords=Azeite+Extra+Virgem+Gallo+500ml&qid=1794337173&s=grocery&sr=1-5",
+          "image": "https://m.media-amazon.com/images/I/71offkXmO7L._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Azeite Andorinha Extra Virgem Projeto Revoa 500ml",
+          "price": 31.25,
+          "url": "https://www.amazon.com.br/Azeite-Andorinha-Virgem-Projeto-Unidade/dp/B0BHV6X11C/ref=sr_1_12?dib=eyJ2IjoiMSJ9.ShqvaXKhZzMV5Q5dENbt3ANL2TAcitYEZMdqZIHJWtr8H7-C3Jfk_Z3kAbmHox1Znu_AWaPJwvtKZkSPCm7XOTaXXUXO2cHvkVi48H0S3jCzcIJSk_PTOmP_pNnxdL6QyKkaT-0L1FBMbLvueuuTHU3Yp5VCdmJGksK4FjkNsrsgvSt1-1cAxf9cqXIRyU6O21PPh61oh_Q9-5GJTpQ3-4g40gEo7HtAp53N_AmRI9sv_mL5Ba5aQL20OV1k9CwVA3NkkicYQ8ec58SX5Afq-AcrjKZOmia9GIUl-BhrQws.ZHr3ODf_nZi2IPpGfj27P6rw_hvlyz7QFlx8ragBg9A&dib_tag=se&keywords=Azeite+Extra+Virgem+Gallo+500ml&qid=1794337173&s=grocery&sr=1-12",
+          "image": "https://m.media-amazon.com/images/I/71phpGvm2XL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Azeite de Oliva Extra Virgem Cocinero Fr 500Ml",
+          "price": 32.16,
+          "url": "https://www.amazon.com.br/Cocinero-Azeite-De-Oliva/dp/B08434Y9PS/ref=sr_1_9_mod_primary_new?dib=eyJ2IjoiMSJ9.ShqvaXKhZzMV5Q5dENbt3ANL2TAcitYEZMdqZIHJWtr8H7-C3Jfk_Z3kAbmHox1Znu_AWaPJwvtKZkSPCm7XOTaXXUXO2cHvkVi48H0S3jCzcIJSk_PTOmP_pNnxdL6QyKkaT-0L1FBMbLvueuuTHU3Yp5VCdmJGksK4FjkNsrsgvSt1-1cAxf9cqXIRyU6O21PPh61oh_Q9-5GJTpQ3-4g40gEo7HtAp53N_AmRI9sv_mL5Ba5aQL20OV1k9CwVA3NkkicYQ8ec58SX5Afq-AcrjKZOmia9GIUl-BhrQws.ZHr3ODf_nZi2IPpGfj27P6rw_hvlyz7QFlx8ragBg9A&dib_tag=se&keywords=Azeite+Extra+Virgem+Gallo+500ml&qid=1794337173&s=grocery&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sr=1-9",
+          "image": "https://m.media-amazon.com/images/I/51wAL8ZRCxL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Azeite de Oliva Andorinha Extra Virgem Seleção 500ml",
+          "price": 32.6,
+          "url": "https://www.amazon.com.br/Azeite-Oliva-Andorinha-Virgem-Sele%C3%A7%C3%A3o/dp/B07Y5P9XNB/ref=sr_1_10?dib=eyJ2IjoiMSJ9.ShqvaXKhZzMV5Q5dENbt3ANL2TAcitYEZMdqZIHJWtr8H7-C3Jfk_Z3kAbmHox1Znu_AWaPJwvtKZkSPCm7XOTaXXUXO2cHvkVi48H0S3jCzcIJSk_PTOmP_pNnxdL6QyKkaT-0L1FBMbLvueuuTHU3Yp5VCdmJGksK4FjkNsrsgvSt1-1cAxf9cqXIRyU6O21PPh61oh_Q9-5GJTpQ3-4g40gEo7HtAp53N_AmRI9sv_mL5Ba5aQL20OV1k9CwVA3NkkicYQ8ec58SX5Afq-AcrjKZOmia9GIUl-BhrQws.ZHr3ODf_nZi2IPpGfj27P6rw_hvlyz7QFlx8ragBg9A&dib_tag=se&keywords=Azeite+Extra+Virgem+Gallo+500ml&qid=1794337173&s=grocery&sr=1-10",
+          "image": "https://m.media-amazon.com/images/I/71qT09Y1e+L._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        }
+      ],
+      "selected": 0,
+      "manualPrice": null,
+      "error": null,
+      "method": "seletores da loja",
+      "searchUrl": "https://www.amazon.com.br/s?k=Azeite+Extra+Virgem+Gallo+500ml&i=grocery",
+      "at": "2026-11-10T18:59:41.183Z"
+    },
+    "magalu": {
+      "querySnapshot": "Azeite Extra Virgem Gallo 500ml",
+      "candidates": [],
+      "selected": null,
+      "manualPrice": null,
+      "error": "Busca automatizada bloqueada pelo firewall anti-bot (Erro 403) da loja. Clique para abrir a busca direta no navegador.",
+      "method": "bloqueado-waf",
+      "searchUrl": "https://www.magazineluiza.com.br/busca/Azeite%20Extra%20Virgem%20Gallo%20500ml/",
+      "at": "2026-11-10T19:00:06.671Z"
+    },
+    "goodbom": {
+      "querySnapshot": "Azeite Extra Virgem Gallo 500ml",
+      "candidates": [
+        {
+          "title": "AZEITE PORTUGUÊS EXTRA VIRGEM GALLO VD. 500ML",
+          "price": 39.98,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/azeite-portevgallo-vd500ml",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/azeite_gallo_extra_virgem_vidro_500ml_1e2bb1d9-2765-434d-9f79-fb71e5596524.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "AZEITE PORTUGUÊS EXTRA VIRGEM GALLO DO SEU JEITO 500ML",
+          "price": 44.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/azeite-portevgallo-do-seu-jeito-500ml",
+          "image": "https://phygital-files.mercafacil.com/good-bom/uploads/produto/azeite_portugu_s_extra_virgem_gallo_do_seu_jeito_500ml_9f4c1f0e-f16e-4da0-8116-74d7debe922a.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "AZEITE PORTUGUÊS EXTRA VIRGEM GALLO RESERVA 500ML",
+          "price": 45.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/azeite-portevgallo-reserva-500ml",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/azeite_gallo_reserva_extra_virgem_500ml_442c1ab5-806b-4b12-9e3e-99c6ab785f77.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "AZEITE PORTUGUÊS EXTRA VIRGEM OLIVEIRA DA SERRA CLÁSSICO 500ML",
+          "price": 25.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/azeite-portevoliveira-serra-class500ml",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/azeite_extra_virgem_oliveira_da_serra_500ml_f99432fc-c8f3-447b-ac51-0ba1528535c4.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "AZEITE ARGENTINO EXTRA VIRGEM VALE FERTIL PREMIUM 500ML",
+          "price": 29.98,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/azeite-argevvale-fertil-premium-500ml",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/azeite_oliva_vale_fertil_500ml_extra_virgem_9f1687ec-0d17-44ba-bc5e-485afce3fe33.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "AZEITE EXTRA VIRGEM GOMES DA COSTA VD. 500ML",
+          "price": 30.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/azeite-espevgomes-da-costa-vd500ml",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/azeite_de_oliva_gomes_da_costa_500ml_extra_virgem_d4730d1a-fc81-4700-a9e0-cc497fabecd9.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "AZEITE ARGENTINO EXTRA VIRGEM COCINERO PET 500ML",
+          "price": 30.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/azeite-argevcocinero-pet-500ml",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/azeite_cocinero_extra_virgem_500ml_31c4234b-b9dd-42fa-8ffb-ed5e2e53c6f2.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "AZEITE ESPANHOL EXTRA VIRGEM LA ESPAÑOLA VD. 500ML",
+          "price": 31.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/azeite-espevla-espanola-vd500ml",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/azeite_la_espanola_extra_virgem_500ml_83929b80-2df0-45c8-a4d1-edf439e7080e.png",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        }
+      ],
+      "selected": 0,
+      "manualPrice": null,
+      "error": null,
+      "method": "Catálogo em tempo real GoodBom (preço real)",
+      "searchUrl": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/busca?q=Azeite%20Extra%20Virgem%20Gallo%20500ml",
+      "at": "2026-11-10T19:00:45.771Z"
+    },
+    "arena": {
+      "querySnapshot": "Azeite Extra Virgem Gallo 500ml",
+      "candidates": [
+        {
+          "title": "Azeite Extravirgem Espanha Borges Vidro 500ml",
+          "price": 30.99,
+          "url": "https://www.arenaatacado.com.br/Azeite-Extravirgem-Espanha-Borges-Vidro-500ml-23496.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw8fe43f6a/Produtos/23496-8410179100036-azeite extravirgem espanha borges vidro 500ml-borges-1.jpg",
+          "score": 0.713,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        }
+      ],
+      "selected": 0,
+      "manualPrice": null,
+      "error": null,
+      "method": "API oficial Arena Atacado (preço real)",
+      "searchUrl": "https://www.arenaatacado.com.br/on/demandware.store/Sites-Arena-Site/pt_BR/Search-Show?q=Azeite%20Extra%20Virgem%20Gallo%20500ml",
+      "at": "2026-11-10T19:03:24.793Z"
+    }
+  },
+  "item-sabao": {
+    "mercadolivre": {
+      "querySnapshot": "Lava Roupas Líquido Omo 3L",
+      "candidates": [],
+      "selected": null,
+      "manualPrice": null,
+      "error": "Esta loja exige login na conta para exibir os preços da busca. Conecte sua conta na Etapa 1.",
+      "method": "bloqueado-login",
+      "searchUrl": "https://www.mercadolivre.com.br/gz/account-verification?go=https%3A%2F%2Flista.mercadolivre.com.br%2Fsupermercado%2FLava%2520Roupas%2520L%25C3%25ADquido%2520Omo%25203L&tid=f25ffd44-77f5-4875-9f09-ae3e90d4a92a",
+      "at": "2026-11-10T18:58:35.051Z"
+    },
+    "amazon": {
+      "querySnapshot": "Lava Roupas Líquido Omo 3L",
+      "candidates": [
+        {
+          "title": "Omo Sabão Líquido Lavanda 3L",
+          "price": 36.99,
+          "url": "https://www.amazon.com.br/Omo-Sab%C3%A3o-L%C3%ADquido-Lavanda-3L/dp/B0GV1FSTNR/ref=sr_1_1?dib=eyJ2IjoiMSJ9.7Do1nTdBcdKPmRMvI0Gfd-VYaZYydqMvvG3QF6X4ZhS9NgQWCP3vMH2RP5d3i9CxEyn2jcfkODXZvfqT0mw0849ToYxloKSHhTYmrCF1_ZWk8XuJB2NBxggy4CXfedzNy8mwM3djz8c778B0BHtbjmsegVIxeaPIEBp_HIKi5E9Rkj3xhR0LUq2bqRchA8uw1uH_Rt_LujclxA0toYotnamK6zL_SEZZOzll8kRowBwqV67jGPyC3Q2u49CI8AHy3wygpofJI2lJwSLHw5cuwXpseYd0jxiZA-L1X-7iBY0.XU0d25D39BFjonWaunMEaeryAyMPuWA7f_FL9KubkCI&dib_tag=se&keywords=Lava+Roupas+L%C3%ADquido+Omo+3L&qid=1794337182&s=grocery&sr=1-1",
+          "image": "https://m.media-amazon.com/images/I/519muVxgPYL._AC_UL320_.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "Lava-Roupas Líquido ODD Sensitive Skin, Coco, 3L",
+          "price": 23.84,
+          "url": "https://www.amazon.com.br/Limppano-Roupas-L%C3%ADquido-Lavagem-Completa/dp/B0D4FYTXJP/ref=sr_1_21?dib=eyJ2IjoiMSJ9.7Do1nTdBcdKPmRMvI0Gfd-VYaZYydqMvvG3QF6X4ZhS9NgQWCP3vMH2RP5d3i9CxEyn2jcfkODXZvfqT0mw0849ToYxloKSHhTYmrCF1_ZWk8XuJB2NBxggy4CXfedzNy8mwM3djz8c778B0BHtbjmsegVIxeaPIEBp_HIKi5E9Rkj3xhR0LUq2bqRchA8uw1uH_Rt_LujclxA0toYotnamK6zL_SEZZOzll8kRowBwqV67jGPyC3Q2u49CI8AHy3wygpofJI2lJwSLHw5cuwXpseYd0jxiZA-L1X-7iBY0.XU0d25D39BFjonWaunMEaeryAyMPuWA7f_FL9KubkCI&dib_tag=se&keywords=Lava+Roupas+L%C3%ADquido+Omo+3L&qid=1794337182&s=grocery&sr=1-21",
+          "image": "https://m.media-amazon.com/images/I/515KVX+MMHL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Brilhante Limpeza Total - Lava Roupas Líquido 3L",
+          "price": 23.9,
+          "url": "https://www.amazon.com.br/Detergente-L%C3%ADquido-Brancas-Coloridas-Brilhante/dp/B07DTN9W36/ref=sr_1_2?dib=eyJ2IjoiMSJ9.7Do1nTdBcdKPmRMvI0Gfd-VYaZYydqMvvG3QF6X4ZhS9NgQWCP3vMH2RP5d3i9CxEyn2jcfkODXZvfqT0mw0849ToYxloKSHhTYmrCF1_ZWk8XuJB2NBxggy4CXfedzNy8mwM3djz8c778B0BHtbjmsegVIxeaPIEBp_HIKi5E9Rkj3xhR0LUq2bqRchA8uw1uH_Rt_LujclxA0toYotnamK6zL_SEZZOzll8kRowBwqV67jGPyC3Q2u49CI8AHy3wygpofJI2lJwSLHw5cuwXpseYd0jxiZA-L1X-7iBY0.XU0d25D39BFjonWaunMEaeryAyMPuWA7f_FL9KubkCI&dib_tag=se&keywords=Lava+Roupas+L%C3%ADquido+Omo+3L&qid=1794337182&s=grocery&sr=1-2",
+          "image": "https://m.media-amazon.com/images/I/71jvqKocIgL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Sabão Liquido Lava-Roupas Multiação Clarin 3L com Enzimas Ativas e Branqueador Optico, Perfumado, Alto Rendimento para Roupas Brancas e Coloridas",
+          "price": 24.49,
+          "url": "https://www.amazon.com.br/sspa/click?ie=UTF8&spc=MTo4NzY2NzQyNDU1MDc0OTI0OjE3OTQzMzcxODI6c3BfbXRmOjMwMTQ4MjU5NDYzMjgwMjo6MDo6&url=%2FLava-Roupas-Multia%25C3%25A7%25C3%25A3o-Branqueador-Perfumado-Rendimento%2Fdp%2FB0HF6CY2B1%2Fref%3Dsr_1_14_sspa%3Fdib%3DeyJ2IjoiMSJ9.7Do1nTdBcdKPmRMvI0Gfd-VYaZYydqMvvG3QF6X4ZhS9NgQWCP3vMH2RP5d3i9CxEyn2jcfkODXZvfqT0mw0849ToYxloKSHhTYmrCF1_ZWk8XuJB2NBxggy4CXfedzNy8mwM3djz8c778B0BHtbjmsegVIxeaPIEBp_HIKi5E9Rkj3xhR0LUq2bqRchA8uw1uH_Rt_LujclxA0toYotnamK6zL_SEZZOzll8kRowBwqV67jGPyC3Q2u49CI8AHy3wygpofJI2lJwSLHw5cuwXpseYd0jxiZA-L1X-7iBY0.XU0d25D39BFjonWaunMEaeryAyMPuWA7f_FL9KubkCI%26dib_tag%3Dse%26keywords%3DLava%2BRoupas%2BL%25C3%25ADquido%2BOmo%2B3L%26qid%3D1794337182%26s%3Dgrocery%26sr%3D1-14-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1",
+          "image": "https://m.media-amazon.com/images/I/71XJlHTGiRL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Brilhante Sabão Líquido Perfume e Cuidado Extraordinário 3L",
+          "price": 28.7,
+          "url": "https://www.amazon.com.br/Brilhante-L%C3%ADquido-Perfume-Cuidado-Extraordin%C3%A1rio/dp/B0FNQ2TPDZ/ref=sr_1_17?dib=eyJ2IjoiMSJ9.7Do1nTdBcdKPmRMvI0Gfd-VYaZYydqMvvG3QF6X4ZhS9NgQWCP3vMH2RP5d3i9CxEyn2jcfkODXZvfqT0mw0849ToYxloKSHhTYmrCF1_ZWk8XuJB2NBxggy4CXfedzNy8mwM3djz8c778B0BHtbjmsegVIxeaPIEBp_HIKi5E9Rkj3xhR0LUq2bqRchA8uw1uH_Rt_LujclxA0toYotnamK6zL_SEZZOzll8kRowBwqV67jGPyC3Q2u49CI8AHy3wygpofJI2lJwSLHw5cuwXpseYd0jxiZA-L1X-7iBY0.XU0d25D39BFjonWaunMEaeryAyMPuWA7f_FL9KubkCI&dib_tag=se&keywords=Lava+Roupas+L%C3%ADquido+Omo+3L&qid=1794337182&s=grocery&sr=1-17",
+          "image": "https://m.media-amazon.com/images/I/61Qy81pNuDL._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Ariel Sabão Líquido Cores Radiantes Toque de Downy 3L",
+          "price": 44.9,
+          "url": "https://www.amazon.com.br/Sab%C3%A3o-L%C3%ADquido-Ariel-Cores-Radiantes/dp/B08JHX6WLR/ref=sr_1_26?dib=eyJ2IjoiMSJ9.7Do1nTdBcdKPmRMvI0Gfd-VYaZYydqMvvG3QF6X4ZhS9NgQWCP3vMH2RP5d3i9CxEyn2jcfkODXZvfqT0mw0849ToYxloKSHhTYmrCF1_ZWk8XuJB2NBxggy4CXfedzNy8mwM3djz8c778B0BHtbjmsegVIxeaPIEBp_HIKi5E9Rkj3xhR0LUq2bqRchA8uw1uH_Rt_LujclxA0toYotnamK6zL_SEZZOzll8kRowBwqV67jGPyC3Q2u49CI8AHy3wygpofJI2lJwSLHw5cuwXpseYd0jxiZA-L1X-7iBY0.XU0d25D39BFjonWaunMEaeryAyMPuWA7f_FL9KubkCI&dib_tag=se&keywords=Lava+Roupas+L%C3%ADquido+Omo+3L&qid=1794337182&s=grocery&sr=1-26&ufe=app_do%3Aamzn1.fos.2fb4d624-b7be-441e-af6d-3c953cfae5bf",
+          "image": "https://m.media-amazon.com/images/I/61Dy9CMMd8L._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Kit 2 Lava Roupas Líquido Baby Soft Max Cuidado Hipoalergênico 3L Total 6L",
+          "price": 64.58,
+          "url": "https://www.amazon.com.br/sspa/click?ie=UTF8&spc=MTo4NzY2NzQyNDU1MDc0OTI0OjE3OTQzMzcxODI6c3BfbXRmOjMwMTUxNDI1Nzk5MTIwMjo6MDo6&url=%2FRoupas-L%25C3%25ADquido-Cuidado-Hipoalerg%25C3%25AAnico-cheiro%2Fdp%2FB0HD36P1Z7%2Fref%3Dsr_1_13_sspa%3Fdib%3DeyJ2IjoiMSJ9.7Do1nTdBcdKPmRMvI0Gfd-VYaZYydqMvvG3QF6X4ZhS9NgQWCP3vMH2RP5d3i9CxEyn2jcfkODXZvfqT0mw0849ToYxloKSHhTYmrCF1_ZWk8XuJB2NBxggy4CXfedzNy8mwM3djz8c778B0BHtbjmsegVIxeaPIEBp_HIKi5E9Rkj3xhR0LUq2bqRchA8uw1uH_Rt_LujclxA0toYotnamK6zL_SEZZOzll8kRowBwqV67jGPyC3Q2u49CI8AHy3wygpofJI2lJwSLHw5cuwXpseYd0jxiZA-L1X-7iBY0.XU0d25D39BFjonWaunMEaeryAyMPuWA7f_FL9KubkCI%26dib_tag%3Dse%26keywords%3DLava%2BRoupas%2BL%25C3%25ADquido%2BOmo%2B3L%26qid%3D1794337182%26s%3Dgrocery%26sr%3D1-13-spons%26ufe%3Dapp_do%253Aamzn1.fos.6d798eae-cadf-45de-946a-f477d47705b9%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1",
+          "image": "https://m.media-amazon.com/images/I/61kEX2qTK7L._AC_UL320_.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "Lava-Roupas Líquido Omo Ciclo Rápido Ação Antiodor Frasco 750ml",
+          "price": 12.95,
+          "url": "https://www.amazon.com.br/Lava-Roupas-L%C3%ADquido-R%C3%A1pido-Antiodor-Frasco/dp/B0FJ7T9R8G/ref=sr_1_16?dib=eyJ2IjoiMSJ9.7Do1nTdBcdKPmRMvI0Gfd-VYaZYydqMvvG3QF6X4ZhS9NgQWCP3vMH2RP5d3i9CxEyn2jcfkODXZvfqT0mw0849ToYxloKSHhTYmrCF1_ZWk8XuJB2NBxggy4CXfedzNy8mwM3djz8c778B0BHtbjmsegVIxeaPIEBp_HIKi5E9Rkj3xhR0LUq2bqRchA8uw1uH_Rt_LujclxA0toYotnamK6zL_SEZZOzll8kRowBwqV67jGPyC3Q2u49CI8AHy3wygpofJI2lJwSLHw5cuwXpseYd0jxiZA-L1X-7iBY0.XU0d25D39BFjonWaunMEaeryAyMPuWA7f_FL9KubkCI&dib_tag=se&keywords=Lava+Roupas+L%C3%ADquido+Omo+3L&qid=1794337182&s=grocery&sr=1-16",
+          "image": "https://m.media-amazon.com/images/I/61FJtM8Pi5L._AC_UL320_.jpg",
+          "score": 0.76,
+          "matchType": "similar",
+          "similarReason": "Similar (outro tamanho/embalagem)"
+        }
+      ],
+      "selected": 0,
+      "manualPrice": null,
+      "error": null,
+      "method": "seletores da loja",
+      "searchUrl": "https://www.amazon.com.br/s?k=Lava+Roupas+L%C3%ADquido+Omo+3L&i=grocery",
+      "at": "2026-11-10T18:59:51.083Z"
+    },
+    "magalu": {
+      "querySnapshot": "Lava Roupas Líquido Omo 3L",
+      "candidates": [],
+      "selected": null,
+      "manualPrice": null,
+      "error": "Busca automatizada bloqueada pelo firewall anti-bot (Erro 403) da loja. Clique para abrir a busca direta no navegador.",
+      "method": "bloqueado-waf",
+      "searchUrl": "https://www.magazineluiza.com.br/busca/Lava%20Roupas%20L%C3%ADquido%20Omo%203L/",
+      "at": "2026-11-10T19:00:08.238Z"
+    },
+    "goodbom": {
+      "querySnapshot": "Lava Roupas Líquido Omo 3L",
+      "candidates": [
+        {
+          "title": "LAVA ROUPAS LÍQUIDO OMO LAVANDA 3L",
+          "price": 46.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/lava-rliqomo-lavanda-3l",
+          "image": "https://phygital-files.mercafacil.com/good-bom/uploads/produto/lava_roupas_l_quido_omo_lavanda_3l_6a58babf-597d-4f8b-9f75-6bd3f38f839d.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "LAVA ROUPAS LÍQUIDO OMO PURO CUIDADO 3L",
+          "price": 46.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/lava-rliqomo-puro-cuidado-3l",
+          "image": "https://phygital-files.mercafacil.com/good-bom/uploads/produto/lava_roupas_l_quido_omo_puro_cuidado_3l_f47b6863-747b-424a-9de3-6c5ce0400d6d.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "LAVA ROUPAS LÍQUIDO OMO LAVAGEM PERFEITA 3L",
+          "price": 46.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/lava-rliqomo-lavperfeita-3l",
+          "image": "https://phygital-files.mercafacil.com/good-bom/uploads/produto/lava_roupas_l_quido_omo_lavagem_perfeita_3l_e65461eb-605f-45a8-8908-4311850253cb.jpg",
+          "score": 1,
+          "matchType": "exact",
+          "similarReason": null
+        },
+        {
+          "title": "LAVA ROUPAS LÍQUIDO UAU ACTIVE 3L",
+          "price": 31.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/lava-rliquau-active-3l",
+          "image": "https://phygital-files.mercafacil.com/good-bom/uploads/produto/lava_roupas_l_quido_uau_active_3l_cb9f2c45-34dd-4892-b590-b0cdf462ec02.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "LAVA ROUPAS LÍQUIDO UAU ROSAS/SEDUÇÃO 3L",
+          "price": 31.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/lava-rliquau-rosasseducao-3l",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/lava_roupas_liquido_uau_perfumes_rosas_e_sedu_o_3l_31710e58-373b-4832-9cd9-4d2257c31f23.jpg",
+          "score": 0.84,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca)"
+        },
+        {
+          "title": "LAVA ROUPAS LÍQUIDO OMO LAVAGEM PERFEITA 900ML",
+          "price": 16.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/lava-rliqomo-lavperfrefil-econ900ml",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/sab_o_l_quido_omo_lavagem_perfeita_refil_900ml_3b0f9f4e-6913-405c-b96f-78bf5ba4b256.jpg",
+          "score": 0.76,
+          "matchType": "similar",
+          "similarReason": "Similar (outro tamanho/embalagem)"
+        },
+        {
+          "title": "LAVA ROUPAS LIQUIDO OMO CICLO RÁPIDO ANTIODOR 750ML",
+          "price": 19.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/lava-rliqomo-ciclo-rantiodor-750ml",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/lava_roupas_liquido_omo_ciclo_rapido_acao_antiodor_750ml_e2a4f876-87ce-4e5d-a9eb-3604bbfc601c.png",
+          "score": 0.76,
+          "matchType": "similar",
+          "similarReason": "Similar (outro tamanho/embalagem)"
+        },
+        {
+          "title": "LAVA ROUPAS LIQUIDO OMO CICLO RÁPIDO AÇÃO CUIDADO 750ML",
+          "price": 19.99,
+          "url": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/produto/lava-rliqomo-ciclo-racao-cuidado-750ml",
+          "image": "https://phygital-files.mercafacil.com/catalogo/uploads/produto/lava_roupas_liquido_omo_ciclo_rapido_acao_cuidado_750ml_68e27813-485d-457d-9dd2-20a2428b29a9.png",
+          "score": 0.76,
+          "matchType": "similar",
+          "similarReason": "Similar (outro tamanho/embalagem)"
+        }
+      ],
+      "selected": 0,
+      "manualPrice": null,
+      "error": null,
+      "method": "Catálogo em tempo real GoodBom (preço real)",
+      "searchUrl": "https://www.goodbom.com.br/campinas-sp-parque-taquaral/busca?q=Lava%20Roupas%20L%C3%ADquido%20Omo%203L",
+      "at": "2026-11-10T19:00:49.606Z"
+    },
+    "arena": {
+      "querySnapshot": "Lava Roupas Líquido Omo 3L",
+      "candidates": [
+        {
+          "title": "Lava-Roupas Líquido Barbarex Coco - 2l",
+          "price": 14.39,
+          "url": "https://www.arenaatacado.com.br/Lava-Roupas-L%C3%ADquido-Barbarex-Coco---2l-304573.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dwa3aa0be1/Produtos/304573-7898462401694-lava-roupas liquido barbarex coco - 2l-barbarex-1.jpg",
+          "score": 0.66,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca, outro tamanho/embalagem)"
+        },
+        {
+          "title": "Lava-Roupas Líquido Ola Bebê 1l",
+          "price": 24.59,
+          "url": "https://www.arenaatacado.com.br/Lava-Roupas-L%C3%ADquido-Ola-Beb%C3%AA-1l-463868.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw9d14df50/Produtos/463868-7891024128596-lava-roupas liquido ola bebe 1l-ola-1.jpg",
+          "score": 0.66,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca, outro tamanho/embalagem)"
+        },
+        {
+          "title": "Lava Roupas Liquido Ariel Classico Sachê 1,8lt",
+          "price": 28.9,
+          "url": "https://www.arenaatacado.com.br/Lava-Roupas-Liquido-Ariel-Classico-Sach%C3%AA-1.8lt-773239.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dweec52f29/Produtos/773239-7500435142007-lava roupas liquido ariel classico sache 18lt-ariel-1.jpg",
+          "score": 0.66,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca, outro tamanho/embalagem)"
+        },
+        {
+          "title": "Lava-Roupas Líquido Ariel Concentrado - 2l",
+          "price": 46.9,
+          "url": "https://www.arenaatacado.com.br/Lava-Roupas-L%C3%ADquido-Ariel-Concentrado---2l-682810.html",
+          "image": "https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw7edba4fe/Produtos/682810-7500435115315-lava-roupas liquido ariel concentrado 2l-ariel-1.jpg",
+          "score": 0.66,
+          "matchType": "similar",
+          "similarReason": "Similar (outra marca, outro tamanho/embalagem)"
+        }
+      ],
+      "selected": 0,
+      "manualPrice": null,
+      "error": null,
+      "method": "API oficial Arena Atacado (preço real)",
+      "searchUrl": "https://www.arenaatacado.com.br/on/demandware.store/Sites-Arena-Site/pt_BR/Search-Show?q=Lava%20Roupas%20L%C3%ADquido%20Omo%203L",
+      "at": "2026-11-10T19:03:27.440Z"
+    }
+  }
+}

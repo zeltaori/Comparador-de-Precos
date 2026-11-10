@@ -123,9 +123,16 @@ td.num, th.num { text-align: right; white-space: nowrap; }
 .cell.best { background: #dcfce7; border: 1px solid #86efac; }
 .cell.best .p { color: #15803d; }
 .cell.na .p { color: #9ca3af; font-weight: 400; }
-.cell.err .p { color: var(--warn); font-size: .85rem; }
-.cell .tag { font-size: .68rem; background: #e0e7ff; color: #3730a3; border-radius: 4px; padding: 1px 4px; margin-left: 4px; }
+.cell.err .p { color: var(--warn); font-size: .82rem; }
+.cell .tag { font-size: .68rem; background: #e0e7ff; color: #3730a3; border-radius: 4px; padding: 1px 5px; margin-left: 4px; font-weight: 600; vertical-align: middle; }
+.cell .tag.sim { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+.cell .tag.exact { background: #dcfce7; color: #166534; }
+.cell.sim-cell { border-left: 3px solid #f59e0b; }
 tr.best-row td { background: #f0fdf4; font-weight: 600; }
+
+.diag-banner { background: #fffbeb; border: 1px solid #fde68a; color: #78350f; border-radius: var(--radius); padding: .9rem 1.2rem; margin-bottom: 1.2rem; font-size: .85rem; line-height: 1.5; }
+.diag-banner b { color: #92400e; }
+.diag-banner ul { margin: .4rem 0 0; padding-left: 1.2rem; }
 
 dialog { border: none; border-radius: 16px; padding: 0; width: min(620px, 94vw); box-shadow: 0 20px 60px rgba(0,0,0,.25); }
 dialog::backdrop { background: rgba(15,23,42,.55); }
@@ -150,8 +157,9 @@ details summary { cursor: pointer; font-size: .9rem; color: var(--accent); }
 #pick-list .info { flex: 1; font-size: .85rem; }
 #pick-list .info a { color: var(--accent); font-size: .75rem; margin-left: .4rem; }
 #pick-list .price { font-weight: 700; }
-.score { font-size: .7rem; padding: 1px 6px; border-radius: 999px; background: #f3f4f6; }
+.score { font-size: .7rem; padding: 2px 7px; border-radius: 999px; background: #f3f4f6; font-weight: 600; }
 .score.good { background: #dcfce7; color: #166534; }
+.score.sim { background: #fef3c7; color: #92400e; }
 .manual { display: flex; gap: .5rem; align-items: flex-end; }
 .manual label { flex: 1; }
 

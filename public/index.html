@@ -98,25 +98,27 @@
     <section id="tab-results" class="tab">
       <div class="section-head">
         <div>
-          <h1>3. Comparação de Preços (Por Produto e Total com Frete)</h1>
+          <h1>3. Comparação de Preços Reais (Por Produto e Total com Frete)</h1>
           <p class="muted" id="results-sub">Faça uma busca para ver os resultados.</p>
         </div>
         <div class="head-actions">
-          <button class="btn" id="btn-research">↻ Atualizar preços</button>
+          <button class="btn" id="btn-research">↻ Atualizar preços nas lojas</button>
         </div>
       </div>
 
       <div id="summary" class="summary"></div>
 
       <div class="card">
-        <h2>Mais barato por produto (Unitário &amp; Subtotal do Item)</h2>
-        <p class="muted small">Clique em qualquer preço para ver outras marcas/opções encontradas na loja, abrir o produto direto no mercado ou ajustar o valor manualmente. 🏆 indica o menor preço daquele produto.</p>
+        <h2>Mais barato por produto (Preços Reais das Lojas — Unitário &amp; Subtotal)</h2>
+        <p class="muted small">
+          <b>100% Preços Reais:</b> Nenhum valor fictício é utilizado. Quando a loja possui o produto exato, aparece com <span class="tag exact">✓ Exato</span>; quando não possui a marca ou embalagem exata, o comparador exibe a opção similar mais próxima disponível na loja com <span class="tag sim">≈ Similar</span>. Clique em qualquer célula para ver todas as opções reais encontradas na loja ou abrir a página oficial do produto.
+        </p>
         <div class="table-wrap"><table id="matrix"></table></div>
       </div>
 
       <div class="card">
         <h2>Total da compra em cada mercado (Produtos + Frete)</h2>
-        <p class="muted small">Compara quanto custaria comprar toda a lista em um único supermercado, já somando o frete configurado (ou aplicando frete grátis quando atingir o valor mínimo).</p>
+        <p class="muted small">Compara quanto custaria comprar os itens encontrados em cada supermercado, somando o frete configurado (ou aplicando frete grátis quando atingir o valor mínimo).</p>
         <div class="table-wrap"><table id="totals"></table></div>
       </div>
     </section>
